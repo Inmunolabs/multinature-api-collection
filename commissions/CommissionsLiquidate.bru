@@ -1,0 +1,29 @@
+meta {
+  name: CommissionsLiquidate
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{commissionsHost}}/commissions/liquidate
+  body: json
+  auth: bearer
+}
+
+headers {
+  password: exr69j6rbvgFy8qT
+}
+
+auth:bearer {
+  token: {{adminToken}}
+}
+
+body:json {
+  [
+      // "630a4283-7319-4974-b5a2-c49e8fe7b8ce",
+      // "9c10961b-0cc8-4b28-b230-dd2285939a36",
+      // "4aa869b6-aba1-4f24-8301-f5ed57878515",
+      "9c10961b-0cc8-4b28-b230-dd2285939a36",
+      "7456d52e-8398-4fd9-9d62-d6c4aefa695f"
+  ]
+}

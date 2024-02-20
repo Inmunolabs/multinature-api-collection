@@ -1,0 +1,15 @@
+meta {
+  name: PaymentMethodsDelete
+  type: http
+  seq: 7
+}
+
+delete {
+  url: {{paymentMethodsHost}}/payment-methods/75617ccf-ed68-4608-9cae-321711c31fb8
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{adminToken}}
+}

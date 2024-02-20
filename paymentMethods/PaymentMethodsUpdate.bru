@@ -1,0 +1,37 @@
+meta {
+  name: PaymentMethodsUpdate
+  type: http
+  seq: 5
+}
+
+patch {
+  url: {{paymentMethodsHost}}/payment-methods/9eca7427-8c99-493d-aee4-6ec36eaafb08
+  body: json
+  auth: bearer
+}
+
+query {
+  ~PaymentMethodId: 
+}
+
+auth:bearer {
+  token: {{adminToken}}
+}
+
+body:json {
+  {
+      //"clabe": 
+      //"beneficiary": "Jorge Campos",
+      //"alias": "LA PERRONA DE Manuelito Bodoque",
+      //"nameOnCard": "mi compa el benny",
+      //"expDate": "12/2026",
+      //"bank": "otro banco"
+  
+      "bank": "Banco Azteca",
+      "beneficiary": "juan Carlos bodoque",
+      "cardUse": "Cobro",
+      "clabe": "032180000118359719",
+      "openpayUserId": "awr1r1aam5ptmfnwt5jy",
+      "openpayBankAccountId": "baukpnociemfasowv204"
+  }
+}

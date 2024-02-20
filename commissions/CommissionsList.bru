@@ -1,0 +1,20 @@
+meta {
+  name: CommissionsList
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{commissionsHost}}/commissions?startDate=2023-10-10&endDate=2025-12-20
+  body: none
+  auth: bearer
+}
+
+query {
+  startDate: 2023-10-10
+  endDate: 2025-12-20
+}
+
+auth:bearer {
+  token: {{adminToken}}
+}

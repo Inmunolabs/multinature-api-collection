@@ -1,0 +1,30 @@
+meta {
+  name: MonthlyPurchaseCreate
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{monthlyPurchaseHost}}/monthlyPurchase/{{idUser}}
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{associatedToken}}
+}
+
+body:json {
+  {
+      "products": [
+          {
+              "id": "663a0000-5415-49ec-bdbc-05b771a8a8f9",
+              "quantity": 10
+          }
+          // {
+          //     "id": "d5a1291a-8a41-4ae1-9fd4-871db82e2e9b",
+          //     "quantity": 1
+          // }
+      ]
+  }
+}

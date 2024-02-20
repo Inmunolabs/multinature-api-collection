@@ -1,0 +1,11 @@
+meta {
+  name: PaymentMethodsHealthcheck
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{paymentMethodsHost}}
+  body: none
+  auth: none
+}

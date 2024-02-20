@@ -1,0 +1,15 @@
+meta {
+  name: UsersDashboard
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{userHost}}/users/dashboard
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{adminToken}}
+}

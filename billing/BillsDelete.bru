@@ -1,0 +1,15 @@
+meta {
+  name: BillsDelete
+  type: http
+  seq: 8
+}
+
+delete {
+  url: {{billingHost}}/billing/d96eb064-2826-4527-b73e-767340c09489
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{adminToken}}
+}

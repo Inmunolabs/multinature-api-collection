@@ -1,0 +1,24 @@
+meta {
+  name: UsersCreate-User
+  type: http
+  seq: 14
+}
+
+post {
+  url: {{userHost}}/users/
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+      "email": "afiliado@inmuno.mx",
+      "password": "12345678",
+      "recommenderId": "",
+      "profile": "Afiliado",
+      "birthdate": "2005-7-22"
+      // "satScheme": 1,
+      // "firstName": "bananas",
+      // "lastName": "bananarama"
+  }
+}

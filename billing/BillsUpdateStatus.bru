@@ -1,0 +1,22 @@
+meta {
+  name: BillsUpdateStatus
+  type: http
+  seq: 7
+}
+
+patch {
+  url: {{billingHost}}/billing/status/e217f86a-1b18-47f5-a0ba-dbb9eee62e71
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{adminToken}}
+}
+
+body:json {
+  {
+      "status": "Factura mal formada",
+      "emailMessage": "El motivo del rechazo de la factura es porque el monto no coincide con el de tu comisión. Deberas corregirlo para que podamos liquidar tu comisión."
+  }
+}

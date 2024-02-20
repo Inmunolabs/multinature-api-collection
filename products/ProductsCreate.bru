@@ -1,0 +1,43 @@
+meta {
+  name: ProductsCreate
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{productHost}}/products
+  body: json
+  auth: bearer
+}
+
+headers {
+  password: n3Mg7nM2dk9n7jSn
+}
+
+auth:bearer {
+  token: {{adminToken}}
+}
+
+body:json {
+  {
+      "id": "522322fd-02c4-458a-8e5c-b22454b0e1f4",
+      "product": "Producto de Prueba",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+      "capsuleQuantity": 60,
+      "capsuleConcentration": 1400,
+      "mainComponents": [
+          {
+              "property": "OMEGA 3 DERIVADO DE SALMON CHILENO",
+              "value": 60
+          }
+      ],
+      "instructions": "Tomar 2 capsulas al día preferentemente con alimentos.",
+      "price": 400,
+      "quantity": 40,
+      "ingredients": "Aceite de Salmon De la corteza: grenetina, agua purificada, glicerina.",
+      "urlImages": [
+          "https://products-images-9fe5.s3.amazonaws.com/OMEGA+3+EPA+%2B+DHA/pill+(4).png",
+          "https://products-images-9fe5.s3.amazonaws.com/OMEGA+3+EPA+%2B+DHA/informacionNutimental.png"
+      ]
+  }
+}

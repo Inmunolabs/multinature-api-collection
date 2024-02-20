@@ -1,0 +1,29 @@
+meta {
+  name: AddressesCreate
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{addressHost}}/addresses/{{idUser}}
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{adminToken}}
+}
+
+body:json {
+  {
+      "street": "Calle de Admin",
+      "extNumber": "4135",
+      "intNumber": "",
+      "colony": "El Secreto",
+      "city": "Zapopan",
+      "federalEntity": "Jalisco",
+      "zipCode": "45138",
+      "country": "México",
+      "refer": "Arbol Verde con flor azul espinas rojas"
+  }
+}

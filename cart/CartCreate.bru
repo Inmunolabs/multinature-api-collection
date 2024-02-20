@@ -1,0 +1,30 @@
+meta {
+  name: CartCreate
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{cartHost}}/cart/{{idUser}}
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{adminToken}}
+}
+
+body:json {
+  {
+      "products": [
+          {
+              "id": "e246af5d-e8c3-4b8c-abbd-348c8a9ac02c",
+              "quantity": 10
+          },
+          {
+              "id": "3810cc55-d3c0-4693-9dbb-c57bd76ddc40",
+              "quantity": 10
+          }
+      ]
+  }
+}

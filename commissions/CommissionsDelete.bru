@@ -1,0 +1,15 @@
+meta {
+  name: CommissionsDelete
+  type: http
+  seq: 6
+}
+
+delete {
+  url: {{commissionsHost}}/commissions/fa95d91d-4d3c-451b-b8c7-0d8d91588319
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{adminToken}}
+}

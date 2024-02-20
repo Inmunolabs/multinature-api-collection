@@ -1,0 +1,23 @@
+meta {
+  name: UsersUpdateAdmin
+  type: http
+  seq: 17
+}
+
+patch {
+  url: {{userHost}}/users/admin/e75c5971-55f1-4b14-adbd-0c943d24370a
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{adminToken}}
+}
+
+body:json {
+  {
+      "firstName": "Chavez",
+      "lastName": "Alvin",
+      "birthdate": "1998/07/22"
+  }
+}

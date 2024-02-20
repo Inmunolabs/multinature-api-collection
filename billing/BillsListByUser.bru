@@ -1,0 +1,15 @@
+meta {
+  name: BillsListByUser
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{billingHost}}/billing/user/{{idUser}}
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{adminToken}}
+}

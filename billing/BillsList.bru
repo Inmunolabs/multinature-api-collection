@@ -1,0 +1,15 @@
+meta {
+  name: BillsList
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{billingHost}}/billing
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{adminToken}}
+}

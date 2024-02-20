@@ -1,0 +1,19 @@
+meta {
+  name: PaymentMethodsShippingPaymentUpdate
+  type: http
+  seq: 6
+}
+
+patch {
+  url: {{paymentMethodsHost}}/payment-methods/shippingPayment/75617ccf-ed68-4608-9cae-321711c31fb8
+  body: none
+  auth: bearer
+}
+
+query {
+  ~PaymentMethodId: 
+}
+
+auth:bearer {
+  token: {{adminToken}}
+}

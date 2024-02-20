@@ -1,0 +1,23 @@
+meta {
+  name: BillsUpdate
+  type: http
+  seq: 6
+}
+
+patch {
+  url: {{billingHost}}/billing/bd8703fe-2a66-4451-ad75-aaae7e5edf46
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InJlY29tbWVuZGVySWQiOiI5ZWNhNzQyNy04Yzk5LTQ5M2QtYWVlNC02ZWMzNmVhYWZiMDgiLCJpZCI6IjkwZTEyN2VkLWYzNmMtNGVkMy05MDkzLTJkYjZjMjM3ZDRlZiIsImVtYWlsIjoiMTBAYS5jb20iLCJwcm9maWxlIjoiYWZmaWxpYXRlZFVzZXIifSwiaWF0IjoxNjkxNDIzNDk0LCJleHAiOjE2OTQwMTU0OTR9.ErY8SGoD8trcSJbX6QpbYwNLss4bbu0DO2STDDLbg-Y
+}
+
+body:json {
+  {
+      "pdf": "https://bills-9fe5.s3.us-east-1.amazonaws.com/90e127ed-f36c-4ed3-9093-2db6c237d4ef/4ccef50d-a02f-42fd-ac06-a65124daf8eb.pdf",
+      "xml": "https://bills-9fe5.s3.us-east-1.amazonaws.com/90e127ed-f36c-4ed3-9093-2db6c237d4ef/316e8ba4-56b7-4cab-a1cf-060b93939dc8.xml",
+      "satScheme": 1
+  }
+}

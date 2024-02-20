@@ -1,0 +1,56 @@
+meta {
+  name: ConstantsUpdate
+  type: http
+  seq: 5
+}
+
+patch {
+  url: {{constantsHost}}/constants
+  body: json
+  auth: bearer
+}
+
+headers {
+  password: 57p4QtnuE9HpTmNG
+}
+
+auth:bearer {
+  token: {{adminToken}}
+}
+
+body:json {
+  {
+      "iva": 16,
+      "commissionPercentajePerLevel": {
+          "1": 0.05,
+          "2": 0.04,
+          "3": 0.03,
+          "4": 0.02
+      },
+      "shippingCost": 100,
+      "maintenanceCost": 200,
+      "minimalAmountOfPurchase": 1000,
+      "affiliatedPackage": [
+          {
+              "product": "Aceite de krill",
+              "id": "663a0000-5415-49ec-bdbc-05b771a8a8f9",
+              "quantity": 1
+          },
+          {
+              "product": "Complejo B - Vitamina C",
+              "id": "3810cc55-d3c0-4693-9dbb-c57bd76ddc40",
+              "quantity": 1
+          },
+          {
+              "product": "Multi-Protect",
+              "id": "e246af5d-e8c3-4b8c-abbd-348c8a9ac02c",
+              "quantity": 1
+          },
+          {
+              "product": "OMEGA 3 EPA + DHA",
+              "id": "522322fd-02c4-458a-8e5c-b22454b0e1f4",
+              "quantity": 1
+          }
+      ]
+  }
+}

@@ -1,0 +1,15 @@
+meta {
+  name: CommissionsCreate
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{commissionsHost}}/commissions/create
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{adminToken}}
+}

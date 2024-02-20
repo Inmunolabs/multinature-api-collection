@@ -1,0 +1,17 @@
+meta {
+  name: UsersGetVerificationCode
+  type: http
+  seq: 11
+}
+
+post {
+  url: {{userHost}}/users/c
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+      "email": "mvaldes@vainilladev.com"
+  }
+}

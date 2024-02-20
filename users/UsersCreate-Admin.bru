@@ -1,0 +1,26 @@
+meta {
+  name: UsersCreate-Admin
+  type: http
+  seq: 15
+}
+
+post {
+  url: {{userHost}}/users/admin
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{adminToken}}
+}
+
+body:json {
+  {
+      "firstName": "Products",
+      "lastName": "Admin",
+      "profile": "Administrador de Productos",
+      "email": "products@m.com",
+      "phone": "3331323234",
+      "password": "12345678"
+  }
+}

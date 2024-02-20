@@ -1,0 +1,15 @@
+meta {
+  name: AddressesListByUser
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{addressHost}}/addresses/user/{{idUser}}
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{adminToken}}
+}

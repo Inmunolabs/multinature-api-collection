@@ -1,0 +1,21 @@
+meta {
+  name: MonthlyPurchaseUpdateShippingAddress
+  type: http
+  seq: 5
+}
+
+patch {
+  url: {{monthlyPurchaseHost}}/monthlyPurchase/shippingAddress/{{idUser}}
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{adminToken}}
+}
+
+body:json {
+  {
+      "idAddress": "b74ddc0e-252f-4e10-9bbf-6e0a72e3a04b"
+  }
+}

@@ -1,0 +1,15 @@
+meta {
+  name: CartGet
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{cartHost}}/cart/{{idUser}}
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{adminToken}}
+}

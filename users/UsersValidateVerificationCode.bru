@@ -1,0 +1,18 @@
+meta {
+  name: UsersValidateVerificationCode
+  type: http
+  seq: 12
+}
+
+post {
+  url: {{userHost}}/users/validateVerificationCode
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+      "email": "mvaldes@vainilladev.com",
+      "code": 795087
+  }
+}

@@ -1,0 +1,19 @@
+meta {
+  name: ProductsPresignedUrl
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{productHost}}/products/s3Upload/abc
+  body: none
+  auth: bearer
+}
+
+headers {
+  filetype: png
+}
+
+auth:bearer {
+  token: {{adminToken}}
+}

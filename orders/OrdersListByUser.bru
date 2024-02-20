@@ -1,0 +1,15 @@
+meta {
+  name: OrdersListByUser
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{ordersHost}}/orders/user/{{idUser}}
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{adminToken}}
+}

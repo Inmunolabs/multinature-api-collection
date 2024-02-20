@@ -1,0 +1,21 @@
+meta {
+  name: UsersContactUs
+  type: http
+  seq: 9
+}
+
+post {
+  url: {{userHost}}/users/contactUsEmail
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+      "email": "mvaldes988@gmail.com",
+      "name": "Miguel Valdés",
+      "phone": 3334071603,
+      "city": "Zapopan",
+      "message": "Quiero saber que paso con mi último pedido"
+  }
+}

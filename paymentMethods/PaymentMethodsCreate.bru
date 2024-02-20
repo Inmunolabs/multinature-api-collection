@@ -1,0 +1,36 @@
+meta {
+  name: PaymentMethodsCreate
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{paymentMethodsHost}}/payment-methods/{{idUser}}
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{associatedToken}}
+}
+
+body:json {
+  // {
+  //     "bank": "Banco Azteca",
+  //     "beneficiary": "juan lopez",
+  //     "cardUse": "Cobro",
+  //     "clabe": "032180000118359719",
+  //     "openpayUserId": "awr1r1aam5ptmfnwt5jy"
+  // }
+  
+  {
+      "alias": "NUEVA TARJETA",
+      "bank": "",
+      "beneficiary": "OPENPAY",
+      "cardUse": "Pago",
+      "deviceSessionId": "67jJ8436Gc0TUj4mNrnu6worRqq19lhN",
+      "nameOnCard": "juanito bananas",
+      "openpayUserId": "aijuuegrexoylxm4kjoz",
+      "tokenId": "kt4zfu2g4aiiuioc7bpz"
+  }
+}

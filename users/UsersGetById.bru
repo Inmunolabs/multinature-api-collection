@@ -1,0 +1,15 @@
+meta {
+  name: UsersGetById
+  type: http
+  seq: 7
+}
+
+get {
+  url: {{userHost}}/users/{{idUser}}
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{adminToken}}
+}

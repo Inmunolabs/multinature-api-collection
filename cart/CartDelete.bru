@@ -1,0 +1,22 @@
+meta {
+  name: CartDelete
+  type: http
+  seq: 6
+}
+
+delete {
+  url: {{cartHost}}/cart/27df2b6c-c68d-4bba-bc34-a61c9c94c669
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{adminToken}}
+}
+
+body:json {
+  [
+      "e246af5d-e8c3-4b8c-abbd-348c8a9ac02c",
+      "3810cc55-d3c0-4693-9dbb-c57bd76ddc40"
+  ]
+}
