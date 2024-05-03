@@ -1,0 +1,15 @@
+meta {
+  name: DietGetBySpecialistId
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{dietHost}}/diets/4a95ae75-a2d1-423b-a926-e01743f2a968
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{adminToken}}
+}
