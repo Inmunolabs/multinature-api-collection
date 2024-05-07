@@ -1,0 +1,24 @@
+meta {
+  name: update
+  type: http
+  seq: 6
+}
+
+patch {
+  url: {{dietHost}}/diets/044344bf-e0a6-4a6d-9f1e-3eb472202330
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{adminToken}}
+}
+
+body:json {
+  {
+    "type": "MODIFIED DIET",
+    "allowedFoods": "Meats",
+    "forbiddenFoods": "SOYA",
+    "notes": "CAN I MODIFY?"
+  }
+}
