@@ -1,11 +1,11 @@
 meta {
-  name: BillsList
+  name: BookingsDelete
   type: http
-  seq: 4
+  seq: 8
 }
 
-get {
-  url: {{billingHost}}/billing
+delete {
+  url: {{bookingsHost}}/bookings/
   body: none
   auth: bearer
 }

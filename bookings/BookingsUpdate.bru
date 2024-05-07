@@ -1,0 +1,25 @@
+meta {
+  name: BookingsUpdate
+  type: http
+  seq: 6
+}
+
+patch {
+  url: {{bookingsHost}}/bookings/37f55194-29a3-4353-b314-fd86636f72d9
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: 
+}
+
+body:json {
+  {
+    "status": "",
+    "date": "",
+    "startHour": "",
+    "endHour": "",
+    "notes": ""
+  }
+}

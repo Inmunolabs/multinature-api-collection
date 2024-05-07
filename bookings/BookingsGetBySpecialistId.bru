@@ -1,0 +1,15 @@
+meta {
+  name: BookingsGetBySpecialistId
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{bookingsHost}}/bookings/specialist/563ce026-3ebd-4bc7-872f-722e3dee5999
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{nutritionistToken}}
+}

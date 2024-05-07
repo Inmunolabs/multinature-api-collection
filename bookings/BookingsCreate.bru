@@ -1,0 +1,25 @@
+meta {
+  name: BookingsCreate
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{bookingsHost}}/bookings/{{idUser}}
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{adminToken}}
+}
+
+body:json {
+  {
+      "status": "",
+      "date": "",
+      "startHour": "",
+      "endHour": "",
+      "notes": ""
+  }
+}

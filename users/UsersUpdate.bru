@@ -1,11 +1,11 @@
 meta {
   name: UsersUpdate
   type: http
-  seq: 16
+  seq: 15
 }
 
 patch {
-  url: {{userHost}}/users/{{idUser}}
+  url: {{userHost}}/users/a675d4df-2d4d-4a46-b764-d0b2fbe25935
   body: json
   auth: bearer
 }
@@ -16,10 +16,10 @@ auth:bearer {
 
 body:json {
   {
-      "firstName": "Afiliado",
-      "lastName": "De Inmuno",
-      "phone": "3344556677",
-      "birthdate": "2005-7-22",
-      "profile": "Afiliado"
+      // "firstName": "Afiliado",
+      // "lastName": "Usuario con RED",
+      "phone": "3334071603",
+      "birthdate": "2000-7-22",
+      "profile": "Socio con Especialista MultiNature (nutrición)"
   }
 }
