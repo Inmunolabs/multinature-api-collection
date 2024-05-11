@@ -5,21 +5,21 @@ meta {
 }
 
 patch {
-  url: {{bookingsHost}}/bookings/37f55194-29a3-4353-b314-fd86636f72d9
+  url: {{bookingsHost}}/bookings/a127f7bd-521c-4db6-a092-89ce2c7c22de
   body: json
   auth: bearer
 }
 
 auth:bearer {
-  token: 
+  token: {{nutritionistToken}}
 }
 
 body:json {
   {
-    "status": "",
-    "date": "",
-    "startHour": "",
-    "endHour": "",
-    "notes": ""
+      "date": "2025-05-09",
+      "startHour": "15:00",
+      "endHour": "15:30",
+      "notes": "Todo cool",
+      "status": "Atendida"
   }
 }

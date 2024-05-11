@@ -5,21 +5,22 @@ meta {
 }
 
 post {
-  url: {{bookingsHost}}/bookings/{{idUser}}
+  url: {{bookingsHost}}/bookings
   body: json
   auth: bearer
 }
 
 auth:bearer {
-  token: {{adminToken}}
+  token: {{nutritionistToken}}
 }
 
 body:json {
   {
-      "status": "",
-      "date": "",
-      "startHour": "",
-      "endHour": "",
-      "notes": ""
+      "specialistId": "563ce026-3ebd-4bc7-872f-722e3dee5999",
+      "userId": "a4895fc8-d662-4ebf-ba9f-a9ace2a74d6a",
+      "date": "2024-07-07",
+      "startHour": "14:00",
+      "endHour": "14:30",
+      "notes": "Todo cool"
   }
 }

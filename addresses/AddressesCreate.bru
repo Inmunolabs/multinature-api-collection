@@ -5,25 +5,26 @@ meta {
 }
 
 post {
-  url: {{addressHost}}/addresses/{{idUser}}
+  url: {{addressHost}}/addresses/a4895fc8-d662-4ebf-ba9f-a9ace2a74d6a
   body: json
   auth: bearer
 }
 
 auth:bearer {
-  token: {{adminToken}}
+  token: {{userToken}}
 }
 
 body:json {
   {
-      "street": "Calle de Admin",
+      "street": "Calle de U1",
       "extNumber": "4135",
       "intNumber": "",
-      "colony": "El Secreto",
+      "neighborhood": "El Secreto",
       "city": "Zapopan",
       "federalEntity": "Jalisco",
       "zipCode": "45138",
       "country": "México",
-      "refer": "Arbol Verde con flor azul espinas rojas"
+      //"refer": "Arbol Verde con flor azul espinas rojas"
+      "refer": "2da dirección ingresada en el sistema"
   }
 }

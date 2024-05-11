@@ -5,7 +5,11 @@ meta {
 }
 
 get {
-  url: {{addressHost}}/addresses/dde61d9d-7c3a-4bb2-aebc-e2e3b8cab1d8
+  url: {{addressHost}}/addresses/46d260a9-3a37-40d2-bf2d-dae7c5592b9f
   body: none
-  auth: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{userToken}}
 }
