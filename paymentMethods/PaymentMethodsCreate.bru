@@ -5,32 +5,30 @@ meta {
 }
 
 post {
-  url: {{paymentMethodsHost}}/payment-methods/{{idUser}}
+  url: {{paymentMethodsHost}}/payment-methods/a4895fc8-d662-4ebf-ba9f-a9ace2a74d6a
   body: json
   auth: bearer
 }
 
 auth:bearer {
-  token: {{associatedToken}}
+  token: {{userToken}}
 }
 
 body:json {
-  // {
-  //     "bank": "Banco Azteca",
-  //     "beneficiary": "juan lopez",
-  //     "cardUse": "Cobro",
-  //     "clabe": "032180000118359719",
-  //     "openpayUserId": "awr1r1aam5ptmfnwt5jy"
-  // }
+  //  {
+  //    "bank": "Banco Azteca",
+  //    "beneficiary": "juan lopez",
+  //    "cardUse": "Cobro",
+  //    "clabe": "032180000118359719"
+  //  }
   
   {
-      "alias": "NUEVA TARJETA",
-      "bank": "",
-      "beneficiary": "OPENPAY",
-      "cardUse": "Pago",
-      "deviceSessionId": "67jJ8436Gc0TUj4mNrnu6worRqq19lhN",
-      "nameOnCard": "juanito bananas",
-      "openpayUserId": "aijuuegrexoylxm4kjoz",
-      "tokenId": "kt4zfu2g4aiiuioc7bpz"
+    "alias": "NUEVA TARJETA",
+    "bank": "",
+    "cardUse": "Pago",
+    "deviceSessionId": "cHVVgb3Ygv7eVJpoNh5lwebd08uo2kuD",
+    "nameOnCard": "juanito bananas",
+    "openpayUserId": "a6egx8lzg27vsjjvorl3",
+    "tokenId": "kzwte5efs7zeku4s2spy"
   }
 }
