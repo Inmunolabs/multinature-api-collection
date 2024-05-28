@@ -1,13 +1,17 @@
 meta {
-  name: GetByUserId
+  name: DietDelete
   type: http
-  seq: 3
+  seq: 7
 }
 
-get {
-  url: {{dietHost}}/diets/user/dce62f57-d6ce-48b9-8017-a6d888ed2576
+delete {
+  url: {{dietHost}}/diets/ee6b3545-8c21-4385-9a33-329e180e5a5a
   body: none
   auth: bearer
+}
+
+headers {
+  password: ufaas88je84SyaAe
 }
 
 auth:bearer {

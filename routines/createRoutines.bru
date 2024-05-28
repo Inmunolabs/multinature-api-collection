@@ -1,11 +1,11 @@
 meta {
-  name: createDiet
+  name: createRoutines
   type: http
   seq: 5
 }
 
 post {
-  url: {{dietHost}}/diets
+  url: {{routinesHost}}/routines
   body: json
   auth: bearer
 }
@@ -17,27 +17,22 @@ auth:bearer {
 body:json {
   {
     "userId": "15d79067-858b-4b92-ba28-e0fc334f5f9f",
-    "startDate": "2024-05-08",
-    "endDate": "2024-05-15",
-    "type": "vegan",
-    "allowedFoods": "vegetables, fruits",
-    "forbiddenFoods": "meat,dairy",
+    "startDate": "2024-04-07",
+    "endDate": "2024-08-27",
+    "notes": "Ejercicios diarios",
     "schedules": [
       {
-        "schedule": "breakfast",
-        "notes": "High protein",
+        "schedule": "In the morning",
+        "notes": "Wake up and take a breakfast",
         "hour": "08:00",
         "day": "Monday",
-        "portions": [
+        "exercises": [
           {
-            "food": "oatmeal",
-            "portion": "1 cup",
-            "notes": "With almond milk"
-          },
-          {
-            "food": "banana",
-            "portion": "1",
-            "notes": "Ripe"
+            "exercise": "Running",
+            "repetitions": "2",
+            "series": "5",
+            "hour": "09: 30",
+            "notes": "Must run fast"
           }
         ]
       },
@@ -46,11 +41,13 @@ body:json {
         "notes": "Low carbs",
         "hour": "12:30",
         "day": "thuesday",
-        "portions": [
+        "exercises": [
           {
-            "food": "quinoa salad",
-            "portion": "1 bowl",
-            "notes": "With vegetables"
+            "exercise": "Ejercicio 2",
+            "repetitions": "3",
+            "series": "4",
+            "hour": "12:30",
+            "notes": "e6"
           }
         ]
       }
