@@ -11,58 +11,14 @@ patch {
 }
 
 auth:bearer {
-  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiYTAxNTI4Y2EtNGJlNC00Y2FlLWJkMmMtZWJmNjQ0OWU0NTdjIiwiZW1haWwiOiJzcGVjaWFsaXN0MkBtdWx0aS5jb20iLCJmaXJzdE5hbWUiOiJTcGVjaWFsaXN0XzIiLCJsYXN0TmFtZSI6IkF0aWVuZGUgVXNlcl8yIiwiYmlydGhkYXRlIjoiMTg5OS0xMS0zMFQwNjozNjozNi4wMDBaIiwiZ2VucmUiOiJPdHJvIiwicGhvbmUiOiIiLCJwcm9maWxlIjoiRXNwZWNpYWxpc3RhIE11bHRpTmF0dXJlIGRlIGVudHJlbmFtaWVudG8vbnV0cmljacOzbiIsIm5ldHdvcmsiOm51bGwsInJlY29tbWVuZGVySWQiOm51bGwsIm51dHJpdGlvblNwZWNpYWxpc3RJZCI6bnVsbCwidHJhaW5pbmdTcGVjaWFsaXN0SWQiOm51bGwsImhhc1BsYW4iOjAsInN1YnNjcmlwdGlvbkRhdGUiOm51bGwsIm9wZW5wYXlVc2VySWQiOiJheTFiY2k4enpiMHg0c3o0MGRnZSIsImlzVmFsaWQiOjAsImlzQWN0aXZlIjoxLCJ1cGRhdGVkIjoiMjAyNC0wNS0wNFQwMDo0MzoyMC4wMDBaIiwiY3JlYXRlZCI6IjIwMjQtMDUtMDRUMDA6NDM6MjAuMDAwWiJ9LCJpYXQiOjE3MTQ3NjQxMzksImV4cCI6MTcxNzM1NjEzOX0.owEvDIjqypa-f24sxKwiEYIs_k5JvYKCQx2Y2_Q71N4
+  token: {{adminToken}}
 }
 
 body:json {
   {
-    "startDate": "2024-05-08",
-    "endDate": "2024-05-15",
-    "type": "vegan",
-    "allowedFoods": "vegetables, fruits",
-    "forbiddenFoods": "meat,dairy",
-    "schedules": [
-      {
-        "id": "e5747852-5b79-4aa9-a8da-68db470abe29",
-        "day": "thuesday",
-        "hour": "12:30:00",
-        "notes": "Low carbs",
-        "dietId": "d05c16eb-a025-478d-9d52-b6d103b9e360",
-        "portions": [
-          {
-            "id": "87843048-5658-455a-a950-502572b0867c",
-            "food": "quinoa salad",
-            "notes": "With vegetables",
-            "portion": "1 bowl",
-            "dietScheduleId": "e5747852-5b79-4aa9-a8da-68db470abe29"
-          }
-        ],
-        "schedule": "lunch"
-      },
-      {
-        "id": "e8403a44-5ced-4ceb-8adc-c0c63176d861",
-        "day": "Monday",
-        "hour": "08:00:00",
-        "notes": "High protein",
-        "dietId": "d05c16eb-a025-478d-9d52-b6d103b9e360",
-        "portions": [
-          {
-            "id": "1ac7c1d8-5334-4863-830a-6bec96187ca0",
-            "food": "banana",
-            "notes": "Ripe",
-            "portion": "1",
-            "dietScheduleId": "e8403a44-5ced-4ceb-8adc-c0c63176d861"
-          },
-          {
-            "id": "8cad32dd-0530-4a6d-9733-7e68be5fed08",
-            "food": "oatmeal",
-            "notes": "With almond milk",
-            "portion": "1 cup",
-            "dietScheduleId": "e8403a44-5ced-4ceb-8adc-c0c63176d861"
-          }
-        ],
-        "schedule": "breakfast"
-      }
-    ]
+    "type": "MODIFIED DIET",
+    "allowedFoods": "Meats",
+    "forbiddenFoods": "SOYA",
+    "notes": "CAN I MODIFY?"
   }
 }

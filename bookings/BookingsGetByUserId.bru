@@ -1,11 +1,11 @@
 meta {
-  name: BillsListByUser
+  name: BookingsGetByUserId
   type: http
   seq: 2
 }
 
 get {
-  url: {{billingHost}}/billing/user/{{idUser}}
+  url: {{bookingsHost}}/bookings/user/a4895fc8-d662-4ebf-ba9f-a9ace2a74d6a
   body: none
   auth: bearer
 }

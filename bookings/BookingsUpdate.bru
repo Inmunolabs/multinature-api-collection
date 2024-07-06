@@ -1,0 +1,25 @@
+meta {
+  name: BookingsUpdate
+  type: http
+  seq: 6
+}
+
+patch {
+  url: {{bookingsHost}}/bookings/a127f7bd-521c-4db6-a092-89ce2c7c22de
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{nutritionistToken}}
+}
+
+body:json {
+  {
+      "date": "2025-05-09",
+      "startHour": "15:00",
+      "endHour": "15:30",
+      "notes": "Todo cool",
+      "status": "Atendida"
+  }
+}

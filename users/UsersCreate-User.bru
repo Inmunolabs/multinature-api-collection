@@ -1,0 +1,24 @@
+meta {
+  name: UsersCreate-User
+  type: http
+  seq: 12
+}
+
+post {
+  url: {{userHost}}/users/
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+      "email": "mvaldes988@gmail.com",
+      "password": "12345678",
+      "recommenderId": "",
+      "birthdate": "2005-7-22",
+      "firstName": "TEST VERIFICATION CODE",
+      "lastName": "Especialista",
+      "genre": "Hombre"
+      // "profile": "Afiliado"
+  }
+}

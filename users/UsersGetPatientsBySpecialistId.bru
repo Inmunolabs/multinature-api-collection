@@ -1,0 +1,20 @@
+meta {
+  name: UsersGetPatientsBySpecialistId
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{userHost}}/users/especialist/{{specialistId}}/patients
+  body: none
+  auth: bearer
+}
+
+headers {
+  Accept-Language: sp
+  ~Accept-Language: en
+}
+
+auth:bearer {
+  token: {{specialistToken}}
+}
