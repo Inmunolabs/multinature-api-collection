@@ -5,19 +5,21 @@ meta {
 }
 
 patch {
-  url: {{addressHost}}/addresses/37f55194-29a3-4353-b314-fd86636f72d9
+  url: {{addressesHost}}/addresses/46d260a9-3a37-40d2-bf2d-dae7c5592b9f
   body: json
   auth: bearer
 }
 
 auth:bearer {
-  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InByb2ZpbGUiOiJhZmZpbGlhdGVkVXNlciIsInJlY29tbWVuZGVySWQiOiI5ZWNhNzQyNy04Yzk5LTQ5M2QtYWVlNC02ZWMzNmVhYWZiMDgiLCJlbWFpbCI6IjEwQGEuY29tIiwiaWQiOiI5MGUxMjdlZC1mMzZjLTRlZDMtOTA5My0yZGI2YzIzN2Q0ZWYifSwiaWF0IjoxNjg4MzIyNjM5LCJleHAiOjE2OTA5MTQ2Mzl9.v22JwatBbz5BcYUFSCfRJXtvY0JtkYSHSK6e_bYJeTk
+  token: {{userToken}}
 }
 
 body:json {
   {
-      "street": "Calle de SAN JUANELO",
+      "street": "Calle de SAN JUANELito",
       "extNumber": "4444",
-      "intNumber": "01"
+      "intNumber": "01",
+      "refer": "Esta dirección es la ostia",
+      "isShippingAddres": 0
   }
 }

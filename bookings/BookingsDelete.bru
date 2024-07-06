@@ -1,0 +1,15 @@
+meta {
+  name: BookingsDelete
+  type: http
+  seq: 7
+}
+
+delete {
+  url: {{bookingsHost}}/bookings/a498f215-d2bb-4a68-a208-4ec04feb7f33
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{nutritionistToken}}
+}

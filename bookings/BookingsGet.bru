@@ -1,0 +1,15 @@
+meta {
+  name: BookingsGet
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{bookingsHost}}/bookings/c8dc35d2-0763-4edf-a5fe-17b56e834179
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{nutritionistToken}}
+}

@@ -5,7 +5,7 @@ meta {
 }
 
 patch {
-  url: {{paymentMethodsHost}}/payment-methods/9eca7427-8c99-493d-aee4-6ec36eaafb08
+  url: {{paymentMethodsHost}}/payment-methods/a4895fc8-d662-4ebf-ba9f-a9ace2a74d6a
   body: json
   auth: bearer
 }
@@ -15,23 +15,16 @@ query {
 }
 
 auth:bearer {
-  token: {{adminToken}}
+  token: {{userToken}}
 }
 
 body:json {
   {
-      //"clabe": 
-      //"beneficiary": "Jorge Campos",
-      //"alias": "LA PERRONA DE Manuelito Bodoque",
-      //"nameOnCard": "mi compa el benny",
-      //"expDate": "12/2026",
-      //"bank": "otro banco"
-  
-      "bank": "Banco Azteca",
-      "beneficiary": "juan Carlos bodoque",
-      "cardUse": "Cobro",
-      "clabe": "032180000118359719",
-      "openpayUserId": "awr1r1aam5ptmfnwt5jy",
-      "openpayBankAccountId": "baukpnociemfasowv204"
+    "alias": "TARJETA Chevere",
+    //"bank": "",
+    "beneficiary": "PP lopez",
+    "clabe": "032180000118359719",
+    "nameOnCard": "juanito bananas",
+    "expDate": "10/30"
   }
 }
