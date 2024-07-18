@@ -1,26 +1,15 @@
 meta {
-  name: CartDelete
+  name: RecommendationGetBySpecialistId
   type: http
-  seq: 11
+  seq: 6
 }
 
-delete {
-  url: {{cartHost}}/cart/a4895fc8-d662-4ebf-ba9f-a9ace2a74d6a
-  body: json
+get {
+  url: {{cartHost}}/cart/recommendations/specialist/{{specialistId}}
+  body: none
   auth: none
 }
 
 headers {
   Authorization: jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiYjJkMGYxYTEtNTUzMi00YjI1LWFlNTAtMWMyYWExNmRlNjM4IiwiZW1haWwiOiJzcGVjaWFsaXN0MUBtdWx0aS5jb20iLCJmaXJzdE5hbWUiOiJTcGVjaWFsaXN0XzEiLCJsYXN0TmFtZSI6IkF0aWVuZGUgVXNlcl8xIiwiYmlydGhkYXRlIjoiMTg5OS0xMS0zMFQwMDowMDowMC4wMDBaIiwiZ2VucmUiOiJPdHJvIiwicGhvbmUiOiIiLCJwcm9maWxlIjoiRXNwZWNpYWxpc3RhIE11bHRpTmF0dXJlIGRlIG51dHJpY2nDs24iLCJuZXR3b3JrIjpudWxsLCJyZWNvbW1lbmRlcklkIjpudWxsLCJudXRyaXRpb25TcGVjaWFsaXN0SWQiOm51bGwsInRyYWluaW5nU3BlY2lhbGlzdElkIjpudWxsLCJoYXNQbGFuIjowLCJzdWJzY3JpcHRpb25EYXRlIjpudWxsLCJvcGVucGF5VXNlcklkIjoiYXRxaDR0b3k3bXg1cGxhdmc2Y3oiLCJpc1ZhbGlkIjowLCJpc0FjdGl2ZSI6MSwidXBkYXRlZCI6IjIwMjQtMDUtMDNUMTg6MzQ6NTguMDAwWiIsImNyZWF0ZWQiOiIyMDI0LTA1LTAzVDE4OjM0OjU4LjAwMFoifSwiaWF0IjoxNzIxMjUxOTI0LCJleHAiOjE3MjM4NDM5MjR9.qiG-AD8fvrdq7rG5nKqpbQeJfFpUiDvWEYpykLxUu_8
-}
-
-auth:bearer {
-  token: {{adminToken}}
-}
-
-body:json {
-  [
-      "2b3c4d5e-6f7g-8h9i-0j1k-2l3m4n5o6p7q",
-      "3810cc55-d3c0-4693-9dbb-c57bd76ddc40"
-  ]
 }
