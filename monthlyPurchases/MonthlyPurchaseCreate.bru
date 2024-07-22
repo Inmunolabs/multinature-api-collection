@@ -5,13 +5,13 @@ meta {
 }
 
 post {
-  url: {{monthlyPurchaseHost}}/monthlyPurchase/{{userId}}
+  url: {{monthlyPurchaseHost}}/monthly-purchase
   body: json
   auth: bearer
 }
 
 auth:bearer {
-  token: {{associatedToken}}
+  token: {{consumerToken}}
 }
 
 body:json {
@@ -19,7 +19,11 @@ body:json {
       "products": [
           {
               "id": "4d5e6f7g-8h9i-0j1k-2l3m-4n5o6p7q8r9s",
-              "quantity": 4
+              "quantity": 14
+          },
+          {
+              "id": "2b3c4d5e-6f7g-8h9i-0j1k-2l3m4n5o6p7q",
+              "quantity": 1
           }
       ]
   }
