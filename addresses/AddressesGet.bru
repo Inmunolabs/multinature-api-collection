@@ -1,15 +1,15 @@
 meta {
   name: AddressesGet
   type: http
-  seq: 3
+  seq: 4
 }
 
 get {
-  url: {{addressesHost}}/addresses/46d260a9-3a37-40d2-bf2d-dae7c5592b9f
+  url: {{addressesHost}}/addresses/f12814e1-7337-4bb9-8523-5d549d95e994
   body: none
   auth: bearer
 }
 
 auth:bearer {
-  token: {{userToken}}
+  token: {{partnerToken}}
 }

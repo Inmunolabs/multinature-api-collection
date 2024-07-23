@@ -5,17 +5,17 @@ meta {
 }
 
 patch {
-  url: {{monthlyPurchaseHost}}/monthlyPurchase/shippingAddress/{{userId}}
+  url: {{monthlyPurchaseHost}}/monthly-purchase/shipping-address/5e08041b-52a1-4827-8a07-df0b50daff84
   body: json
   auth: bearer
 }
 
 auth:bearer {
-  token: {{adminToken}}
+  token: {{consumerToken}}
 }
 
 body:json {
   {
-      "idAddress": "b74ddc0e-252f-4e10-9bbf-6e0a72e3a04b"
+      "idAddress": "d9065f52-f2b8-4dd2-b477-daef2a7575af"
   }
 }

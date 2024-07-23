@@ -5,26 +5,26 @@ meta {
 }
 
 post {
-  url: {{monthlyPurchaseHost}}/monthlyPurchase/{{userId}}
+  url: {{monthlyPurchaseHost}}/monthly-purchase
   body: json
   auth: bearer
 }
 
 auth:bearer {
-  token: {{associatedToken}}
+  token: {{consumerToken}}
 }
 
 body:json {
   {
       "products": [
           {
-              "id": "663a0000-5415-49ec-bdbc-05b771a8a8f9",
-              "quantity": 10
+              "id": "4d5e6f7g-8h9i-0j1k-2l3m-4n5o6p7q8r9s",
+              "quantity": 14
+          },
+          {
+              "id": "2b3c4d5e-6f7g-8h9i-0j1k-2l3m4n5o6p7q",
+              "quantity": 1
           }
-          // {
-          //     "id": "d5a1291a-8a41-4ae1-9fd4-871db82e2e9b",
-          //     "quantity": 1
-          // }
       ]
   }
 }
