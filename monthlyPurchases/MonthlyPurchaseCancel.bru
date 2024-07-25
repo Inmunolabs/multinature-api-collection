@@ -1,12 +1,12 @@
 meta {
-  name: MonthlyPurchaseUpdateShippingAddress
+  name: MonthlyPurchaseCancel
   type: http
-  seq: 6
+  seq: 4
 }
 
 patch {
-  url: {{monthlyPurchaseHost}}/monthly-purchase/shipping-address/{{userId}}
-  body: json
+  url: {{monthlyPurchaseHost}}/monthly-purchase/cancel/{{userId}}
+  body: none
   auth: none
 }
 
@@ -15,11 +15,5 @@ headers {
 }
 
 auth:bearer {
-  token: {{consumerToken}}
-}
-
-body:json {
-  {
-      "idAddress": "f8833b45-1cd7-426a-8d78-68fc35653aff"
-  }
+  token: 
 }
