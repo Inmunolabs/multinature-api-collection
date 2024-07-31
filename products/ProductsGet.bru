@@ -5,7 +5,11 @@ meta {
 }
 
 get {
-  url: {{productHost}}/products/e246af5d-e8c3-4b8c-abbd-348c8a9ac02c
+  url: {{productHost}}/products/{{productId}}
   body: none
-  auth: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{consumerToken}}
 }
