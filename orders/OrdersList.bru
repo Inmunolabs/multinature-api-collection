@@ -10,6 +10,11 @@ get {
   auth: bearer
 }
 
+query {
+  ~limit: 2
+  ~page: 1
+}
+
 auth:bearer {
   token: {{adminToken}}
 }

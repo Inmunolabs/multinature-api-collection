@@ -5,7 +5,11 @@ meta {
 }
 
 get {
-  url: {{ordersHost}}/orders/c37b1e2a-ea8a-441e-96a7-90905ff052aa
+  url: {{ordersHost}}/orders/{{orderId}}
   body: none
-  auth: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{consumerToken}}
 }

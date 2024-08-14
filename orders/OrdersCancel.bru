@@ -5,11 +5,11 @@ meta {
 }
 
 patch {
-  url: {{ordersHost}}/orders/cancel/8b6877a8-9fde-4ee4-b41d-fca1080c464d
+  url: {{ordersHost}}/orders/cancel/{{orderId}}
   body: none
   auth: bearer
 }
 
 auth:bearer {
-  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InByb2ZpbGUiOiJhZmZpbGlhdGVkVXNlciIsInJlY29tbWVuZGVySWQiOiI5MGUxMjdlZC1mMzZjLTRlZDMtOTA5My0yZGI2YzIzN2Q0ZWYiLCJlbWFpbCI6IjIyLTExQGEuY29tIiwiaWQiOiJlMDE4YTY3My1jNjJmLTRmMTYtYTY3ZC02MmRjZjg0NTUxNDAifSwiaWF0IjoxNjkwMDg5OTMyLCJleHAiOjE2OTI2ODE5MzJ9.9R0x1tL5tWgbLeLs942BY1cBIHv98sIAuOOKkYgtI04
+  token: {{consumerToken}}
 }
