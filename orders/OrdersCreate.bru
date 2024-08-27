@@ -7,7 +7,11 @@ meta {
 post {
   url: {{ordersHost}}/orders/{{userId}}
   body: json
-  auth: bearer
+  auth: none
+}
+
+headers {
+  Authorization: jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiYTQ4OTVmYzgtZDY2Mi00ZWJmLWJhOWYtYTlhY2UyYTc0ZDZhIiwiZW1haWwiOiJ1MUBtdWx0aS5jb20iLCJmaXJzdE5hbWUiOiJVc3VhcmlvIDEiLCJsYXN0TmFtZSI6IkNvbnN1bWlkb3IgY29uIEVzcGVjaWFsaXN0YSAobnV0cmljacOzbikiLCJiaXJ0aGRhdGUiOiIyMDA1LTA3LTIyVDAwOjAwOjAwLjAwMFoiLCJnZW5yZSI6IkhvbWJyZSIsInBob25lIjoiIiwicHJvZmlsZSI6IlNvY2lvIGNvbiBFc3BlY2lhbGlzdGEgTXVsdGlOYXR1cmUgKG51dHJpY2nDs24pIiwibmV0d29yayI6eyIxIjpbeyJpZCI6IjFkYzU0MjQ3LWQwMTYtNGQ4ZS1iNzE4LTVmNDQwNzY0MzA2MiIsInZhbGlkIjpmYWxzZX1dfSwicmVjb21tZW5kZXJJZCI6bnVsbCwibnV0cml0aW9uU3BlY2lhbGlzdElkIjoiYTAxNTI4Y2EtNGJlNC00Y2FlLWJkMmMtZWJmNjQ0OWU0NTdjIiwidHJhaW5pbmdTcGVjaWFsaXN0SWQiOiJlZGU5NTM0ZC1kODc5LTRmN2UtOTY4ZS1lY2NmZWY4NzE4NmUiLCJoYXNQbGFuIjowLCJzdWJzY3JpcHRpb25EYXRlIjoiMjAyNC0wNy0yOVQwMDowMDowMC4wMDBaIiwib3BlbnBheVVzZXJJZCI6ImE2ZWd4OGx6ZzI3dnNqanZvcmwzIiwiaXNWYWxpZCI6MCwiaXNBY3RpdmUiOjEsInVwZGF0ZWQiOiIyMDI0LTA1LTA3VDIxOjI0OjI5LjAwMFoiLCJjcmVhdGVkIjoiMjAyNC0wNS0wN1QyMTowMTo1My4wMDBaIn0sImlhdCI6MTcyMzU2ODMwMywiZXhwIjoxNzI2MTYwMzAzfQ.gf1aNv99c1AemhwoWLT2w_RI_GHuJLDa73Udb4a3DQA
 }
 
 auth:bearer {
@@ -16,26 +20,22 @@ auth:bearer {
 
 body:json {
   {
-      "idAddress": "4e5d2865-91aa-426c-8548-9661f9824fd2",
-      "idPaymentMethod": "d5edfad8-f773-4581-8833-223dec4b5096",
+      "idAddress": "31f67769-df19-464b-bc0b-f0a64641c385",
+      "idPaymentMethod": "59530015-c547-49d5-aa88-2d6298e6ebf0",
       "cvv": "333",
       "deviceSessionId": "66YgbOIIJAaOPsiJr2VmrQi0W2SSWBVi",
       "products": [
           {
-              "id": "d5a1291a-8a41-4ae1-9fd4-871db82e2e9b",
-              "quantity": 8
-          },
-          {
-              "id": "c19391e5-72b1-4a84-898c-9dd14c1d60b2",
+              "id": "bcbd672b-6606-4f35-9b35-fd1255618d82",
               "quantity": 1
           },
           {
-              "id": "889af48f-2a06-4eec-bc6c-932f226436b7",
+              "id": "182355ee-3952-4095-973f-5439f86334ea",
               "quantity": 1
           },
           {
-              "id": "67352e3f-39f0-4f8f-94ce-b162b4d49c79",
-              "quantity": 1
+              "id": "0e53880d-1554-4e02-8a8b-046e1e3c9108",
+              "quantity": 2
           }
       ]
   }

@@ -5,7 +5,7 @@ meta {
 }
 
 patch {
-  url: {{ordersHost}}/orders/72bdcf08-873f-45d7-a2b8-3ba046742b0f
+  url: {{ordersHost}}/orders/{{orderId}}
   body: json
   auth: bearer
 }
@@ -22,6 +22,6 @@ body:json {
           "id": "12345"
       },
       "deliveryStatus": "Entregado",
-      "deliveryDate": "51 de febrero de 2023"
+      "deliveryDate": "41 de febrero de 2023"
   }
 }
