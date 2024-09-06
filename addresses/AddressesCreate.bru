@@ -5,18 +5,18 @@ meta {
 }
 
 post {
-  url: {{addressesHost}}/addresses/a4895fc8-d662-4ebf-ba9f-a9ace2a74d6a
+  url: {{addressesHost}}/addresses/{{userId}}
   body: json
   auth: bearer
 }
 
 auth:bearer {
-  token: {{userToken}}
+  token: {{consumerToken}}
 }
 
 body:json {
   {
-      "street": "Calle de U1",
+      "street": "Calle de Miguel",
       "extNumber": "413",
       "intNumber": "",
       "neighborhood": "El Secreto",

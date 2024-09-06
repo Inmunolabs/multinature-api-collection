@@ -7,17 +7,17 @@ meta {
 patch {
   url: {{cartHost}}/cart/recommendations/{{recommendationId}}
   body: json
-  auth: none
+  auth: bearer
 }
 
-headers {
-  Authorization: jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiYjJkMGYxYTEtNTUzMi00YjI1LWFlNTAtMWMyYWExNmRlNjM4IiwiZW1haWwiOiJzcGVjaWFsaXN0MUBtdWx0aS5jb20iLCJmaXJzdE5hbWUiOiJTcGVjaWFsaXN0XzEiLCJsYXN0TmFtZSI6IkF0aWVuZGUgVXNlcl8xIiwiYmlydGhkYXRlIjoiMTg5OS0xMS0zMFQwMDowMDowMC4wMDBaIiwiZ2VucmUiOiJPdHJvIiwicGhvbmUiOiIiLCJwcm9maWxlIjoiRXNwZWNpYWxpc3RhIE11bHRpTmF0dXJlIGRlIG51dHJpY2nDs24iLCJuZXR3b3JrIjpudWxsLCJyZWNvbW1lbmRlcklkIjpudWxsLCJudXRyaXRpb25TcGVjaWFsaXN0SWQiOm51bGwsInRyYWluaW5nU3BlY2lhbGlzdElkIjpudWxsLCJoYXNQbGFuIjowLCJzdWJzY3JpcHRpb25EYXRlIjpudWxsLCJvcGVucGF5VXNlcklkIjoiYXRxaDR0b3k3bXg1cGxhdmc2Y3oiLCJpc1ZhbGlkIjowLCJpc0FjdGl2ZSI6MSwidXBkYXRlZCI6IjIwMjQtMDUtMDNUMTg6MzQ6NTguMDAwWiIsImNyZWF0ZWQiOiIyMDI0LTA1LTAzVDE4OjM0OjU4LjAwMFoifSwiaWF0IjoxNzIxMjUxOTI0LCJleHAiOjE3MjM4NDM5MjR9.qiG-AD8fvrdq7rG5nKqpbQeJfFpUiDvWEYpykLxUu_8
+auth:bearer {
+  token: {{specialistToken}}
 }
 
 body:json {
   [
     {
-        "id": "1a2b3c4d-5e6f-7g8h-9i0j-1k2l3m4n5o6p",
+        "id": "dab39456-36f6-433d-8f55-e116907b6b0f",
         "quantity": 11
     }
   ]

@@ -5,13 +5,13 @@ meta {
 }
 
 patch {
-  url: {{addressesHost}}/addresses/46d260a9-3a37-40d2-bf2d-dae7c5592b9f
+  url: {{addressesHost}}/addresses/b3a091f6-54cf-4331-bae2-3050016c7f50
   body: json
   auth: bearer
 }
 
 auth:bearer {
-  token: {{userToken}}
+  token: {{consumerToken}}
 }
 
 body:json {
@@ -20,6 +20,6 @@ body:json {
       "extNumber": "4444",
       "intNumber": "01",
       "refer": "Esta dirección es la ostia",
-      "isShippingAddres": 0
+      "isShippingAddres": 1
   }
 }
