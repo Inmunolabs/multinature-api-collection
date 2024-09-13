@@ -20,7 +20,7 @@ auth:bearer {
 
 body:json {
   {
-    "product": "Producto 2. Prueba Miguel",
+    "product": "Producto 4. Prueba Miguel",
     "urlImages": [
       "https://multi-products.s3.amazonaws.com/Complejo+B+Rutina/140e2a31-987a-45be-bceb-3a5b73a1396c.png"
     ],
@@ -31,11 +31,10 @@ body:json {
     "stock": 100,
     "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
     "benefits": [
-      "Es bueno",
-      "Segundo beneficio"
-    ],
-    "benefitDetails": [
-      "Es muy bueno qué te digo"
+      {
+        "title": "Beneficio 1",
+        "detail": "Detalles del Beneficio 1"
+      }
     ],
     "studies": [
       {
