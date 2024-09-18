@@ -7,9 +7,9 @@ meta {
 get {
   url: {{publicResourcesHost}}/public-resources/
   body: none
-  auth: none
+  auth: bearer
 }
 
-headers {
-  Authorization: jwt {{adminToken}}
+auth:bearer {
+  token: {{adminToken}}
 }
