@@ -5,14 +5,14 @@ meta {
 }
 
 get {
-  url: {{userHost}}/users/s3Upload/?folder=certificates&size=15.2
+  url: {{userHost}}/users/s3Upload/?folder=certificates
   body: none
   auth: bearer
 }
 
 query {
   folder: certificates
-  size: 15.2
+  ~size: 15.2
 }
 
 headers {
