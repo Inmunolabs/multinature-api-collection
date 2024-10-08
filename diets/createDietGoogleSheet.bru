@@ -1,59 +1,15 @@
 meta {
   name: createDietGoogleSheet
   type: http
-  seq: 6
+  seq: 5
 }
 
-post {
+get {
   url: {{dietHost}}/diets/create-google-sheet
   body: none
   auth: bearer
 }
 
 auth:bearer {
-  token: {{adminToken}}
-}
-
-body:json {
-  {
-    "userId": "15d79067-858b-4b92-ba28-e0fc334f5f9f",
-    "startDate": "2024-05-08",
-    "endDate": "2024-05-15",
-    "type": "vegan",
-    "allowedFoods": "vegetables, fruits",
-    "forbiddenFoods": "meat, dairy",
-    "schedules": [
-      {
-        "schedule": "breakfast",
-        "notes": "High protein",
-        "hour": "08:00",
-        "day": "Monday",
-        "portions": [
-          {
-            "food": "oatmeal",
-            "portion": "1 cup",
-            "notes": "With almond milk"
-          },
-          {
-            "food": "banana",
-            "portion": "1",
-            "notes": "Ripe"
-          }
-        ]
-      },
-      {
-        "schedule": "lunch",
-        "notes": "Low carbs",
-        "hour": "12:30",
-        "day": "thuesday",
-        "portions": [
-          {
-            "food": "quinoa salad",
-            "portion": "1 bowl",
-            "notes": "With vegetables"
-          }
-        ]
-      }
-    ]
-  }
+  token: {{specialistToken}}
 }
