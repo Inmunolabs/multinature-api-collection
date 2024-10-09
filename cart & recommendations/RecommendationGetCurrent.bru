@@ -1,0 +1,15 @@
+meta {
+  name: RecommendationGetCurrent
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{cartHost}}/cart/recommendations/{{userId}}
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{specialistToken}}
+}
