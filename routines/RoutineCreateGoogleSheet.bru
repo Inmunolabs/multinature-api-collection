@@ -1,11 +1,11 @@
 meta {
-  name: createDietGoogleSheet
+  name: RoutineCreateGoogleSheet
   type: http
   seq: 5
 }
 
 get {
-  url: {{dietHost}}/diets/create-google-sheet/{{userId}}
+  url: {{routinesHost}}/routines/create-google-sheet/{{userId}}
   body: none
   auth: bearer
 }

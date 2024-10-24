@@ -1,11 +1,11 @@
 meta {
-  name: DietDelete
+  name: DietListByUserId
   type: http
-  seq: 8
+  seq: 3
 }
 
-delete {
-  url: {{dietsHost}}/diets/ee825690-5887-4a45-9eba-3ea53d7c4f09
+get {
+  url: {{dietsHost}}/diets/user/{{userId}}
   body: none
   auth: bearer
 }

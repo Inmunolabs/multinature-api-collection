@@ -1,11 +1,11 @@
 meta {
-  name: GetDietById
+  name: DietGet
   type: http
   seq: 2
 }
 
 get {
-  url: {{dietHost}}/diets/{{userId}}
+  url: {{dietsHost}}/diets/{{userId}}
   body: none
   auth: bearer
 }

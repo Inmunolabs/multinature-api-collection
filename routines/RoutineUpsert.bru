@@ -1,0 +1,240 @@
+meta {
+  name: RoutineUpsert
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{routinesHost}}/routines/{{userId}}
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{trainerToken}}
+}
+
+body:json {
+  {
+    "startDate": "2024-10-22",
+    "endDate": "2024-11-23",
+    "notes": "Recuerda tener buena técnica para evitar lesiones. Si tienes alguna duda sobre algún ejercicio, no dudes en escribirme",
+    "schedules": [
+      {
+        "hour": "16:00",
+        "date": "2024-10-24",
+        "exercises": [
+          {
+            "exercise": "Elevaciones de talones",
+            "repetitions": "10",
+            "series": "4"
+          },
+          {
+            "exercise": "Crunch abdominal",
+            "repetitions": "30 segundos",
+            "series": "4"
+          },
+          {
+            "exercise": "Burpees",
+            "repetitions": "12",
+            "series": "4"
+          },
+          {
+            "exercise": "Lagartijas",
+            "repetitions": "12",
+            "series": "4"
+          }
+        ]
+      },    
+      {
+        "hour": "08:00",
+        "date": "2024-10-25",
+        "exercises": [
+          {
+            "exercise": "Sentadillas",
+            "repetitions": "12",
+            "series": "4"
+          },
+          {
+            "exercise": "Flexiones de pecho",
+            "repetitions": "10",
+            "series": "4"
+          },
+          {
+            "exercise": "Zancadas",
+            "repetitions": "10",
+            "series": "4"
+          }
+        ]
+      },
+      {
+        "hour": "12:30",
+        "date": "2024-10-25",
+        "exercises": [
+          {
+            "exercise": "Plancha (plank)",
+            "repetitions": "30 segundos",
+            "series": "4"
+          },
+          {
+            "exercise": "Remo con mancuernas",
+            "repetitions": "12",
+            "series": "4"
+          }
+        ]
+      },
+      {
+        "hour": "16:00",
+        "date": "2024-10-25",
+        "exercises": [
+          {
+            "exercise": "Elevaciones de talones",
+            "repetitions": "10",
+            "series": "4"
+          },
+          {
+            "exercise": "Crunch abdominal",
+            "repetitions": "30 segundos",
+            "series": "4"
+          },
+          {
+            "exercise": "Burpees",
+            "repetitions": "12",
+            "series": "4"
+          },
+          {
+            "exercise": "Lagartijas",
+            "repetitions": "12",
+            "series": "4"
+          }
+        ]
+      },
+      {
+        "hour": "08:00",
+        "date": "2024-10-26",
+        "exercises": [
+          {
+            "exercise": "Sentadillas",
+            "repetitions": "12",
+            "series": "4"
+          },
+          {
+            "exercise": "Flexiones de pecho",
+            "repetitions": "10",
+            "series": "4"
+          },
+          {
+            "exercise": "Zancadas",
+            "repetitions": "10",
+            "series": "4"
+          }
+        ]
+      },
+      {
+        "hour": "12:30",
+        "date": "2024-10-26",
+        "exercises": [
+          {
+            "exercise": "Plancha (plank)",
+            "repetitions": "30 segundos",
+            "series": "4"
+          },
+          {
+            "exercise": "Remo con mancuernas",
+            "repetitions": "12",
+            "series": "4"
+          }
+        ]
+      },
+      {
+        "hour": "16:00",
+        "date": "2024-10-26",
+        "exercises": [
+          {
+            "exercise": "Elevaciones de talones",
+            "repetitions": "10",
+            "series": "4"
+          },
+          {
+            "exercise": "Crunch abdominal",
+            "repetitions": "30 segundos",
+            "series": "4"
+          },
+          {
+            "exercise": "Burpees",
+            "repetitions": "12",
+            "series": "4"
+          },
+          {
+            "exercise": "Lagartijas",
+            "repetitions": "12",
+            "series": "4"
+          }
+        ]
+      },
+      {
+        "hour": "08:00",
+        "date": "2024-10-27",
+        "exercises": [
+          {
+            "exercise": "Sentadillas",
+            "repetitions": "12",
+            "series": "4"
+          },
+          {
+            "exercise": "Flexiones de pecho",
+            "repetitions": "10",
+            "series": "4"
+          },
+          {
+            "exercise": "Zancadas",
+            "repetitions": "10",
+            "series": "4"
+          }
+        ]
+      },
+      {
+        "hour": "12:30",
+        "date": "2024-10-27",
+        "exercises": [
+          {
+            "exercise": "Plancha (plank)",
+            "repetitions": "30 segundos",
+            "series": "4"
+          },
+          {
+            "exercise": "Remo con mancuernas",
+            "repetitions": "12",
+            "series": "4"
+          }
+        ]
+      },
+      {
+        "hour": "16:00",
+        "date": "2024-10-27",
+        "exercises": [
+          {
+            "exercise": "Elevaciones de talones",
+            "repetitions": "10",
+            "series": "4"
+          },
+          {
+            "exercise": "Crunch abdominal",
+            "repetitions": "30 segundos",
+            "series": "4"
+          },
+          {
+            "exercise": "Burpees",
+            "repetitions": "12",
+            "series": "4"
+          },
+          {
+            "exercise": "Lagartijas",
+            "repetitions": "12",
+            "series": "4"
+          }
+        ]
+      }
+    ]
+  }
+}

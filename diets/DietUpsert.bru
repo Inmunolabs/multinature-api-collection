@@ -1,11 +1,11 @@
 meta {
-  name: createDiet
+  name: DietUpsert
   type: http
   seq: 6
 }
 
 post {
-  url: {{dietHost}}/diets/{{userId}}
+  url: {{dietsHost}}/diets/{{userId}}
   body: json
   auth: bearer
 }
