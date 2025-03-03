@@ -1,11 +1,11 @@
 meta {
-  name: RecommendationGetCurrent
+  name: UsersGetNetworkUser
   type: http
-  seq: 4
+  seq: 0
 }
 
 get {
-  url: {{cartHost}}/recommendations/{{userId}}
+  url: {{userHost}}/users/network/detail/{{userId}}
   body: none
   auth: bearer
 }
