@@ -1,0 +1,22 @@
+meta {
+  name: openpayDeleteBankAccounts
+  type: http
+  seq: 7
+}
+
+delete {
+  url: {{openpayHost}}/openpay/bank-account/
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "bankAccountIds": ["ba97ot9jxekal4ndxtlx", 
+                        "bcgfozrhf3wdrgjrenid"]
+  }
+}

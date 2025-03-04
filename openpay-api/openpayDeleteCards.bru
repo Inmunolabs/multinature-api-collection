@@ -1,0 +1,22 @@
+meta {
+  name: openpayDeleteCards
+  type: http
+  seq: 7
+}
+
+delete {
+  url: {{openpayHost}}/openpay/cards/
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "cardIds": ["ba97ot9jxekal4ndxtlx", 
+                "bcgfozrhf3wdrgjrenid"]
+  }
+}
