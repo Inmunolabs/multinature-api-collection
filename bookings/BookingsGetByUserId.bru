@@ -6,19 +6,10 @@ meta {
 
 get {
   url: {{bookingsHost}}/bookings/user/a4895fc8-d662-4ebf-ba9f-a9ace2a74d6a
-  body: json
+  body: none
   auth: bearer
 }
 
 auth:bearer {
   token: {{token}}
-}
-
-body:json {
-  {
-    "specialistId": "f0d8e32b-e4bb-4e08-ae48-6c9b96a3a98f",
-    "date": "2025-02-25",
-    "startHour": "10:00",
-    "endHour": "11:00"
-  }
 }
