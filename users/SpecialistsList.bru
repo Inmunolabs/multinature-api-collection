@@ -1,18 +1,18 @@
 meta {
-  name: UsersList
+  name: SpecialistList
   type: http
   seq: 3
 }
 
 get {
-  url: {{userHost}}/users?startDate=2024-12-01&endDate=2025-01-01
+  url: {{userHost}}/users/specialists?page=1&limit=20
   body: none
   auth: bearer
 }
 
 params:query {
-  startDate: 2024-12-01
-  endDate: 2025-01-01
+  page: 1
+  limit: 20
 }
 
 headers {
