@@ -1,13 +1,13 @@
 meta {
   name: SpecialistList
   type: http
-  seq: 3
+  seq: 11
 }
 
 get {
-  url: {{userHost}}/users/specialists?page=1&limit=20
+  url: {{userHost}}/specialists/?page=1&limit=20
   body: none
-  auth: bearer
+  auth: none
 }
 
 params:query {
@@ -18,8 +18,4 @@ params:query {
 headers {
   Accept-Language: sp
   ~Accept-Language: en
-}
-
-auth:bearer {
-  token: {{token}}
 }
