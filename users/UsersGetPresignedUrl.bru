@@ -1,7 +1,7 @@
 meta {
   name: UsersGetPresignedUrl
   type: http
-  seq: 7
+  seq: 8
 }
 
 get {
@@ -10,7 +10,7 @@ get {
   auth: bearer
 }
 
-query {
+params:query {
   folder: certificates
   ~size: 15.2
 }

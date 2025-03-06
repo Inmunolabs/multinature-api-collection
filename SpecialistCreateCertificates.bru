@@ -1,0 +1,23 @@
+meta {
+  name: SpecialistCreateCertificates
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{userHost}}/specialists/certificates/
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "userId": "58311178-ed1b-4074-8f53-fa3104ff8034",
+    "url": "http://example.com",
+    "name": "Certificados de estudios superiores"
+  }
+}
