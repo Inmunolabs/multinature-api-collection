@@ -1,11 +1,11 @@
 meta {
-  name: SpecialistCreateSettings
+  name: SpecialistAssignedToUser
   type: http
-  seq: 23
+  seq: 4
 }
 
 post {
-  url: {{userHost}}/specialists/config/:id
+  url: {{userHost}}/specialists/specialty/:id
   body: json
   auth: bearer
 }

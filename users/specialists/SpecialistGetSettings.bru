@@ -1,0 +1,19 @@
+meta {
+  name: SpecialistGetSettings
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{userHost}}/specialists/config/:id
+  body: none
+  auth: bearer
+}
+
+params:path {
+  id: eb003fcf-fcf1-4da0-b003-35afd7198844
+}
+
+auth:bearer {
+  token: {{token}}
+}
