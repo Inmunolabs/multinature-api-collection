@@ -1,18 +1,18 @@
 meta {
   name: UsersList
   type: http
-  seq: 4
+  seq: 5
 }
 
 get {
-  url: {{userHost}}/users?startDate=2024-12-01&endDate=2025-01-01
+  url: {{userHost}}/users
   body: none
   auth: bearer
 }
 
 params:query {
-  startDate: 2024-12-01
-  endDate: 2025-01-01
+  ~startDate: 2024-12-01
+  ~endDate: 2025-04-01
 }
 
 headers {

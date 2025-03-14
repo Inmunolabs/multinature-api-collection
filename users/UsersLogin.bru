@@ -1,7 +1,7 @@
 meta {
   name: UsersLogin
   type: http
-  seq: 21
+  seq: 10
 }
 
 post {
@@ -17,7 +17,8 @@ auth:bearer {
 body:json {
   {
       //"email": "admin@multi.com",
-      "email": "000@multi.com",
+      //"email": "000@multi.com", // USUARIO DE PRUEBA (Cabecilla de red)
+      "email": "001@multi.com",
       "password": "12345678"
     
       // "email": "operaciones@paket.mx",

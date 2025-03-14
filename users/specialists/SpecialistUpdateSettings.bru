@@ -1,10 +1,10 @@
 meta {
-  name: SpecialistCreateSettings
+  name: SpecialistUpdateSettings
   type: http
-  seq: 23
+  seq: 7
 }
 
-post {
+patch {
   url: {{userHost}}/specialists/config/:id
   body: json
   auth: bearer
