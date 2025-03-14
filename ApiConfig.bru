@@ -1,0 +1,16 @@
+meta {
+  name: ApiConfig
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{userHost}}/api/config
+  body: none
+  auth: none
+}
+
+headers {
+  ~Accept-Language: en
+  ~Accept-Language: sp
+}

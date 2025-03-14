@@ -5,14 +5,14 @@ meta {
 }
 
 get {
-  url: {{userHost}}/users?startDate=2024-12-01&endDate=2025-04-01
+  url: {{userHost}}/users
   body: none
   auth: bearer
 }
 
 params:query {
-  startDate: 2024-12-01
-  endDate: 2025-04-01
+  ~startDate: 2024-12-01
+  ~endDate: 2025-04-01
 }
 
 headers {
