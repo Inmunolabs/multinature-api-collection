@@ -1,16 +1,16 @@
 meta {
-  name: UsersHealthcheck
+  name: ApiConfig
   type: http
   seq: 1
 }
 
 get {
-  url: {{userHost}}
+  url: {{userHost}}/api/config
   body: none
   auth: none
 }
 
 headers {
-  Accept-Language: en
+  ~Accept-Language: en
   ~Accept-Language: sp
 }
