@@ -1,0 +1,28 @@
+meta {
+  name: SpecialistUpdateSettings
+  type: http
+  seq: 7
+}
+
+patch {
+  url: {{userHost}}/specialists/config/:id
+  body: json
+  auth: bearer
+}
+
+params:path {
+  id: eb003fcf-fcf1-4da0-b003-35afd7198844
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "chargeAdvancePayment": 290,
+    "chargePerConsultation": 30.50,
+    "monthlyCharge": 100,
+    "receiveEmails": true
+  }
+}

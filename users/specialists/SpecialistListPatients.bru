@@ -1,0 +1,24 @@
+meta {
+  name: SpecialistListPatients
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{userHost}}/specialists/:specialistId/patients
+  body: none
+  auth: bearer
+}
+
+params:path {
+  specialistId: 3be280e2-4354-4e4b-aa8d-acf94df12af8
+}
+
+headers {
+  Accept-Language: sp
+  ~Accept-Language: en
+}
+
+auth:bearer {
+  token: {{token}}
+}

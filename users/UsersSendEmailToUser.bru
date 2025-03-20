@@ -1,11 +1,11 @@
 meta {
-  name: UsersPasswordRecoveryCode
+  name: UsersSendEmailToUser
   type: http
-  seq: 15
+  seq: 14
 }
 
 post {
-  url: {{userHost}}/users/password-recovery-code
+  url: {{userHost}}/users/send-email/
   body: json
   auth: none
 }
