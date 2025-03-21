@@ -5,13 +5,14 @@ meta {
 }
 
 get {
-  url: {{userHost}}/specialists/s3Upload?name=CertificadoDeTitulo
+  url: {{userHost}}/specialists/s3Upload?name=CertificadoDeTitulo&bucket=specialists-support-materials
   body: none
   auth: bearer
 }
 
 params:query {
   name: CertificadoDeTitulo
+  bucket: specialists-support-materials
 }
 
 headers {
