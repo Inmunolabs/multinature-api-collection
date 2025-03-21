@@ -1,0 +1,29 @@
+meta {
+  name: BookingsLiquidate
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{bookingsHost}}/bookings/liquidate/:id
+  body: json
+  auth: bearer
+}
+
+params:path {
+  id: cc716d02-82d0-48b9-bf9a-82013f70262e
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "type": "openpayCard",
+    "deviceSessionId": "YYXX1Ku4zPv0e1i07jmfryyMr10PU0ja",
+    "idPaymentMethod": "7900836f-a416-4ac0-a839-9ab4bb15cc96",
+    "description": "Pago de liquidación de consulta",
+    "cvv": "123"
+  }
+}

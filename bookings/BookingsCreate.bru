@@ -1,26 +1,32 @@
 meta {
   name: BookingsCreate
   type: http
-  seq: 5
+  seq: 4
 }
 
 post {
-  url: {{bookingsHost}}/bookings
+  url: {{bookingsHost}}/bookings/
   body: json
   auth: bearer
 }
 
 auth:bearer {
-  token: {{nustricionTrainingtoken}}
+  token: {{token}}
 }
 
 body:json {
   {
-      "specialistId": "a01528ca-4be4-4cae-bd2c-ebf6449e457c",
-      "userId": "a4895fc8-d662-4ebf-ba9f-a9ace2a74d6a",
-      "date": "2024-08-07",
-      "startHour": "14:00",
-      "endHour": "14:30",
-      "notes": "Todo cool, es solo una prueba"
+    "specialistId": "5b8b8743-ee39-11ef-bd0a-1290daed9e2f",
+    "userId": "58311178-ed1b-4074-8f53-fa3104ff8034",
+    "date": "2025-03-05",
+    "startHour": "15:00",
+    "endHour": "16:30",
+    "notes": "Cita agendada por el usuario",
+    "type": "openpayCard",
+    "deviceSessionId": "YYXX1Ku4zPv0e1i07jmfryyMr10PU0ja",
+    "idPaymentMethod": "7900836f-a416-4ac0-a839-9ab4bb15cc96",
+    "description": "Pago de anticipo de consulta",
+    "cvv": "123",
+    "amount": 9
   }
 }

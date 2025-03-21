@@ -1,0 +1,23 @@
+meta {
+  name: UsersAssignSpecialist
+  type: http
+  seq: 24
+}
+
+patch {
+  url: {{userHost}}/users/specialist/assign
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "userId": "6aa94d81-738b-468f-8b09-5ff663a4060e",
+    "specialistId": "3be280e2-4354-4e4b-aa8d-acf94df12af8",
+    "specialityId": "9ce67305-eafc-11ef-bd0a-1290daed9e2f"
+  }
+}

@@ -1,0 +1,21 @@
+meta {
+  name: BookingCancel
+  type: http
+  seq: 8
+}
+
+patch {
+  url: {{bookingsHost}}/bookings/{{bookingId}}/cancel
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+      "reason": "No puedo asistir"
+  }
+}

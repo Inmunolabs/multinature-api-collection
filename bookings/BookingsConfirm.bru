@@ -1,0 +1,19 @@
+meta {
+  name: BookingsConfirm
+  type: http
+  seq: 9
+}
+
+patch {
+  url: {{bookingsHost}}/bookings/confirm/:id
+  body: none
+  auth: bearer
+}
+
+params:path {
+  id: 3c523cd9-70d2-4a11-9611-327967b6acb4
+}
+
+auth:bearer {
+  token: {{token}}
+}
