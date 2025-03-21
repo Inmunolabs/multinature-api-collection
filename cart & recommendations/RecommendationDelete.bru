@@ -1,10 +1,10 @@
 meta {
-  name: RecommendationsUpdate
+  name: RecommendationDelete
   type: http
   seq: 9
 }
 
-patch {
+delete {
   url: {{cartHost}}/recommendations/317dac45-606a-4db5-af42-25cfaf510adc
   body: json
   auth: bearer
@@ -12,11 +12,4 @@ patch {
 
 auth:bearer {
   token: {{token}}
-}
-
-body:json {
-  {
-      "id": "dfe1f481-9177-46a3-8f9e-98e407b668cb",
-      "quantity": 10
-  }
 }
