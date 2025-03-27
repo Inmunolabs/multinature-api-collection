@@ -1,0 +1,27 @@
+meta {
+  name: SpecialistUpdateWorkingHour
+  type: http
+  seq: 10
+}
+
+patch {
+  url: {{userHost}}/specialists/working-hours/:id
+  body: json
+  auth: bearer
+}
+
+params:path {
+  id: 0883e4b8-0dba-4e25-9567-1e7105e5ca17
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "dayOfWeek": 2,
+    "startHour": "10:15",
+    "endHour": "11:45"
+  }
+}

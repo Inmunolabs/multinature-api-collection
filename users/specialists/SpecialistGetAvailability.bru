@@ -1,0 +1,20 @@
+meta {
+  name: SpecialistGetAvailability
+  type: http
+  seq: 11
+}
+
+get {
+  url: {{userHost}}/specialists/availability/:id?startDate=2025-04-01&endDate=2025-04-06
+  body: none
+  auth: inherit
+}
+
+params:query {
+  startDate: 2025-04-01
+  endDate: 2025-04-06
+}
+
+params:path {
+  id: eb003fcf-fcf1-4da0-b003-35afd7198844
+}
