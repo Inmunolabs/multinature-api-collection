@@ -1,17 +1,21 @@
 meta {
   name: BookingsUpdate
   type: http
-  seq: 7
+  seq: 8
 }
 
 patch {
-  url: {{bookingsHost}}/bookings/fcd9d354-2534-4d94-aaed-5091ffd12877
+  url: {{bookingsHost}}/bookings/:id
   body: json
   auth: bearer
 }
 
+params:path {
+  id: 81fabfb0-3d12-4517-9228-523f6185fd1f
+}
+
 auth:bearer {
-  token: {{nustricionTrainingtoken}}
+  token: {{token}}
 }
 
 body:json {
@@ -20,6 +24,6 @@ body:json {
       "startHour": "15:00",
       "endHour": "15:30",
       "notes": "Todo cool",
-      "status": "Atendida"
+      "videoCallUrl": "https://zoom.us/j/987654321"
   }
 }
