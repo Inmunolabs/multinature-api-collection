@@ -1,5 +1,3 @@
-console.error('⚙️ FILTER EXECUTED'); // 👈 Agregado para ver si se ejecuta
-
 function cleanSingle(obj) {
   if (obj.meta && obj.meta.seq !== undefined) {
     delete obj.meta.seq;
