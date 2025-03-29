@@ -1,0 +1,61 @@
+meta {
+  name: ServicePaymentConfirmPay
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{bookingsHost}}/service-payment/confirm
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "type": "charge.succeeded",
+    "event_date": "2024-12-11T23:09:40-06:00",
+    "transaction": {
+         "id": "trqvxnfnoujd2pksfvfn",
+         "authorization": "380860",
+         "operation_type": "in",
+         "transaction_type": "charge",
+         "status": "completed",
+         "conciliated": false,
+         "creation_date": "2024-12-11T23:09:39-06:00",
+         "operation_date": "2024-12-11T23:09:40-06:00",
+         "description": "Inmunosalud. No. de pedido: ed14f0d6-ebed-43dd-8aec-10fd28673260",
+         "error_message": null,
+         "order_id": null,
+         "card": {
+              "id": "kqohyhxfofdqytkejwjz",
+              "type": "debit",
+              "brand": "visa",
+              "address": null,
+              "card_number": "419822XXXXXX4632",
+              "holder_name": "Citly Georgina Durán Jiménez ",
+              "expiration_year": "27",
+              "expiration_month": "09",
+              "allows_charges": true,
+              "allows_payouts": true,
+              "creation_date": "2024-12-11T23:02:25-06:00",
+              "bank_name": "AZTECA",
+              "card_business_type": null,
+              "dcc": null,
+              "bank_code": "127",
+              "customer_id": "azs2edwfxsizs942ox4b"
+         },
+         "customer_id": "azs2edwfxsizs942ox4b",
+         "gateway_card_present": "BANCOMER",
+         "amount": 10,
+         "fee": {
+              "amount": 39.8,
+              "tax": 6.368,
+              "surcharge": null,
+              "base_commission": null,
+              "currency": "MXN"
+         },
+         "currency": "MXN",
+         "method": "card"
+    }
+  }
+}

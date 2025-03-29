@@ -1,0 +1,25 @@
+meta {
+  name: UsersList
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{userHost}}/users
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~startDate: 2024-12-01
+  ~endDate: 2025-04-01
+}
+
+headers {
+  Accept-Language: sp
+  ~Accept-Language: en
+}
+
+auth:bearer {
+  token: {{token}}
+}

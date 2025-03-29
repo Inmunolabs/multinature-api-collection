@@ -1,0 +1,20 @@
+meta {
+  name: CommissionsListByUser
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{commissionsHost}}/commissions/9307ef30-f8c3-445e-b00c-2d22fe1a72ab?startDate=2023-12-12&endDate=2024-12-20
+  body: none
+  auth: bearer
+}
+
+params:query {
+  startDate: 2023-12-12
+  endDate: 2024-12-20
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Imxhc3ROYW1lIjoiVmFsZMOpcyBHYXJjw61hIiwicHJvZmlsZSI6ImFmZmlsaWF0ZWRVc2VyIiwicmVjb21tZW5kZXJJZCI6ImI1MTYyZTA1LWY4ZDktNDhhZC05NjljLTFkMDhjZjZmNjM1YSIsIm9wZW5wYXkiOnsib3BlbnBheVVzZXJJZCI6ImFvMHRrYXlvYmxleHQ1dnNpaWNtIn0sImVtYWlsIjoibXZhbGRlczk4OEBnbWFpbC5jb20iLCJpZCI6IjkzMDdlZjMwLWY4YzMtNDQ1ZS1iMDBjLTJkMjJmZTFhNzJhYiIsImZpcnN0TmFtZSI6Ik1pZ3VlbCBBbmdlbCJ9LCJpYXQiOjE3MDMxMTY2MjYsImV4cCI6MTcwNTcwODYyNn0.KuNKceu2f1eMHoXCQ3Xcavbc27HUhrrDcYK-Xj7B-H8
+}

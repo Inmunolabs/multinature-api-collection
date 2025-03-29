@@ -1,0 +1,15 @@
+meta {
+  name: RoutineCreateGoogleSheet
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{routinesHost}}/routines/create-google-sheet/{{userId}}
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

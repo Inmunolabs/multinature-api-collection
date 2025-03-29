@@ -1,0 +1,15 @@
+meta {
+  name: DeleteCertificatesbyId
+  type: http
+  seq: 1
+}
+
+delete {
+  url: {{userHost}}/specialists/certificates/1044cd62-12af-41a8-968c-a888a7633bd2
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

@@ -1,0 +1,15 @@
+meta {
+  name: ConstantsList
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{constantsHost}}/constants
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

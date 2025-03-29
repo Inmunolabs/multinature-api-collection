@@ -1,0 +1,19 @@
+meta {
+  name: CartGet
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{cartHost}}/cart/:id
+  body: none
+  auth: bearer
+}
+
+params:path {
+  id: 04e5e292-061c-40ab-9962-f92bdbc74a57
+}
+
+auth:bearer {
+  token: {{token}}
+}

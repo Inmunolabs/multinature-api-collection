@@ -1,0 +1,15 @@
+meta {
+  name: UsersDataUser -Token Validation-
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{userHost}}/users/data-user
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

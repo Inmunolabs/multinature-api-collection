@@ -1,0 +1,16 @@
+meta {
+  name: DietHealthcheck
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{dietsHost}}
+  body: none
+  auth: none
+}
+
+headers {
+  Accept-Language: en
+  ~Accept-Language: sp
+}

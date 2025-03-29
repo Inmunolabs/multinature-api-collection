@@ -1,0 +1,26 @@
+meta {
+  name: CartUpdate
+  type: http
+  seq: 1
+}
+
+patch {
+  url: {{cartHost}}/cart/:id
+  body: json
+  auth: bearer
+}
+
+params:path {
+  id: 04e5e292-061c-40ab-9962-f92bdbc74a57
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+      "id": "5195f304-e1a3-4f6d-b2b6-92ea92c910d0",
+      "quantity": 1
+  }
+}

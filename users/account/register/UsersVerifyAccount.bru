@@ -1,0 +1,18 @@
+meta {
+  name: UsersVerifyAccount
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{userHost}}/users/verify-account
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+      "email": "012@multi.com",
+      "code": 287539
+  }
+}

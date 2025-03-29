@@ -1,0 +1,15 @@
+meta {
+  name: RoutineGet
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{routinesHost}}/routines/{{userId}}
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

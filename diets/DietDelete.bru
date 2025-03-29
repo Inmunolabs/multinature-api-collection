@@ -1,0 +1,15 @@
+meta {
+  name: DietDelete
+  type: http
+  seq: 1
+}
+
+delete {
+  url: {{dietsHost}}/diets/ee825690-5887-4a45-9eba-3ea53d7c4f09
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

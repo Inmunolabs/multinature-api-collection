@@ -1,0 +1,15 @@
+meta {
+  name: AddressesShippingAddressUpdate
+  type: http
+  seq: 1
+}
+
+patch {
+  url: {{addressesHost}}/addresses/shippingAddress/46d260a9-3a37-40d2-bf2d-dae7c5592b9f
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{userToken}}
+}

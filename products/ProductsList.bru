@@ -1,0 +1,15 @@
+meta {
+  name: ProductsList
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{productHost}}/products
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjViOGI4NzQzLWVlMzktMTFlZi1iZDBhLTEyOTBkYWVkOWUyZiIsImlhdCI6MTc0MjUwMzg4OSwiZXhwIjoxNzQ1MDk1ODg5fQ.DLv8wej-da46ddPpjAigCDks4rvQAMCIaQfu4swgouo
+}

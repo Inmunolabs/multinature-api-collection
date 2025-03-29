@@ -1,0 +1,15 @@
+meta {
+  name: DietListByUserId
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{dietsHost}}/diets/user/{{userId}}
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

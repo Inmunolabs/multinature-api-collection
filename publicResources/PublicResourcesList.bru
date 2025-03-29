@@ -1,0 +1,15 @@
+meta {
+  name: PublicResourcesList
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{publicResourcesHost}}/public-resources/
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

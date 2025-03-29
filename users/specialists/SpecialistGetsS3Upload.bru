@@ -1,0 +1,24 @@
+meta {
+  name: GetsS3upload
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{userHost}}/specialists/s3-upload?name=CertificadoDeTitulo&bucket=specialists-support-materials
+  body: none
+  auth: bearer
+}
+
+params:query {
+  name: CertificadoDeTitulo
+  bucket: specialists-support-materials
+}
+
+headers {
+  filetype: pdf
+}
+
+auth:bearer {
+  token: {{token}}
+}

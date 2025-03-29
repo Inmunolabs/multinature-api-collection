@@ -1,0 +1,15 @@
+meta {
+  name: BookingsDelete
+  type: http
+  seq: 1
+}
+
+delete {
+  url: {{bookingsHost}}/bookings/867bf729-aebb-4bb2-a47a-eff97c7f5ef3
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

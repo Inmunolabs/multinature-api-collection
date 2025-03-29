@@ -1,0 +1,22 @@
+meta {
+  name: openpayDeleteUsers
+  type: http
+  seq: 1
+}
+
+delete {
+  url: {{openpayHost}}/openpay/user/
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "usersIds": ["ba97ot9jxekal4ndxtlx", 
+                        "bcgfozrhf3wdrgjrenid"]
+  }
+}

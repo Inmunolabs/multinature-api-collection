@@ -1,0 +1,25 @@
+meta {
+  name: SpecialistCreateSupportMaterial
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{userHost}}/specialists/support-material
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "userId":"58311178-ed1b-4074-8f53-fa3104ff8034",
+    "url":"https://us-east-1.console.aws.amazon.com/s3/object/specialist-support-materials?region=us-east-1&bucketType=general&prefix=M6+Session+2+-+React_+Fetching+%26+Managing+Data+%28Rodrigo%29.pdf",
+    "name":"M6 Session 2 - React_ Fetching & Managing Data (Rodrigo).pdf",
+    "notes":"This is a practice tests",
+    "s3_key": "58311178-ed1b-4074-8f53-fa3104ff8034/_Architecture Software Description_A01644024     .pdf"
+  }
+}

@@ -1,0 +1,15 @@
+meta {
+  name: DietListBySpecialistId
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{dietsHost}}/diets/specialist/67311ab8-7d78-409b-bffa-4a1c45bf3fd5
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

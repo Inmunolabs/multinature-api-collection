@@ -1,0 +1,32 @@
+meta {
+  name: RecommendationsUpdate
+  type: http
+  seq: 1
+}
+
+patch {
+  url: {{cartHost}}/recommendations/:id
+  body: json
+  auth: bearer
+}
+
+params:path {
+  id: 8f74e464-176c-4662-a2fc-c013da3be786
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  [
+    {
+      "id": "36e20922-d4fa-4b55-84df-cf6a7b6bb858",
+      "quantity": 1
+    },
+    {
+      "id": "fbb8bffb-4692-4352-8e86-74c464791959",
+      "quantity": 1
+    }
+  ]
+}

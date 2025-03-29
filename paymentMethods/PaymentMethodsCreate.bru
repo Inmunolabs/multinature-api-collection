@@ -1,0 +1,28 @@
+meta {
+  name: PaymentMethodsCreate
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{paymentMethodsHost}}/payment-methods/{{userId}}
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+   "cardUse": "Cobro",
+   "bank": "Banco Azteca",
+   "beneficiary": "PlayStation",
+   "clabe": "646180109400423323"
+  //   "cardUse": "Pago",
+  //   "alias": "Pollo pepe",
+  //   "deviceSessionId": "n2dE7tieK04KU6xgRkdoi2NE00PN5mS1",
+  //   "tokenId": "kroqjbkglfueodwyqii5"
+  }
+}

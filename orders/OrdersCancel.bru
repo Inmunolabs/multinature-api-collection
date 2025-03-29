@@ -1,0 +1,15 @@
+meta {
+  name: OrdersCancel
+  type: http
+  seq: 1
+}
+
+patch {
+  url: {{ordersHost}}/orders/cancel/{{orderId}}
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
