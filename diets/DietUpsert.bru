@@ -1,13 +1,17 @@
 meta {
   name: DietUpsert
   type: http
-  seq: 1
+  seq: 6
 }
 
 post {
-  url: {{dietsHost}}/diets/{{userId}}
+  url: {{dietsHost}}/diets/:id
   body: json
   auth: bearer
+}
+
+params:path {
+  id: f0d8e32b-e4bb-4e08-ae48-6c9b96a3a98f
 }
 
 auth:bearer {
@@ -16,228 +20,33 @@ auth:bearer {
 
 body:json {
   {
-    "startDate": "2024-10-22",
-    "endDate": "2024-11-23",
-    "type": "Baja en grasa",
-    "allowedFoods": "Vegetales y pescado",
-    "forbiddenFoods": "Grasas saturadas y harinas. NO enlatados ni procesados",
-    "schedules": [
-      {
-        "hour": "08:00",
-        "date": "2024-10-24",
-        "portions": [
-          {
-            "food": "Avena",
-            "portion": "1 taza"
-          },
-          {
-            "food": "Huevos revueltos con jamón",
-            "portion": "2"
-          },
-          {
-            "food": "Tortillas",
-            "portion": "2"
-          }
-        ]
+    "specialistId": "eb003fcf-fcf1-4da0-b003-35afd7198844",
+    "userId": "f0d8e32b-e4bb-4e08-ae48-6c9b96a3a98f",
+    "notes": "Actualización de dieta de ejemplo.",
+    "meals": {
+      "1": {
+        "Desayuno": {
+          "id": "79328e60-0d73-11f0-9947-1290daed9e2f"
+        },
+        "Comida": {
+          "id": "79328e60-0d73-11f0-9947-1290daed9e2f"
+        },
+        "Colación 2": {
+          "id": "79332503-0d73-11f0-9947-1290daed9e2f"
+        }
       },
-      {
-        "hour": "12:30",
-        "date": "2024-10-24",
-        "portions": [
-          {
-            "food": "Ensalada de espinacas, pepino y jitomate, aderezada con aceite de oliva y limón",
-            "portion": ""
-          },
-          {
-            "food": "Agua de jamaica (sin azúcar)",
-            "portion": "1 vaso"
-          }
-        ]
-      },
-      {
-        "hour": "16:00",
-        "date": "2024-10-24",
-        "portions": [
-          {
-            "food": "Filete de pescado (a la plancha o al horno, sazonado con especias y limón)",
-            "portion": "1"
-          },
-          {
-            "food": "Puré de calabacitas",
-            "portion": ""
-          },
-          {
-            "food": "Frijoles de la olla",
-            "portion": "1 taza"
-          },
-          {
-            "food": "Té de manzanilla o agua natural",
-            "portion": "1 taza"
-          }
-        ]
-      },    
-      {
-        "hour": "08:00",
-        "date": "2024-10-25",
-        "portions": [
-          {
-            "food": "Avena",
-            "portion": "1 taza"
-          },
-          {
-            "food": "Huevos revueltos con jamón",
-            "portion": "2"
-          },
-          {
-            "food": "Tortillas",
-            "portion": "2"
-          }
-        ]
-      },
-      {
-        "hour": "12:30",
-        "date": "2024-10-25",
-        "portions": [
-          {
-            "food": "Ensalada de espinacas, pepino y jitomate, aderezada con aceite de oliva y limón",
-            "portion": ""
-          },
-          {
-            "food": "Agua de jamaica (sin azúcar)",
-            "portion": "1 vaso"
-          }
-        ]
-      },
-      {
-        "hour": "16:00",
-        "date": "2024-10-25",
-        "portions": [
-          {
-            "food": "Filete de pescado (a la plancha o al horno, sazonado con especias y limón)",
-            "portion": "1"
-          },
-          {
-            "food": "Puré de calabacitas",
-            "portion": ""
-          },
-          {
-            "food": "Frijoles de la olla",
-            "portion": "1 taza"
-          },
-          {
-            "food": "Té de manzanilla o agua natural",
-            "portion": "1 taza"
-          }
-        ]
-      },
-      {
-        "hour": "08:00",
-        "date": "2024-10-26",
-        "portions": [
-          {
-            "food": "Avena",
-            "portion": "1 taza"
-          },
-          {
-            "food": "Huevos revueltos con jamón",
-            "portion": "2"
-          },
-          {
-            "food": "Tortillas",
-            "portion": "2"
-          }
-        ]
-      },
-      {
-        "hour": "12:30",
-        "date": "2024-10-26",
-        "portions": [
-          {
-            "food": "Ensalada de espinacas, pepino y jitomate, aderezada con aceite de oliva y limón",
-            "portion": ""
-          },
-          {
-            "food": "Agua de jamaica (sin azúcar)",
-            "portion": "1 vaso"
-          }
-        ]
-      },
-      {
-        "hour": "16:00",
-        "date": "2024-10-26",
-        "portions": [
-          {
-            "food": "Filete de pescado (a la plancha o al horno, sazonado con especias y limón)",
-            "portion": "1"
-          },
-          {
-            "food": "Puré de calabacitas",
-            "portion": ""
-          },
-          {
-            "food": "Frijoles de la olla",
-            "portion": "1 taza"
-          },
-          {
-            "food": "Té de manzanilla o agua natural",
-            "portion": "1 taza"
-          }
-        ]
-      },
-      {
-        "hour": "08:00",
-        "date": "2024-10-27",
-        "portions": [
-          {
-            "food": "Avena",
-            "portion": "1 taza"
-          },
-          {
-            "food": "Huevos revueltos con jamón",
-            "portion": "2"
-          },
-          {
-            "food": "Tortillas",
-            "portion": "2"
-          }
-        ]
-      },
-      {
-        "hour": "12:30",
-        "date": "2024-10-27",
-        "portions": [
-          {
-            "food": "Ensalada de espinacas, pepino y jitomate, aderezada con aceite de oliva y limón",
-            "portion": ""
-          },
-          {
-            "food": "Agua de jamaica (sin azúcar)",
-            "portion": "1 vaso"
-          }
-        ]
-      },
-      {
-        "hour": "16:00",
-        "date": "2024-10-27",
-        "portions": [
-          {
-            "food": "Filete de pescado (a la plancha o al horno, sazonado con especias y limón)",
-            "portion": "1"
-          },
-          {
-            "food": "Puré de calabacitas",
-            "portion": ""
-          },
-          {
-            "food": "Frijoles de la olla",
-            "portion": "1 taza"
-          },
-          {
-            "food": "Té de manzanilla o agua natural",
-            "portion": "1 taza"
-          }
-        ]
+      "2": {
+        "Desayuno": {
+          "id": "79332824-0d73-11f0-9947-1290daed9e2f"
+        },
+        "Comida": {
+          "id": "79328e60-0d73-11f0-9947-1290daed9e2f"
+        },
+        "Colación 2": {
+          "id": "79332503-0d73-11f0-9947-1290daed9e2f"
+        }
       }
-    ]
+    }
   }
+  
 }

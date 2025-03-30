@@ -1,13 +1,17 @@
 meta {
   name: DietGet
   type: http
-  seq: 1
+  seq: 2
 }
 
 get {
-  url: {{dietsHost}}/diets/{{userId}}
+  url: {{dietsHost}}/diets/:id
   body: none
   auth: bearer
+}
+
+params:path {
+  id: 1dffdafc-9b50-4ea9-87b0-3890d256ba2c
 }
 
 auth:bearer {
