@@ -1,0 +1,6 @@
+#!/bin/sh
+# Hook pre-commit para limpiar campos meta.seq y params.path
+
+echo "🚨 Ejecutando limpieza de archivos Bruno .bru..."
+
+node scripts/clean_bru_fields.js
