@@ -1,7 +1,8 @@
 meta {
   name: AddressesCreate
   type: http
-  seq: 1}
+  seq: 1
+}
 
 post {
   url: {{addressesHost}}/addresses/{{userId}}
@@ -16,12 +17,12 @@ auth:bearer {
 body:json {
   {
       "street": "Calle de Miguel",
-      "extNumber": "41",
+      "extNumber": "413",
       "intNumber": "",
       "neighborhood": "El Secreto",
       "city": "Zapopan",
       "federalEntity": "Jalisco",
-      "zipCode": "4514",
+      "zipCode": "45138",
       "country": "México",
       //"refer": "Arbol Verde con flor azul espinas rojas"
       "refer": "2da dirección ingresada en el sistema"
