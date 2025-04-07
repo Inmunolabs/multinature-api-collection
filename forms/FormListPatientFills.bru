@@ -5,9 +5,14 @@ meta {
   seq: 1}
 
 get {
-  url: {{formHost}}/forms/:id
+  url: {{formHost}}/forms/:id?startDate=2025-02-01&endDate=2025-05-06
   body: none
   auth: bearer
+}
+
+params:query {
+  startDate: 2025-02-01
+  endDate: 2025-05-06
 }
 
 params:path {
