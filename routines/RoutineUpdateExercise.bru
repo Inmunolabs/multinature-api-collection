@@ -1,0 +1,27 @@
+meta {
+  name: RoutineUpdateExercise
+  type: http
+
+  seq: 1}
+
+patch {
+  url: {{routinesHost}}/routines/exercise/:id
+  body: json
+  auth: bearer
+}
+
+params:path {
+  id: 8f2080ed-4181-467f-b749-7775fef1b8ba
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "title": "Abdominales bicicleta",
+    "description": "Ver video de ejemplo"
+  }
+  
+}

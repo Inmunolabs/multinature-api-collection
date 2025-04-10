@@ -1,0 +1,15 @@
+meta {
+  name: RoutineListExercisesBySpecialistId copy
+  type: http
+
+  seq: 1}
+
+get {
+  url: {{routinesHost}}/routines/exercise
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
