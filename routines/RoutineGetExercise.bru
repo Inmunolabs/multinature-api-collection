@@ -1,17 +1,17 @@
 meta {
-  name: RoutineListByUserId
+  name: RoutineGetExercise
   type: http
 
   seq: 1}
 
 get {
-  url: {{routinesHost}}/routines/user/:id
+  url: {{routinesHost}}/routines/exercise/:id
   body: none
   auth: bearer
 }
 
 params:path {
-  id: f0d8e32b-e4bb-4e08-ae48-6c9b96a3a98f
+  id: d120ca91-ed03-4bb9-8be7-b1cb996659aa
 }
 
 auth:bearer {
