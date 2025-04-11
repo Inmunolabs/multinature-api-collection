@@ -5,14 +5,14 @@ meta {
 }
 
 get {
-  url: {{userHost}}/specialists/s3-upload?name=CertificadoDeTitulo&bucket=specialists-support-materials
+  url: {{userHost}}/specialists/s3-upload?name=CertificadoDeTitulo&bucket=specialist-support-materials
   body: none
   auth: bearer
 }
 
 params:query {
   name: CertificadoDeTitulo
-  bucket: specialists-support-materials
+  bucket: specialist-support-materials
 }
 
 headers {
@@ -21,4 +21,14 @@ headers {
 
 auth:bearer {
   token: {{token}}
+}
+
+docs {
+  Hecho por Antoine Ganem Nuñez
+  
+  Lista de buckets:
+  
+  * **Materiales de apoyo:** `specialist-support-materials`  
+  * **Certificados:** `specialist-certificates`
+  
 }
