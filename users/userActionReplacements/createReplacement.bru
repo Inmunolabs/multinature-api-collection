@@ -1,0 +1,25 @@
+meta {
+  name: Create-Replacement
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{userHost}}/users/replacements
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "date": "2025-04-15",
+    "type": "meal",
+    "reference_id": "f7044a08-96ae-4cb9-b66e-47e1d2006efa",  
+    "replacement_text": "Sopa de verduras"
+  }
+  
+}
