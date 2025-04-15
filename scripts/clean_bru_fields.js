@@ -3,7 +3,10 @@ const { execSync } = require('child_process');
 
 function cleanBruFile(filePath) {
   const content = fs.readFileSync(filePath, 'utf8');
-  let cleaned = content.replace(/^\s*seq:\s*\d*\s*\n*\s*}?/gm, '  seq: 1\n}');
+  let cleaned = content
+    .replace(/(.*\S)\s+seq:\s*\d*/g, '$1\n  seq: 1')
+    .replace(/^\s*seq:\s*\d*\s*\n*\s*}?/gm, '  seq: 1\n}');
+
   fs.writeFileSync(filePath, cleaned, 'utf8');
   console.log(`🧹 Limpieza aplicada a: ${filePath}`);
 }
