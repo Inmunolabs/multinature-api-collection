@@ -1,11 +1,11 @@
 meta {
-  name: DietTodayByUserId
+  name: UsersGetTodayInfo
   type: http
-  seq: 5
-}
+
+  seq: 1}
 
 get {
-  url: {{dietsHost}}/diets/user/:id
+  url: {{userHost}}/users/today/:id
   body: none
   auth: bearer
 }
