@@ -1,17 +1,13 @@
 meta {
   name: UsersCreateTaxInformation
   type: http
-  seq: 1
-}
+
+  seq: 1}
 
 post {
-  url: {{userHost}}/users/tax-info/:id
+  url: {{userHost}}/users/tax-info/{{userId}}
   body: json
   auth: bearer
-}
-
-params:path {
-  id: eb003fcf-fcf1-4da0-b003-35afd7198844
 }
 
 headers {
