@@ -5,13 +5,9 @@ meta {
 }
 
 patch {
-  url: {{userHost}}/users/replacements/:id
+  url: {{userHost}}/users/replacements
   body: json
   auth: bearer
-}
-
-params:path {
-  id: 1dac4ae6-107d-4a47-8815-7b9d7bea5da2
 }
 
 auth:bearer {
@@ -20,7 +16,10 @@ auth:bearer {
 
 body:json {
   {
+    "id": "",
+    "type": "",
+    "referenceId" : "",
     "date": "2025-04-15",
-    "replacement_text": "Sopa de verduras"
+    "replacementText": "Sopa de verduras"
   }
 }
