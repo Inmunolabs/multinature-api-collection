@@ -1,16 +1,16 @@
 meta {
-  name: RoutineGet
+  name: FormsDeleteTemplate
   type: http  seq: 1
 }
 
-get {
-  url: {{routinesHost}}/routines/:id
+delete {
+  url: {{formHost}}/forms/template/:id
   body: none
   auth: bearer
 }
 
 params:path {
-  id: 53857bad-ad86-4b71-aa9c-e8d43061bf8b
+  id: 7e692155-b8a4-47d6-8a11-d8c21895843c
 }
 
 auth:bearer {

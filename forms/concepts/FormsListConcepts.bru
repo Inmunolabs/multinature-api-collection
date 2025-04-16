@@ -1,0 +1,14 @@
+meta {
+  name: FormsListConcepts
+  type: http  seq: 1
+}
+
+get {
+  url: {{formHost}}/forms/concept
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

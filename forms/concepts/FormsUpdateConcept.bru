@@ -1,0 +1,26 @@
+meta {
+  name: FormsUpdateConcept
+  type: http  seq: 1
+}
+
+patch {
+  url: {{formHost}}/forms/concept/:id
+  body: json
+  auth: bearer
+}
+
+params:path {
+  id: e9019df5-6b0e-44bb-a60a-f5697be3bb55
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "name": "¿Haz actualizado esta pregunta?",
+    "defaultUnit": "actualizaciones",
+    "description": "Prueba de uptade"
+  }
+}

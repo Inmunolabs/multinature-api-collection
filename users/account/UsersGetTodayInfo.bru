@@ -1,16 +1,16 @@
 meta {
-  name: RoutineGet
+  name: UsersGetTodayInfo
   type: http  seq: 1
 }
 
 get {
-  url: {{routinesHost}}/routines/:id
+  url: {{userHost}}/users/today/:id
   body: none
   auth: bearer
 }
 
 params:path {
-  id: 53857bad-ad86-4b71-aa9c-e8d43061bf8b
+  id: f0d8e32b-e4bb-4e08-ae48-6c9b96a3a98f
 }
 
 auth:bearer {

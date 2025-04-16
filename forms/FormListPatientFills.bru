@@ -1,0 +1,24 @@
+meta {
+  name: FormListPatientFills
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{formHost}}/forms/:id?startDate=2025-02-01&endDate=2025-05-06
+  body: none
+  auth: bearer
+}
+
+params:query {
+  startDate: 2025-02-01
+  endDate: 2025-05-06
+}
+
+params:path {
+  id: f0d8e32b-e4bb-4e08-ae48-6c9b96a3a98f
+}
+
+auth:bearer {
+  token: {{token}}
+}

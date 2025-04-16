@@ -1,0 +1,41 @@
+meta {
+  name: FormsUpdateTemplate
+  type: http  seq: 1
+}
+
+patch {
+  url: {{formHost}}/forms/template/:id
+  body: json
+  auth: bearer
+}
+
+params:path {
+  id: 46fe03b0-d50b-4762-9b7c-6bd1b891a9e4
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "specialtyId": "9ce67305-eafc-11ef-bd0a-1290daed9e2f",
+    "name": "Evaluación semanal",
+    "description": "Formulario de consultas semanales",
+    "questions": [
+      {
+        "conceptId": "4b1b2c82-9685-405e-abcf-d811e49c231a",
+        "customName": "Masa",
+        "unit": "toneladas",
+        "isMandatory": true
+      },
+      {
+        "conceptId": "72f03164-ce78-4147-9999-9824afb3f6a7",
+        "isMandatory": true
+      },
+      {
+        "conceptId": "8b688c05-afdd-4380-a7ce-0f02ca9f6d51"
+      }
+    ]
+  }
+}

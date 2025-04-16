@@ -1,13 +1,16 @@
 meta {
   name: RoutineListBySpecialistId
-  type: http
-  seq: 1
+  type: http  seq: 1
 }
 
 get {
-  url: {{routinesHost}}/routines/specialist/a01528ca-4be4-4cae-bd2c-ebf6449e457c
+  url: {{routinesHost}}/routines/specialist/:id
   body: none
   auth: bearer
+}
+
+params:path {
+  id: eb003fcf-fcf1-4da0-b003-35afd7198844
 }
 
 auth:bearer {

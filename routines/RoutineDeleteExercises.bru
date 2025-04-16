@@ -1,0 +1,18 @@
+meta {
+  name: RoutineDeleteExercises
+  type: http  seq: 1
+}
+
+delete {
+  url: {{routinesHost}}/routines/exercise/:id
+  body: none
+  auth: bearer
+}
+
+params:path {
+  id: 5d3bec17-2809-44fe-82ce-31daeb3cad3c
+}
+
+auth:bearer {
+  token: {{token}}
+}
