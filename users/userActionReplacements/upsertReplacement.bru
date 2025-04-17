@@ -1,10 +1,10 @@
 meta {
-  name: Create-Replacement
+  name: UpsertReplacement
   type: http
   seq: 1
 }
 
-post {
+patch {
   url: {{userHost}}/users/replacements
   body: json
   auth: bearer
@@ -16,10 +16,9 @@ auth:bearer {
 
 body:json {
   {
-    "date": "2025-04-15",
+    "id": "f6b5c857-914f-49d9-8cca-db4341ce5164",
     "type": "meal",
-    "reference_id": "f7044a08-96ae-4cb9-b66e-47e1d2006efa",  
-    "replacement_text": "Sopa de verduras"
+    "referenceId" : "35c494db-fd79-4ea3-b404-32a7b4393849",
+    "replacementText": "Huevo"
   }
-  
 }
