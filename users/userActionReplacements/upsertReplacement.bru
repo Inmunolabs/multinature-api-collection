@@ -1,0 +1,24 @@
+meta {
+  name: UpsertReplacement
+  type: http
+  seq: 1
+}
+
+patch {
+  url: {{userHost}}/users/replacements
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "id": "f6b5c857-914f-49d9-8cca-db4341ce5164",
+    "type": "meal",
+    "referenceId" : "35c494db-fd79-4ea3-b404-32a7b4393849",
+    "replacementText": "Huevo"
+  }
+}
