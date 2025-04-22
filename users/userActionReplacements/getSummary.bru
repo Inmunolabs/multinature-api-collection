@@ -1,0 +1,20 @@
+meta {
+  name: GetSummary
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{userHost}}/users/summary/8f74e464-176c-4662-a2fc-c013da3be786
+  body: json
+  auth: bearer
+}
+
+params:query {
+  ~startDate: 2025-01-01
+  ~endDate: 2025-04-31
+}
+
+auth:bearer {
+  token: {{token}}
+}
