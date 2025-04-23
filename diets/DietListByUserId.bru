@@ -5,9 +5,16 @@ meta {
 }
 
 get {
-  url: {{dietsHost}}/diets/user/{{userId}}
+  url: {{dietsHost}}/diets/user/:id
   body: none
   auth: bearer
+}
+
+params:path {
+  id: caloriesPerDay
+  proteinPerDay
+  lipidsPerDay
+  f0d8e32b-e4bb-4e08-ae48-6c9b96a3a98f
 }
 
 auth:bearer {
