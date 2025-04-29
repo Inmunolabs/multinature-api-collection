@@ -1,0 +1,11 @@
+meta {
+  name: NotificationsRead
+  type: http
+  seq: 2
+}
+
+patch {
+  url: {{notificationsHost}}/notifications/{{userId}}/read
+  body: none
+  auth: inherit
+}

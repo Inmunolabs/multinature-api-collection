@@ -1,0 +1,11 @@
+meta {
+  name: NotificationsListByUserId
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{notificationsHost}}/notifications/{{userId}}
+  body: none
+  auth: inherit
+}
