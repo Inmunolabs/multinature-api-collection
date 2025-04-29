@@ -5,7 +5,22 @@ meta {
 }
 
 patch {
-  url: {{notificationsHost}}/notifications/{{userId}}/read
-  body: none
-  auth: inherit
+  url: {{notificationsHost}}/notifications/{{userId}}/read?all=true
+  body: json
+  auth: bearer
+}
+
+params:query {
+  all: true
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  [
+    "c1c2b1d7-253c-11f0-8618-1290daed9e2f",
+    "c1c305e2-253c-11f0-8618-1290daed9e2f"
+  ]
 }
