@@ -5,16 +5,14 @@ meta {
 }
 
 get {
-  
-  url: {{userHost}}/users/summary/f0d8e32b-e4bb-4e08-ae48-6c9b96a3a98f?day=2025-04-15
+  url: {{userHost}}/users/summary/f0d8e32b-e4bb-4e08-ae48-6c9b96a3a98f
   body: json
-
   auth: bearer
 }
 
 params:query {
-  day: 2025-04-15
-  ~startDate: 2025-03-30
+  ~day: 2025-02-02
+  ~startDate: 2025-04-01
   ~endDate: 2025-04-30
 }
 
