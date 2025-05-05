@@ -1,0 +1,11 @@
+meta {
+  name: NotificationsHealthCheck
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{notificationsHost}}
+  body: none
+  auth: inherit
+}
