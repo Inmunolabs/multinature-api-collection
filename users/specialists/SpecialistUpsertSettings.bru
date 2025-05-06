@@ -1,17 +1,13 @@
 meta {
-  name: SpecialistCreateSettings
+  name: SpecialistUpsertSettings
   type: http
   seq: 1
 }
 
-post {
-  url: {{userHost}}/specialists/config/:id
+patch {
+  url: {{userHost}}/specialists/config/{{userId}}
   body: json
   auth: bearer
-}
-
-params:path {
-  id: eb003fcf-fcf1-4da0-b003-35afd7198844
 }
 
 auth:bearer {
@@ -23,6 +19,6 @@ body:json {
     "chargeAdvancePayment": 290,
     "chargePerConsultation": 30.50,
     "monthlyCharge": 100,
-    "receiveEmails": true
+    "receiveEmails": false
   }
 }
