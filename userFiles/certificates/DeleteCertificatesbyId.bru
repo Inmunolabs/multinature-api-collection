@@ -5,9 +5,13 @@ meta {
 }
 
 delete {
-  url: {{userHost}}/specialists/certificates/1044cd62-12af-41a8-968c-a888a7633bd2
+  url: {{userFilesHost}}/user-files/certificates/:id
   body: none
   auth: bearer
+}
+
+params:path {
+  id: 
 }
 
 auth:bearer {
