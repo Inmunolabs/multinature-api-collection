@@ -5,9 +5,13 @@ meta {
 }
 
 get {
-  url: {{userHost}}/specialists/support-material/58311178-ed1b-4074-8f53-fa3104ff8034
+  url: {{userFilesHost}}/user-files/support-material/:id
   body: none
   auth: bearer
+}
+
+params:path {
+  id: 
 }
 
 auth:bearer {
