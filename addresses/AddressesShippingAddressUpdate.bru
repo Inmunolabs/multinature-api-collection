@@ -5,11 +5,15 @@ meta {
 }
 
 patch {
-  url: {{addressesHost}}/addresses/shippingAddress/46d260a9-3a37-40d2-bf2d-dae7c5592b9f
-  body: json
+  url: {{addressesHost}}/addresses/shippingAddress/:id
+  body: none
   auth: bearer
 }
 
+params:path {
+  id: 9e5d3355-7547-4dd5-a36d-e466851e5457
+}
+
 auth:bearer {
-  token: {{userToken}}
+  token: {{token}}
 }

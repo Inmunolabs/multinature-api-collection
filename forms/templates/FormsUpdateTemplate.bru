@@ -1,9 +1,10 @@
 meta {
   name: FormsUpdateTemplate
-  type: http  seq: 1
+  type: http
+  seq: 1
 }
 
-patch {
+put {
   url: {{formHost}}/forms/template/:id
   body: json
   auth: bearer
@@ -34,7 +35,7 @@ body:json {
         "isMandatory": true
       },
       {
-        "conceptId": "8b688c05-afdd-4380-a7ce-0f02ca9f6d51"
+        "conceptId": ""
       }
     ]
   }
