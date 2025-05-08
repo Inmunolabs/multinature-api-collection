@@ -5,9 +5,13 @@ meta {
 }
 
 get {
-  url: {{userHost}}/users/network/detail/{{userId}}
+  url: {{userHost}}/users/network/detail/:id
   body: none
   auth: bearer
+}
+
+params:path {
+  id: 6d2badae-51a7-4873-bf32-407997218e83
 }
 
 auth:bearer {

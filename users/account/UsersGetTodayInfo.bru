@@ -5,13 +5,9 @@ meta {
 }
 
 get {
-  url: {{userHost}}/users/:id/summary/today
+  url: {{userHost}}/users/{{userId}}/summary/today
   body: none
   auth: bearer
-}
-
-params:path {
-  id: f0d8e32b-e4bb-4e08-ae48-6c9b96a3a98f
 }
 
 auth:bearer {
