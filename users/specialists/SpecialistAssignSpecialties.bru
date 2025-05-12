@@ -4,7 +4,7 @@ meta {
   seq: 8
 }
 
-post {
+patch {
   url: {{userHost}}/specialists/specialties
   body: json
   auth: bearer
@@ -15,8 +15,8 @@ auth:bearer {
 }
 
 body:json {
-  [
-    "7c99a650-eafc-11ef-bd0a-1290daed9e2f",
-    "9ce67305-eafc-11ef-bd0a-1290daed9e2f"
-  ]
+  {
+    "specialtiesIds": ["7c99a650-eafc-11ef-bd0a-1290daed9e2f", "9ce67305-eafc-11ef-bd0a-1290daed9e2f"],
+    "subspecialties": ["obesidad", "infantil"]
+  }
 }
