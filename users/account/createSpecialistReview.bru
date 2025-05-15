@@ -1,0 +1,25 @@
+meta {
+  name: CreateSpecialistReview
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{userHost}}/users/specialist-review
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+        "specialistId": "",
+        "rating": 5,
+        "review": "Buen especialiasta, me recuerda a Spider-Man.",
+        "urlImages": [],
+        "subspecialtyIds": ["644383e7-9915-43fa-8500-517c9c1e62c8"]
+  }
+}
