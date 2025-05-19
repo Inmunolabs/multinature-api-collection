@@ -1,10 +1,10 @@
 meta {
   name: SpecialistCreateSettings
   type: http
-  seq: 9
+  seq: 8
 }
 
-post {
+patch {
   url: {{userHost}}/specialists/config/:id
   body: json
   auth: bearer
@@ -21,7 +21,7 @@ auth:bearer {
 body:json {
   {
     "chargeAdvancePayment": 290,
-    "chargePerConsultation": 30.50,
+    "chargePerConsultation": 350,
     "monthlyCharge": 100,
     "receiveEmails": true
   }

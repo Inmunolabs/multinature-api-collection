@@ -5,9 +5,13 @@ meta {
 }
 
 patch {
-  url: {{bookingsHost}}/bookings/{{bookingId}}/cancel
+  url: {{bookingsHost}}/bookings/:id/cancel
   body: json
   auth: bearer
+}
+
+params:path {
+  id: 074b388a-7632-4829-8fc5-5e9ea913929f
 }
 
 auth:bearer {
