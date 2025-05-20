@@ -1,0 +1,19 @@
+meta {
+  name: SpecialistGetWorkingHours
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{userHost}}/working-hours/:id
+  body: none
+  auth: bearer
+}
+
+params:path {
+  id: eb003fcf-fcf1-4da0-b003-35afd7198844
+}
+
+auth:bearer {
+  token: {{token}}
+}
