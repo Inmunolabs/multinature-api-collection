@@ -1,11 +1,11 @@
 meta {
-  name: SpecialistUpdateWorkingHour
+  name: WorkingHoursUpdate
   type: http
   seq: 3
 }
 
 put {
-  url: {{userHost}}/working-hours/{{userId}}
+  url: {{bookingsHost}}/working-hours/{{userId}}
   body: json
   auth: bearer
 }

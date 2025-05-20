@@ -1,11 +1,11 @@
 meta {
-  name: SpecialistGetWorkingHours
+  name: WorkingHoursGetByUserId
   type: http
   seq: 1
 }
 
 get {
-  url: {{userHost}}/working-hours/:id
+  url: {{bookingsHost}}/working-hours/:id
   body: none
   auth: bearer
 }
