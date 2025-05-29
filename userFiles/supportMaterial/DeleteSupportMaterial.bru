@@ -5,9 +5,13 @@ meta {
 }
 
 delete {
-  url: {{userHost}}/specialists/support-material/13efbb4a-cfa4-481a-845e-c2a4aae0ff44
+  url: {{userFilesHost}}/user-files/support-material/:id
   body: none
   auth: bearer
+}
+
+params:path {
+  id: 
 }
 
 headers {

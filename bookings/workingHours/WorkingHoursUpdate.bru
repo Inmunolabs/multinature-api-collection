@@ -1,17 +1,13 @@
 meta {
-  name: SpecialistUpdateWorkingHour
+  name: WorkingHoursUpdate
   type: http
-  seq: 10
+  seq: 3
 }
 
-patch {
-  url: {{userHost}}/specialists/working-hours/:id
+put {
+  url: {{bookingsHost}}/working-hours/{{userId}}
   body: json
   auth: bearer
-}
-
-params:path {
-  id: eb003fcf-fcf1-4da0-b003-35afd7198844
 }
 
 auth:bearer {

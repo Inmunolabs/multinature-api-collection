@@ -5,9 +5,13 @@ meta {
 }
 
 get {
-  url: {{addressesHost}}/addresses/f12814e1-7337-4bb9-8523-5d549d95e994
+  url: {{addressesHost}}/addresses/:id
   body: none
   auth: bearer
+}
+
+params:path {
+  id: 270e44d1-d663-4f08-9f04-7267ba12f9ab
 }
 
 auth:bearer {

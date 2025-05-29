@@ -1,0 +1,19 @@
+meta {
+  name: OrdersOldRemove
+  type: http
+  seq: 1
+}
+
+delete {
+  url: {{ordersHost}}/orders/cleanup
+  body: none
+  auth: bearer
+}
+
+headers {
+  password: ufaas88je84SyaAe
+}
+
+auth:bearer {
+  token: {{token}}
+}

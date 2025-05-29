@@ -1,13 +1,17 @@
 meta {
-  name: SpecialistList
+  name: SpecialistReviewsList
   type: http
-  seq: 4
+  seq: 3
 }
 
 get {
-  url: {{userHost}}/specialists/?page=1&limit=20
+  url: {{userHost}}/specialists/:id/reviews?page=1&limit=20
   body: none
   auth: bearer
+}
+
+params:path {
+  id: eb003fcf-fcf1-4da0-b003-35afd7198844
 }
 
 params:query {

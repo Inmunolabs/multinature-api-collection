@@ -5,11 +5,15 @@ meta {
 }
 
 delete {
-  url: {{addressesHost}}/addresses/46d260a9-3a37-40d2-bf2d-dae7c5592b9f
+  url: {{addressesHost}}/addresses/:id
   body: none
   auth: bearer
 }
 
+params:path {
+  id: e9450540-472f-4a02-b727-20baa981c3e3
+}
+
 auth:bearer {
-  token: {{userToken}}
+  token: {{token}}
 }

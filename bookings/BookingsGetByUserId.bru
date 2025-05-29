@@ -5,9 +5,13 @@ meta {
 }
 
 get {
-  url: {{bookingsHost}}/bookings/user/a4895fc8-d662-4ebf-ba9f-a9ace2a74d6a
+  url: {{bookingsHost}}/bookings/user/{{userId}}?startDate=2025-12-08
   body: none
   auth: bearer
+}
+
+params:query {
+  startDate: 2025-12-08
 }
 
 auth:bearer {
