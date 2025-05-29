@@ -1,0 +1,19 @@
+meta {
+  name: EDAMAMAI
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{dietsHost}}/diets/edamam-ai?query=dame platillos de pollo
+  body: json
+  auth: bearer
+}
+
+params:query {
+  query: dame platillos de pollo
+}
+
+auth:bearer {
+  token: {{token}}
+}

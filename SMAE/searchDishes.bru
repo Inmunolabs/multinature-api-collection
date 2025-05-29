@@ -1,0 +1,23 @@
+meta {
+  name: searchDishes
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{dietsHost}}/diets/dishes/search?q=frijoles
+  body: none
+  auth: bearer
+}
+
+params:query {
+  q: frijoles
+}
+
+headers {
+  : 
+}
+
+auth:bearer {
+  token: {{token}}
+}

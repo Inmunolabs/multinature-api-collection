@@ -1,0 +1,19 @@
+meta {
+  name: getEquivalencesByFoods
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{dietsHost}}/diets/dishes/equiFood?platillo=Huevos revueltos con kale
+  body: none
+  auth: bearer
+}
+
+params:query {
+  platillo: Huevos revueltos con kale
+}
+
+auth:bearer {
+  token: {{token}}
+}
