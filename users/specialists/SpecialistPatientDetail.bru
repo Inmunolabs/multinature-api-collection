@@ -1,0 +1,15 @@
+meta {
+  name: SpecialistPatientDetail
+  type: http
+  seq: 10
+}
+
+get {
+  url: {{userHost}}/specialists/{{userId}}/patient-detail
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
