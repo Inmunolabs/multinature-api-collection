@@ -1,10 +1,10 @@
 meta {
-  name: MonthlyPurchaseCreate
+  name: MonthlyPurchaseUpsert
   type: http
   seq: 2
 }
 
-post {
+patch {
   url: {{monthlyPurchaseHost}}/monthly-purchase
   body: json
   auth: bearer
@@ -16,6 +16,7 @@ auth:bearer {
 
 body:json {
   {
+      "isSubscriptionPurchase": true,
       "products": [
         {
           "id": "036e2bbc-6ed0-4fd9-b4eb-0dfbca728ca2",
