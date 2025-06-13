@@ -1,0 +1,20 @@
+meta {
+  name: getEquivalencesByGroup
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{dietsHost}}/diets/dishes/equi?platillo=Chiles Rellenos de Frijoles&food_id=108654d5-9ffc-4cea-b3fd-00aebe67700c
+  body: none
+  auth: bearer
+}
+
+params:query {
+  platillo: Chiles Rellenos de Frijoles
+  food_id: 108654d5-9ffc-4cea-b3fd-00aebe67700c
+}
+
+auth:bearer {
+  token: {{token}}
+}
