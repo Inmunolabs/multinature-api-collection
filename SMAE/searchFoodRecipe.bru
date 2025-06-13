@@ -1,0 +1,19 @@
+meta {
+  name: searchFoodRecipe
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{dietsHost}}/diets/dishes/recipe?platillo=Chiles Rellenos de Frijoles
+  body: none
+  auth: bearer
+}
+
+params:query {
+  platillo: Chiles Rellenos de Frijoles
+}
+
+auth:bearer {
+  token: {{token}}
+}
