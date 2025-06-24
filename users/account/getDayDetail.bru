@@ -1,0 +1,19 @@
+meta {
+  name: GetDayDetail
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{userHost}}/users/summary/detail/8f74e464-176c-4662-a2fc-c013da3be786?day=2025-06-17
+  body: json
+  auth: bearer
+}
+
+params:query {
+  day: 2025-06-17
+}
+
+auth:bearer {
+  token: {{token}}
+}
