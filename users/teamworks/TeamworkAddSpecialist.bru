@@ -1,0 +1,22 @@
+meta {
+  name: TeamworkAddSpecialist
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{userHost}}/teamworks/add
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "teamworkId": "1290eece-91c1-4364-a989-f8c55df42299",
+    "specialistId": "eb003fcf-fcf1-4da0-b003-35afd7198844"
+  }
+}

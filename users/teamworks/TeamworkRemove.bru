@@ -1,0 +1,19 @@
+meta {
+  name: TeamworkRemove
+  type: http
+  seq: 8
+}
+
+delete {
+  url: {{userHost}}/teamworks/:id
+  body: none
+  auth: bearer
+}
+
+params:path {
+  id: 1290eece-91c1-4364-a989-f8c55df42299
+}
+
+auth:bearer {
+  token: {{token}}
+}
