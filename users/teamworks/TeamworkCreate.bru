@@ -1,0 +1,21 @@
+meta {
+  name: TeamworkCreate
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{userHost}}/teamworks/
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "name": "Equipo dinamita"
+  }
+}
