@@ -1,17 +1,13 @@
 meta {
-  name: searchDishes
+  name: getAllIngredientsByFood
   type: http
-  seq: 2
+  seq: 24
 }
 
 get {
-  url: {{dietsHost}}/diets/dishes/search?q=
+  url: {{dietsHost}}/diets/dishes/ingredients
   body: none
   auth: bearer
-}
-
-params:query {
-  q: 
 }
 
 headers {
