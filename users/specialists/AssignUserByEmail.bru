@@ -1,0 +1,23 @@
+meta {
+  name: AssignUserByEmail
+  type: http
+  seq: 10
+}
+
+patch {
+  url: {{userHost}}/specialists/assign-user
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "email": "usuarioDePrueba@gmail.com",
+    "specialtyIds" : ["7c99a650-eafc-11ef-bd0a-1290daed9e2f","9ce67305-eafc-11ef-bd0a-1290daed9e2f"]
+  }
+  
+}
