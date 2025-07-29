@@ -1,0 +1,23 @@
+meta {
+  name: DietsUpsertMenuFoods
+  type: http
+  seq: 9
+}
+
+post {
+  url: {{dietsHost}}/diets/menus/foods
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "menuId": "3ebd7049-76d5-492f-80ea-3a36346be7d2",
+    "dietId": "405c5829-df27-4760-8c4a-0afb69bca085",
+    "foods": ["01c9059b-6531-4023-a704-f57bb674229a"]
+  }
+}
