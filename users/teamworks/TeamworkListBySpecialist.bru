@@ -1,11 +1,11 @@
 meta {
-  name: DietGet
+  name: TeamworkListBySpecialist
   type: http
-  seq: 3
+  seq: 2
 }
 
 get {
-  url: {{dietsHost}}/diets/f0d8e32b-e4bb-4e08-ae48-6c9b96a3a98f
+  url: {{userHost}}/teamworks/specialist/{{userId}}
   body: none
   auth: bearer
 }

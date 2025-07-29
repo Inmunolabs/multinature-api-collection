@@ -1,0 +1,15 @@
+meta {
+  name: TeamworkUpdateReview
+  type: http
+  seq: 11
+}
+
+patch {
+  url: {{userHost}}/users/reviews/teamwork/:id
+  body: none
+  auth: inherit
+}
+
+params:path {
+  id: 
+}
