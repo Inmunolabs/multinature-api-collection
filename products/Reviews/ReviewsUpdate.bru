@@ -1,0 +1,27 @@
+meta {
+  name: ReviewsUpdate
+  type: http
+  seq: 3
+}
+
+patch {
+  url: {{productHost}}/products/reviews/:id
+  body: json
+  auth: bearer
+}
+
+params:path {
+  id: 09598622-d94c-4e1f-9ab4-e33499d50e00
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "rating": 4,
+    "review": "Medio blend la verdad",
+    "urlImages": []
+  }
+}
