@@ -1,0 +1,73 @@
+meta {
+  name: OpenpayPaymentReceived
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{ordersHost}}/confirm/openpay
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    //Dato importante para hacer pruebas
+    "type": "charge.succeeded",
+    "event_date": "2025-07-30T13:26:24-06:00",
+    "transaction": {
+      "id": "trxxl7oovhlecofvwze3",
+      "authorization": "801585",
+      "operation_type": "in",
+      "transaction_type": "charge",
+      
+      //Dato importante para hacer pruebas
+      "status": "completed",
+      "conciliated": false,
+      "creation_date": "2025-07-30T13:26:20-06:00",
+      "operation_date": "2025-07-30T13:26:23-06:00",
+      "description": "Subscription charge of period 1 of plan f0d8e32b-e4bb-4e08-ae48-6c9b96a3a98f from customer albtknpj8m3xhzfcptt5",
+      
+      //Dato importante para hacer pruebas
+      "error_message": null,
+      "order_id": null,
+      "card": {
+        "id": "k2a2qfiwzj4r5l8iqkn8",
+        "type": "debit",
+        "brand": "visa",
+        "address": null,
+        "card_number": "411111XXXXXX1111",
+        "holder_name": "Samuel Usuario",
+        "expiration_year": "34",
+        "expiration_month": "04",
+        "allows_charges": true,
+        "allows_payouts": true,
+        "creation_date": "2025-03-11T13:34:32-06:00",
+        "bank_name": "Banamex",
+        "card_business_type": null,
+        "dcc": null,
+        "customer_id": "albtknpj8m3xhzfcptt5",
+        "bank_code": "002"
+      },
+      "customer_id": "albtknpj8m3xhzfcptt5",
+      
+      //Dato importante para hacer pruebas (se quita en compras mensuales)
+      //"subscription_id": "s1nyowieqsfbcjy2gdme",
+      
+      //Dato importante para hacer pruebas
+      "amount": 3147,
+      "currency": "MXN",
+      "fee": {
+        "amount": 17.06,
+        "tax": 2.7296,
+        "surcharge": null,
+        "base_commission": null,
+        "currency": "MXN"
+      },
+      
+      //Dato importante para hacer pruebas
+      "method": "store"
+    }
+  }
+  
+}
