@@ -1,11 +1,11 @@
 meta {
-  name: DietListBySpecialistId
+  name: DietGet
   type: http
-  seq: 4
+  seq: 1
 }
 
 get {
-  url: {{dietsHost}}/diets/specialist/:id
+  url: {{dietsHost}}/diets/:id
   body: none
   auth: bearer
 }
