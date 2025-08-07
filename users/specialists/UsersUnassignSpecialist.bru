@@ -1,19 +1,22 @@
 meta {
-  name: UsersUnassignSpecialist
+  name: UnassignSpecialist
   type: http
   seq: 12
 }
 
-delete {
-  url: {{userHost}}/users/specialist/:id
-  body: none
+patch {
+  url: {{userHost}}/specialists/unassign-transfer
+  body: json
   auth: bearer
-}
-
-params:path {
-  id: 3be280e2-4354-4e4b-aa8d-acf94df12af8
 }
 
 auth:bearer {
   token: {{token}}
+}
+
+body:json {
+  {
+    "specialistId": "",
+    "userId": ""
+  }
 }
