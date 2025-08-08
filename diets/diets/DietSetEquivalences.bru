@@ -11,7 +11,7 @@ post {
 }
 
 params:path {
-  id: f0d8e32b-e4bb-4e08-ae48-6c9b96a3a98f
+  id: 0909cb1a-90eb-4707-bde5-a6d889974fde
 }
 
 auth:bearer {
@@ -20,21 +20,23 @@ auth:bearer {
 
 body:json {
   {
-    "dietGoals": {
-      "caloriesPerDay": 2100,
-      "proteinPerDay": 262.5,
-      "lipidsPerDay": 70,
-      "carbohydratesPerDay": 105
-    },
     "equivalences": [
-      { "id": "db480987-640e-11f0-8618-1290daed9e2f", "quantity": 12 },  // AOA bajo en grasa (40 cal c/u)
-      { "id": "db487ac0-640e-11f0-8618-1290daed9e2f", "quantity": 8 },  // AOA medio en grasa (55 cal)
-      { "id": "db48979e-640e-11f0-8618-1290daed9e2f", "quantity": 2 },  // AOA grasa moderada (75 cal)
-      { "id": "db48b6cf-640e-11f0-8618-1290daed9e2f", "quantity": 2 },  // Verdura (25 cal)
-      { "id": "db48d84d-640e-11f0-8618-1290daed9e2f", "quantity": 3 },  // Leche sin grasa (95 cal)
-      { "id": "db48da6b-640e-11f0-8618-1290daed9e2f", "quantity": 5 },  // Grasa saludable (70 cal)
-      { "id": "db48db93-640e-11f0-8618-1290daed9e2f", "quantity": 2 },  // Leguminosas (120 cal)
+      { "id": "db480987-640e-11f0-8618-1290daed9e2f", "quantity": 16},  // AOA bajo en grasa (40 cal c/u)
+      { "id": "db487ac0-640e-11f0-8618-1290daed9e2f", "quantity": 11 }, // AOA medio en grasa (55 cal)
+      { "id": "db48979e-640e-11f0-8618-1290daed9e2f", "quantity": 3 },  // AOA grasa moderada (75 cal)
+      { "id": "db48b6cf-640e-11f0-8618-1290daed9e2f", "quantity": 1 },  // Verdura (25 cal)
+      { "id": "db48d84d-640e-11f0-8618-1290daed9e2f", "quantity": 2 },  // Leche sin grasa (95 cal)
+      { "id": "db48da6b-640e-11f0-8618-1290daed9e2f", "quantity": 1 },  // Grasa saludable (70 cal)
+      { "id": "db48db93-640e-11f0-8618-1290daed9e2f", "quantity": 3 },  // Leguminosas (120 cal)
       { "id": "db48dac7-640e-11f0-8618-1290daed9e2f", "quantity": 1 }   // Azúcar simple (40 cal, solo para redondear)
     ]
   }
+}
+
+docs {
+  Parametros 
+  
+  id = dietId 
+  
+  Body = equivalencias de la dieta
 }

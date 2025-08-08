@@ -1,11 +1,11 @@
 meta {
   name: DietCreateMenu
   type: http
-  seq: 6
+  seq: 1
 }
 
 post {
-  url: {{dietsHost}}/diets/menus
+  url: {{dietsHost}}/menus/
   body: json
   auth: bearer
 }
@@ -16,7 +16,7 @@ auth:bearer {
 
 body:json {
   {
-    "dietId": "681746fa-181e-42c5-bd0f-86c7601ea042",
+    "dietId": "7d34f809-2b68-48dd-a755-eac06482f602",
     "name": "Menú lunes - bajo en carbohidratos",
     "description": "Comidas programadas para el martes con enfoque en proteína y vegetales.",
     "dayOfWeek": 1,
