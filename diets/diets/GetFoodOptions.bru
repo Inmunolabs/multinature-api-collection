@@ -1,0 +1,21 @@
+meta {
+  name: Food-Options
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{dietsHost}}/diets/food-options?Fruta=4.5
+  body: json
+  auth: bearer
+}
+
+params:query {
+  Fruta: 4.5
+  ~Verdura: 15
+  ~Leguminosas: 4
+}
+
+auth:bearer {
+  token: {{token}}
+}
