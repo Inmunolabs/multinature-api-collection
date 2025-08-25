@@ -1,0 +1,19 @@
+meta {
+  name: listEquivalencesGroups
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{dietsHost}}/diets/equivalences/group
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+settings {
+  encodeUrl: true
+}

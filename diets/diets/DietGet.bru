@@ -1,0 +1,15 @@
+meta {
+  name: DietGet
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{dietsHost}}/diets/f0d8e32b-e4bb-4e08-ae48-6c9b96a3a98f
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

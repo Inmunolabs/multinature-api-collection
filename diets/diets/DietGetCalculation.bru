@@ -1,0 +1,34 @@
+meta {
+  name: DietGetCalculation
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{dietsHost}}/diets/diet-calculations/:id
+  body: json
+  auth: bearer
+}
+
+params:path {
+  id: f0d8e32b-e4bb-4e08-ae48-6c9b96a3a98f
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "formulas": [
+      "harrisBenedict",
+      "mifflinStJeor",
+      "cunningham",
+      "AGA",
+      "owenGeneral"
+    ],
+    "CAF": 1.1,
+    "ETA": 10,
+    "AF": 15
+  }
+}
