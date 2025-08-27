@@ -1,0 +1,128 @@
+meta {
+  name: ConfirmRoutine
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{routinesHost}}/routines-ai/confirm-routine
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "specialistId": "",
+    "userId": "",
+     "notes": "Rutina enfocada en pérdida de peso con ejercicios cardiovasculares y de fuerza.",
+      "exercises": {
+        "0": [
+          {
+            "id": "36ddb308-9c17-465c-adcf-52f1b068bcbd",
+            "index": 1,
+            "repetitions": "20 min"
+          },
+          {
+            "id": "d120ca91-ed03-4bb9-8be7-b1cb996659aa",
+            "index": 2,
+            "repetitions": "3 series de 12 repeticiones"
+          },
+          {
+            "id": "778ecc46-ec32-42fd-847c-42b8eedb2ad6",
+            "index": 3,
+            "repetitions": "3 series de 15 repeticiones"
+          }
+        ],
+        "1": [
+          {
+            "id": "36ddb308-9c17-465c-adcf-52f1b068bcbd",
+            "index": 1,
+            "repetitions": "30 min"
+          },
+          {
+            "id": "fe211c30-eb6e-4dff-9f30-0ca03a2255e0",
+            "index": 2,
+            "repetitions": "3 series de 12 repeticiones"
+          },
+          {
+            "id": "815954df-0ebb-455e-9312-b5c94e79d944",
+            "index": 3,
+            "repetitions": "3 series de 10 repeticiones"
+          }
+        ],
+        "2": [
+          {
+            "id": "36ddb308-9c17-465c-adcf-52f1b068bcbd",
+            "index": 1,
+            "repetitions": "15 min"
+          },
+          {
+            "id": "2df2944a-54c0-406c-955a-5cc64936d252",
+            "index": 2,
+            "repetitions": "3 series de 10 repeticiones"
+          },
+          {
+            "id": "7f92d691-2504-43db-aacc-af1cadccbbc7",
+            "index": 3,
+            "repetitions": "3 series de 12 repeticiones"
+          }
+        ],
+        "3": [
+          {
+            "id": "36ddb308-9c17-465c-adcf-52f1b068bcbd",
+            "index": 1,
+            "repetitions": "20 min"
+          },
+          {
+            "id": "6787204a-0a44-4c85-bf22-4fbe9f562158",
+            "index": 2,
+            "repetitions": "3 series de 12 repeticiones"
+          },
+          {
+            "id": "078e6746-973b-49ba-abd4-f5b616a0a6ff",
+            "index": 3,
+            "repetitions": "3 series de 15 repeticiones"
+          }
+        ],
+        "4": [],
+        "5": [
+          {
+            "id": "36ddb308-9c17-465c-adcf-52f1b068bcbd",
+            "index": 1,
+            "repetitions": "25 min"
+          },
+          {
+            "id": "813444ef-9019-4e95-8607-f84aa14993d0",
+            "index": 2,
+            "repetitions": "3 series de 10 repeticiones"
+          },
+          {
+            "id": "815954df-0ebb-455e-9312-b5c94e79d944",
+            "index": 3,
+            "repetitions": "3 series de 10 repeticiones"
+          }
+        ],
+        "6": [
+          {
+            "id": "36ddb308-9c17-465c-adcf-52f1b068bcbd",
+            "index": 1,
+            "repetitions": "30 min"
+          },
+          {
+            "id": "5eafd545-c190-489c-9239-5f25bc48e36a",
+            "index": 2,
+            "repetitions": "3 series de 10 repeticiones"
+          },
+          {
+            "id": "778ecc46-ec32-42fd-847c-42b8eedb2ad6",
+            "index": 3,
+            "repetitions": "3 series de 20 repeticiones"
+          }
+        ]
+      }
+  }
+}
