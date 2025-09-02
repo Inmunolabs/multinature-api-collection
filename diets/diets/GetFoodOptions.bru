@@ -5,15 +5,29 @@ meta {
 }
 
 get {
-  url: {{dietsHost}}/diets/food-options?AOA_Muy bajo en grasa=2
+  url: {{dietsHost}}/diets/food-options?Leguminosas=5.5
   body: json
   auth: bearer
 }
 
 params:query {
-  AOA_Muy bajo en grasa: 2
-  ~Verdura: 15
-  ~Leguminosas: 4
+  Leguminosas: 5.5
+  ~AOA_Muy_bajo_en_grasa: 4
+  ~Fruta: 4.5
+  ~Verdura: 4.5
+  ~AOA_Bajo_en_grasa: 4
+  ~AOA_Moderado_en_grasa: 5
+  ~AOA_Alto_en_grasa: 5
+  ~Cereal_Con_grasa: 7
+  ~Cereal_Sin_grasa: 3.5
+  ~Leche_Descremada: 4
+  ~Leche_Semidescremada: 6.5
+  ~Leche_Con_azucar: 8
+  ~Grasa_Con_proteina: 7.5
+  ~Grasa_Sin_proteina: 4
+  ~Azucar_Sin_grasa: 4
+  ~Azucar_Con_grasa: 6
+  ~Libre: 
 }
 
 auth:bearer {
