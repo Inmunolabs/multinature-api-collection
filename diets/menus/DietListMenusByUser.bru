@@ -1,0 +1,19 @@
+meta {
+  name: DietListMenusByUser
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{dietsHost}}/menus/:userId
+  body: none
+  auth: bearer
+}
+
+params:path {
+  userId: eb003fcf-fcf1-4da0-b003-35afd7198844
+}
+
+auth:bearer {
+  token: {{token}}
+}
