@@ -1,0 +1,18 @@
+meta {
+  name: GetRecipeById
+  type: http
+  seq: 5
+}
+
+get{
+  url: {{dietsHost}}/menus/recipe/:id
+  auth: bearer
+}
+
+params:path {
+  id: 01c9059b-6531-4023-a704-f57bb674229a
+}
+
+auth:bearer {
+  token: {{token}}
+}
