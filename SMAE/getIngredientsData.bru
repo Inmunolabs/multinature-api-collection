@@ -1,0 +1,23 @@
+meta {
+  name: getIngredientsData
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{dietsHost}}/smae/ingredient?ingrediente=Chagua
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ingrediente: Chagua
+}
+
+headers {
+  : 
+}
+
+auth:bearer {
+  token: {{token}}
+}

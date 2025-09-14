@@ -1,0 +1,23 @@
+meta {
+  name: getGroupAlimentos
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{dietsHost}}/smae/group-aliments?grupo=Chagua
+  body: none
+  auth: bearer
+}
+
+params:query {
+  grupo: Frutas
+}
+
+headers {
+  : 
+}
+
+auth:bearer {
+  token: {{token}}
+}
