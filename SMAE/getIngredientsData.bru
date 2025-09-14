@@ -5,13 +5,14 @@ meta {
 }
 
 get {
-  url: {{dietsHost}}/smae/ingredient?ingrediente=Chagua
+  url: {{dietsHost}}/smae/ingredient?ingrediente=Chagua&grupo=Frutas
   body: none
   auth: bearer
 }
 
 params:query {
   ingrediente: Chagua
+  grupo: Frutas
 }
 
 headers {
