@@ -5,14 +5,20 @@ meta {
 }
 
 get {
-  url: {{dietsHost}}/smae/ingredient?ingrediente=Chagua&grupo=Frutas
+  url: {{dietsHost}}/smae/ingredient?grupo=Leche
+  body: none
+  auth: bearer
+}
+
+// Detalle por idAlimento
+get {
+  url: {{dietsHost}}/smae/ingredient?idAlimento=2295
   body: none
   auth: bearer
 }
 
 params:query {
-  ingrediente: Chagua
-  grupo: Frutas
+  grupo: Leche
 }
 
 headers {
