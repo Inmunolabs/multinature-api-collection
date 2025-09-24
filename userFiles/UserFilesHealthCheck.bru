@@ -1,0 +1,11 @@
+meta {
+  name: UserFilesHealthCheck
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{userFilesHost}}
+  body: none
+  auth: inherit
+}
