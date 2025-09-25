@@ -5,24 +5,16 @@ meta {
 }
 
 get {
-  url: {{dietsHost}}/smae/ingredient?grupo=Leche
-  body: none
-  auth: bearer
-}
-
-// Detalle por idAlimento
-get {
-  url: {{dietsHost}}/smae/ingredient?idAlimento=2295
+  url: {{dietsHost}}/smae/ingredient?ingrediente=Aceite de aguacate&sync=1
   body: none
   auth: bearer
 }
 
 params:query {
-  grupo: Leche
-}
-
-headers {
-  : 
+  ingrediente: Aceite de aguacate
+  sync: 1
+  ~idAlimento: 2295
+  ~grupo: Frutas
 }
 
 auth:bearer {

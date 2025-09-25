@@ -1,0 +1,38 @@
+meta {
+  name: getAllIngredientsData
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{dietsHost}}/smae/ingredients/syncAll?dryRun=false&concurrency=3
+  body: none
+  auth: bearer
+}
+
+params:query {
+  dryRun: false
+  concurrency: 3
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+tests {
+  test("Status code is 200", function() {
+    expect(res.getStatus()).to.equal(200);
+  });
+  
+  test("Response has success true", function() {
+    expect(res.getBody().success).to.equal(true);
+  });
+  
+  test("Response has sync summary", function() {
+    const data = res.getBody().content;
+    expect(data).to.have.property('total');
+    expect(data).to.have.property('updated');
+    expect(data).to.have.property('errorsCount');
+    expect(data).to.have.property('dryRun');
+  });
+}
