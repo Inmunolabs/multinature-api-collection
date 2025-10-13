@@ -1,0 +1,20 @@
+meta {
+  name: ExercisesFromApi
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{routinesHost}}/routines/exercise-api?limit=200&offset=400
+  body: none
+  auth: bearer
+}
+
+params:query {
+  limit: 200
+  offset: 400
+}
+
+auth:bearer {
+  token: {{token}}
+}
