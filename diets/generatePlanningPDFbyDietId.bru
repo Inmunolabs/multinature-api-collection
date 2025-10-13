@@ -1,0 +1,23 @@
+meta {
+  name: generatePlanningPDFbyDietId
+  type: http
+  seq: 24
+}
+
+post {
+  url: {{dietsHost}}/diets/weekly/pdf/:id
+  body: none
+  auth: bearer
+}
+
+params:path {
+  id: 2ed48765-38f6-4584-82b6-703a2d622b51
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+settings {
+  encodeUrl: true
+}
