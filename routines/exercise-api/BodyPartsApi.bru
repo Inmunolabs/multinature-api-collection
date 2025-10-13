@@ -1,0 +1,15 @@
+meta {
+  name: BodyPartsFromApi
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{routinesHost}}/routines/bodyParts-api
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

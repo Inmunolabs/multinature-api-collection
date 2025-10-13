@@ -1,0 +1,26 @@
+meta {
+  name: SaveExercisesFromApi
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{routinesHost}}/routines/exercise-api/sync
+  body: json
+  auth: bearer
+}
+
+body:json {
+  {
+    "limit": 50,
+    "offset": 0,
+    "all": false,
+    "maxPages": 1
+  }
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+
