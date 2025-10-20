@@ -1,0 +1,33 @@
+meta {
+  name: FormsAnswerForm
+  type: http
+  seq: 1
+}
+
+put {
+  url: {{formHost}}/forms/fill
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "specialistId": "04e5e292-061c-40ab-9962-f92bdbc74a57",
+    "userId": "8f74e464-176c-4662-a2fc-c013da3be786",
+    "templateId": "a50c76ab-81cd-40be-b7f4-d8eae6b85587",
+    "answers": [
+      {
+        "conceptId": "8d77c1c9-e014-4226-8050-2bf437777628",
+        "value": "98",
+        "observation": "Subir subir subir",
+        "goal": 115,
+        "direction": 1
+      }
+    ]
+  }
+  
+}

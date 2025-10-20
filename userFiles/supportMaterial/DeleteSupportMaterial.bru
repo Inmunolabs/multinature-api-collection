@@ -1,0 +1,23 @@
+meta {
+  name: DeleteSupportMaterial
+  type: http
+  seq: 1
+}
+
+delete {
+  url: {{userFilesHost}}/user-files/support-material/:id
+  body: none
+  auth: bearer
+}
+
+params:path {
+  id: 
+}
+
+headers {
+  : 
+}
+
+auth:bearer {
+  token: {{token}}
+}

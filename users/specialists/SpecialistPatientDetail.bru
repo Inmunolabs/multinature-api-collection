@@ -1,0 +1,20 @@
+meta {
+  name: SpecialistPatientDetail
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{userHost}}/specialists/f0d8e32b-e4bb-4e08-ae48-6c9b96a3a98f/patient-detail?startDate=2025-06-01&endDate=2025-06-30
+  body: none
+  auth: bearer
+}
+
+params:query {
+  startDate: 2025-06-01
+  endDate: 2025-06-30
+}
+
+auth:bearer {
+  token: {{token}}
+}

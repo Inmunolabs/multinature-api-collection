@@ -5,9 +5,13 @@ meta {
 }
 
 delete {
-  url: {{productHost}}/products/{{productId}}
+  url: {{productHost}}/products/:id
   body: none
   auth: bearer
+}
+
+params:path {
+  id: f1dac324-9379-49a2-82a2-55f8345d837a
 }
 
 headers {

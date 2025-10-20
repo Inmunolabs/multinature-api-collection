@@ -1,0 +1,25 @@
+meta {
+  name: ListExercise2
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{routinesHost}}/routines/exercises2?limit=50&offset=0&equipments=barbell,dumbbell
+  body: none
+  auth: bearer
+}
+
+params:query {
+  limit: 50
+  offset: 0
+  equipments: barbell,dumbbell
+  ~q: curl
+  ~muscles: biceps,triceps
+  ~bodyParts: back
+  ~type: primary
+}
+
+auth:bearer {
+  token: {{token}}
+}

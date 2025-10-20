@@ -5,9 +5,13 @@ meta {
 }
 
 get {
-  url: {{productHost}}/products/{{productId}}
+  url: {{productHost}}/products/:id
   body: none
   auth: bearer
+}
+
+params:path {
+  id: 6ce7ac2a-fe27-47cd-a696-8bdf1a9a1b3f
 }
 
 auth:bearer {

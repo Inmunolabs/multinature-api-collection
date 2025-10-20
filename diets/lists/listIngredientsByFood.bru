@@ -1,0 +1,23 @@
+meta {
+  name: listIngredientsByFood
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{dietsHost}}/diets/ingredients/:id
+  body: none
+  auth: bearer
+}
+
+params:path {
+  id: 2f8efe45-b754-4923-a5bf-bb0d6ca4dfcf
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+settings {
+  encodeUrl: true
+}

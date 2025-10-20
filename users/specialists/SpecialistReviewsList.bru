@@ -1,0 +1,29 @@
+meta {
+  name: SpecialistReviewsList
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{userHost}}/specialists/:id/reviews?page=1&limit=20
+  body: none
+  auth: bearer
+}
+
+params:path {
+  id: eb003fcf-fcf1-4da0-b003-35afd7198844
+}
+
+params:query {
+  page: 1
+  limit: 20
+}
+
+headers {
+  Accept-Language: sp
+  ~Accept-Language: en
+}
+
+auth:bearer {
+  token: {{token}}
+}

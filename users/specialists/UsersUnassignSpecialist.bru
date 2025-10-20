@@ -1,0 +1,22 @@
+meta {
+  name: UnassignSpecialist
+  type: http
+  seq: 1
+}
+
+patch {
+  url: {{userHost}}/specialists/unassign-transfer
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "specialistId": "",
+    "userId": ""
+  }
+}

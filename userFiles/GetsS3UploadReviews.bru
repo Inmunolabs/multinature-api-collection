@@ -1,0 +1,25 @@
+meta {
+  name: GetsS3UploadReviews
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{userFilesHost}}/user-files/s3-upload-review?name=image&bucket=multi-reviews-images&folder=eb003fcf-fcf1-4da0-b003-35afd7198844
+  body: none
+  auth: bearer
+}
+
+params:query {
+  name: image
+  bucket: multi-reviews-images
+  folder: eb003fcf-fcf1-4da0-b003-35afd7198844
+}
+
+headers {
+  filetype: image/png
+}
+
+auth:bearer {
+  token: {{token}}
+}

@@ -1,0 +1,42 @@
+meta {
+  name: NotificationsCreate
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{notificationsHost}}/notifications
+  body: json
+  auth: bearer
+}
+
+params:query {
+  ~minAge: 10
+  ~maxAge: 10
+  ~profile: Usuario
+  ~hasDiet: true
+  ~hasRoutine: false
+  ~createdFrom: 2025-02-18
+  ~createdTo: 2026-02-24
+  ~specialistWithPatients: true
+  ~noPurchases: true
+  ~email: sabyreveles@gmail.com
+  ~ordersInProgress: true
+  ~noRecommendations: true
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "type": "database",
+    //"notificationDetails": "<div class=\"notification\" style=\"background-color: #fff; border-left: 5px solid #007bff; padding: 20px 25px; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); border-radius: 4px; max-width: 400px; text-align: left;\"><p class=\"notification-title\" style=\"font-size: 18px; font-weight: bold; margin: 0; color: #333;\">🔔 Notificación</p><p class=\"notification-body\" style=\"font-size: 14px; color: #555; margin-top: 10px;\">Prueba de notificación</p></div>",
+    //"subject": "Asunto aquí",
+    "title": "Título de notificación",
+    //"subtitle": "Esto es un subtitulo"
+    "message": "Notificación en base de datos"
+    
+  }
+}

@@ -1,0 +1,19 @@
+meta {
+  name: SpecialistGetDetails
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{userHost}}/specialists/:id
+  body: none
+  auth: bearer
+}
+
+params:path {
+  id: 58311178-ed1b-4074-8f53-fa3104ff8034
+}
+
+auth:bearer {
+  token: {{token}}
+}

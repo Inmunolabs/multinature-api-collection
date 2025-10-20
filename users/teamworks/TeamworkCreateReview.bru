@@ -1,0 +1,24 @@
+meta {
+  name: TeamworkCreateReview
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{userHost}}/users/teamwork-review
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+        "teamworkId": "1290eece-91c1-4364-a989-f8c55df42299",
+        "rating": 5,
+        "review": "Buen equipo, muy explosivo",
+        "urlImages": []
+  }
+}

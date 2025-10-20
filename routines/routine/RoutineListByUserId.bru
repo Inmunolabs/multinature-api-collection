@@ -1,0 +1,19 @@
+meta {
+  name: RoutineListByUserId
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{routinesHost}}/routines/user/:id
+  body: none
+  auth: bearer
+}
+
+params:path {
+  id: f0d8e32b-e4bb-4e08-ae48-6c9b96a3a98f
+}
+
+auth:bearer {
+  token: {{token}}
+}

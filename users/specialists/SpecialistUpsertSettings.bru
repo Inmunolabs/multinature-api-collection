@@ -1,0 +1,24 @@
+meta {
+  name: SpecialistUpsertSettings
+  type: http
+  seq: 2
+}
+
+patch {
+  url: {{userHost}}/specialists/config/{{userId}}
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "chargeAdvancePayment": 290,
+    "chargePerConsultation": 30.50,
+    "monthlyCharge": 100,
+    "receiveEmails": false
+  }
+}

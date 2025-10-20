@@ -1,0 +1,19 @@
+meta {
+  name: listIngredients
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{dietsHost}}/diets/ingredients?equivalences_group_id=db489a4f-640e-11f0-8618-1290daed9e2f
+  body: json
+  auth: bearer
+}
+
+params:query {
+  equivalences_group_id: db489a4f-640e-11f0-8618-1290daed9e2f
+}
+
+auth:bearer {
+  token: {{token}}
+}

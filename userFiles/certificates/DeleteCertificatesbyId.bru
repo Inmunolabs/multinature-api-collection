@@ -1,0 +1,19 @@
+meta {
+  name: DeleteCertificatesbyId
+  type: http
+  seq: 1
+}
+
+delete {
+  url: {{userFilesHost}}/user-files/certificates/:id
+  body: none
+  auth: bearer
+}
+
+params:path {
+  id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

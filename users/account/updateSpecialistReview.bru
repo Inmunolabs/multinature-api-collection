@@ -1,0 +1,28 @@
+meta {
+  name: UpdateSpecialistReview
+  type: http
+  seq: 1
+}
+
+put {
+  url: {{userHost}}/users/reviews/:id
+  body: json
+  auth: bearer
+}
+
+params:path {
+  id: 172b6406-36d7-4322-817f-8841afbaf6ab
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+        "rating": 3,
+        "review": "Buen especialiasta, me recuerda a Spider-Man de Tobey.",
+        "urlImages": [],
+        "subspecialtyIds": ["644383e7-9915-43fa-8500-517c9c1e62c8"]
+  }
+}

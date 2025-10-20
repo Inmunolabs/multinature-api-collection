@@ -1,0 +1,19 @@
+meta {
+  name: ReviewsList
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{productHost}}/products/reviews/:id
+  body: none
+  auth: bearer
+}
+
+params:path {
+  id: 6ce7ac2a-fe27-47cd-a696-8bdf1a9a1b3f
+}
+
+auth:bearer {
+  token: {{token}}
+}

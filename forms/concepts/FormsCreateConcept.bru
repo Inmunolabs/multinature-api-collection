@@ -1,0 +1,23 @@
+meta {
+  name: FormsCreateConcept
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{formHost}}/forms/concept
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "name": "¿Haces ejercicio frecuentemente?",
+    "defaultUnit": "",
+    "description": "En caso de hacer ejercicio, explica qué ejercicios haces."
+  }
+}

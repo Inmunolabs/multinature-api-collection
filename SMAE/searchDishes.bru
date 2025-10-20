@@ -1,0 +1,23 @@
+meta {
+  name: searchDishes
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{dietsHost}}/diets/dishes/search?q=Clara
+  body: none
+  auth: bearer
+}
+
+params:query {
+  q: Clara
+}
+
+headers {
+  : 
+}
+
+auth:bearer {
+  token: {{token}}
+}

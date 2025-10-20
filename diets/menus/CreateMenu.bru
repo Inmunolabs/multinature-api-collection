@@ -1,0 +1,70 @@
+meta {
+  name: CreateMenu
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{dietsHost}}/menus/
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+      "dietId": "09fdd824-842e-4a32-95f2-9a68f89215d1",  
+      "specialistId": "04e5e292-061c-40ab-9962-f92bdbc74a57",
+      "name": "Menu comidas moderadas",
+      "notes": "Agregar 2 vasos de agua por comida",
+      "meals": [
+      {
+        "mealType": "desayuno",
+        "mealTime": "08:00:00",       
+        "equivalencesPerGroup": [
+          { "id": "db487ac0-640e-11f0-8618-1290daed9e2f", "quantity": 3 },
+          { "id": "db48d84d-640e-11f0-8618-1290daed9e2f", "quantity": 3 }
+        ],
+        "dishes": [
+          {
+            "dishId": 0,   
+            "foodId": "3c42e17d-e249-495c-adfd-6a45a71d0d8a",
+            "quantity": 2.5
+            // "overrides": []
+          },
+          {
+            "dishId": 1,
+            "ingredientId": "0080fb52-6740-11f0-8618-1290daed9e2f",
+            "quantity": 2.5
+            // "overrides": []
+          }
+        ]
+      }, 
+      {
+        "mealType":"comida",
+        "mealTime": "14:00:00",
+        "equivalencesPerGroup": [
+          { "id": "db487ac0-640e-11f0-8618-1290daed9e2f", "quantity": 3 },
+          { "id": "db48d84d-640e-11f0-8618-1290daed9e2f", "quantity": 3 }
+        ],
+        "dishes": [
+          {
+            "dishId": 0,     
+            "foodId": "3c42e17d-e249-495c-adfd-6a45a71d0d8a",
+            "quantity": 2.5
+            //"overrides": []
+          },
+          {
+            "dishId": 1,
+            "ingredientId": "0080fb52-6740-11f0-8618-1290daed9e2f",
+            "quantity": 1
+          }
+        ]
+      }
+    ]
+  }
+  
+}

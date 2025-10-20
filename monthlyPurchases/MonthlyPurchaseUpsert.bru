@@ -1,0 +1,39 @@
+meta {
+  name: MonthlyPurchaseUpsert
+  type: http
+  seq: 2
+}
+
+patch {
+  url: {{monthlyPurchaseHost}}/monthly-purchase
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+      "isSubscriptionPurchase": true,
+      "products": [
+        {
+          "id": "036e2bbc-6ed0-4fd9-b4eb-0dfbca728ca2",
+          "quantity": 1
+        },
+        {
+          "id": "036e2bbc-6ed0-4fd9-b4eb-0dfbca728ca2",
+          "quantity": 1
+        },
+        {
+          "id": "2e17cfde-136c-481f-bd33-9e4b16ab5d91",
+          "quantity": 2
+        },
+        {
+          "id": "2e17cfde-136c-481f-bd33-9e4b16ab5d91",
+          "quantity": 1
+        }
+      ]
+  }
+}

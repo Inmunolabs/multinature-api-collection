@@ -1,0 +1,19 @@
+meta {
+  name: RoutineGetExercise
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{routinesHost}}/routines/exercise/:id
+  body: none
+  auth: bearer
+}
+
+params:path {
+  id: d120ca91-ed03-4bb9-8be7-b1cb996659aa
+}
+
+auth:bearer {
+  token: {{token}}
+}

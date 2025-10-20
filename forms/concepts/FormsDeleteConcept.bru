@@ -1,0 +1,19 @@
+meta {
+  name: FormsDeleteConcept
+  type: http
+  seq: 1
+}
+
+delete {
+  url: {{formHost}}/forms/concept/:id
+  body: none
+  auth: bearer
+}
+
+params:path {
+  id: 1b55349b-1e54-4ca1-8f96-981113e0a21f
+}
+
+auth:bearer {
+  token: {{token}}
+}

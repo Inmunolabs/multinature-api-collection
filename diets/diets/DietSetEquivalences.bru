@@ -1,0 +1,43 @@
+meta {
+  name: DietSetEquivalences
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{dietsHost}}/diets/equivalences/:id
+  body: json
+  auth: bearer
+}
+
+params:path {
+  id: 1a3cb1f0-c1b8-45d5-924c-31360521b113
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "equivalences": [
+      { "id": "db489a4f-640e-11f0-8618-1290daed9e2f", "quantity": 6 },   // Cereales sin grasa
+      { "id": "db48b6cf-640e-11f0-8618-1290daed9e2f", "quantity": 5 },   // Verduras
+      { "id": "db48d736-640e-11f0-8618-1290daed9e2f", "quantity": 5 },   // Frutas
+      { "id": "db48db93-640e-11f0-8618-1290daed9e2f", "quantity": 2 },   // Leguminosas
+      { "id": "db480987-640e-11f0-8618-1290daed9e2f", "quantity": 25 },  // AOA muy bajo en grasa
+      { "id": "db48d84d-640e-11f0-8618-1290daed9e2f", "quantity": 3.5 }, // Leche descremada
+      { "id": "db48da09-640e-11f0-8618-1290daed9e2f", "quantity": 4 },   // Grasas sin proteína
+      { "id": "db48dac7-640e-11f0-8618-1290daed9e2f", "quantity": 2 }    // Azúcares sin grasa
+    ]
+  }
+  
+}
+
+docs {
+  Parametros 
+  
+  id = dietId 
+  
+  Body = equivalencias de la dieta
+}

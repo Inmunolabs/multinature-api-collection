@@ -16,15 +16,16 @@ auth:bearer {
 
 body:json {
   {
-  //     "email": "admin@multi.com",
       "email": "mvaldes988@gmail.com",
-  //     "email": "000@miguel.com",
+      //"email": "000@miguel.com",
+      //"email": "admin@multi.com",
       //"email": "000@multi.com",
-      //"email": "000@multi.com",
-  //     "email": "erick@gmail.com",
+      //"email": "001@multi.com",
+      //"email": "erick556u@gmail.com",
       //"email": "example@example.com",
+      //"email": "x1@multi.com",
+      //"email": "samu.sandbox@gmail.com",
       "password": "12345678"
-    
       // "email": "operaciones@paket.mx",
       // "password": "24n75fgSFqIL"
   }
@@ -32,4 +33,5 @@ body:json {
 
 script:post-response {
   bru.setVar("token",res.body.content.token)
+  bru.setVar("userId",res.body.content.user.id)
 }

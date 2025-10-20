@@ -1,0 +1,19 @@
+meta {
+  name: SpecialistGetSupportMaterial
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{userFilesHost}}/user-files/support-material/:id
+  body: none
+  auth: bearer
+}
+
+params:path {
+  id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

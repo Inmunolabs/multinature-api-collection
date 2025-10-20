@@ -1,0 +1,55 @@
+meta {
+  name: DietSaveMenus
+  type: http
+  seq: 1
+}
+
+put {
+  url: {{dietsHost}}/diets/save-diet
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "dietId": "815d1a5a-2652-49bd-bab9-48e502b18679",
+    "menus": [
+      {
+        "menuId":"a3964bc2-7ede-49a4-849f-b5304107e746",
+        "weekday": 0
+      },
+      {
+        "menuId":"a3964bc2-7ede-49a4-849f-b5304107e746",
+        "weekday": 1
+      },
+       {
+        "menuId":"a3964bc2-7ede-49a4-849f-b5304107e746",
+        "weekday": 2
+      },
+       {
+        "menuId":"a3964bc2-7ede-49a4-849f-b5304107e746",
+        "weekday": 3
+      },
+       {
+        "menuId":"a3964bc2-7ede-49a4-849f-b5304107e746",
+        "weekday": 4
+      },
+       {
+        "menuId":"a3964bc2-7ede-49a4-849f-b5304107e746",
+        "weekday": 5
+      },
+      {
+        "menuId":"a3964bc2-7ede-49a4-849f-b5304107e746",
+        "weekday": 6
+      }
+    ]
+  }
+}
+
+settings {
+  encodeUrl: true
+}

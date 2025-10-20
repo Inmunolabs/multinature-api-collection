@@ -1,0 +1,15 @@
+meta {
+  name: UsersGetCertificatesByUserId
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{userFilesHost}}/user-files/certificates/{{userId}}
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
