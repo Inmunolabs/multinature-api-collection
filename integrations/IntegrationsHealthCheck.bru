@@ -1,0 +1,11 @@
+meta {
+  name: IntegrationsHealthCheck
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{integrationsHost}}
+  body: none
+  auth: inherit
+}
