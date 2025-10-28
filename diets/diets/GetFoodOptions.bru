@@ -5,14 +5,17 @@ meta {
 }
 
 get {
-  url: {{dietsHost}}/diets/food-options?Leguminosas=5.5
+  url: {{dietsHost}}/diets/food-options?page=1&limit=20&search=cerdo&AOA_Bajo_en_grasa=4
   body: json
   auth: bearer
 }
 
 params:query {
-  Leguminosas: 5.5
-  micro_sodio: bajo
+  page: 1
+  limit: 20
+  search: cerdo
+  AOA_Bajo_en_grasa: 4
+  ~Leguminosas: 5.5
   ~micro_potasio: medio
   ~micro_fosforo: alto
   ~micro_hierro: medio
@@ -23,7 +26,6 @@ params:query {
   ~AOA_Muy_bajo_en_grasa: 4
   ~Fruta: 4.5
   ~Verdura: 4.5
-  ~AOA_Bajo_en_grasa: 4
   ~AOA_Moderado_en_grasa: 5
   ~AOA_Alto_en_grasa: 5
   ~Cereal_Con_grasa: 7
