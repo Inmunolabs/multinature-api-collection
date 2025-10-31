@@ -1,0 +1,163 @@
+meta {
+  name: DietGenerateAutomaticGET
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{dietsHost}}/diets/generate-automatic/0eeb910f-965c-4f62-b7ad-337e1027550b
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+tests {
+  test("Status code is 200", function() {
+    expect(res.getStatus()).to.equal(200);
+  });
+  
+  test("Response has content array", function() {
+    expect(res.getBody()).to.have.property("content");
+    expect(res.getBody().content).to.be.an("array");
+    expect(res.getBody().content.length).to.be.greaterThan(0);
+  });
+  
+  test("Diet has 7-day structure", function() {
+    const diet = res.getBody().content[0];
+    expect(diet).to.have.property("mealStructure");
+    expect(diet.mealStructure.days).to.equal(7);
+  });
+  
+  test("Menus are present", function() {
+    const diet = res.getBody().content[0];
+    expect(diet).to.have.property("menus");
+    expect(diet.menus).to.be.an("array");
+    expect(diet.menus.length).to.be.greaterThan(0);
+  });
+  
+  test("Equivalences have name (not id)", function() {
+    const diet = res.getBody().content[0];
+    const menus = diet.menus;
+    
+    let hasEquivalences = false;
+    let allHaveName = true;
+    let noneHaveId = true;
+    
+    menus.forEach(menu => {
+      if (menu.meals && Array.isArray(menu.meals)) {
+        menu.meals.forEach(meal => {
+          if (meal.equivalences && Array.isArray(meal.equivalences) && meal.equivalences.length > 0) {
+            hasEquivalences = true;
+            meal.equivalences.forEach(eq => {
+              if (!eq.name) {
+                allHaveName = false;
+              }
+              if (eq.id) {
+                noneHaveId = false;
+              }
+            });
+          }
+        });
+      }
+    });
+    
+    if (hasEquivalences) {
+      expect(allHaveName).to.be.true;
+      expect(noneHaveId).to.be.true;
+    }
+  });
+  
+  test("Equivalence names have proper format", function() {
+    const diet = res.getBody().content[0];
+    const menus = diet.menus;
+    
+    menus.forEach(menu => {
+      if (menu.meals && Array.isArray(menu.meals)) {
+        menu.meals.forEach(meal => {
+          if (meal.equivalences && Array.isArray(meal.equivalences)) {
+            meal.equivalences.forEach(eq => {
+              expect(eq.name).to.be.a("string");
+              expect(eq.name.length).to.be.greaterThan(0);
+              expect(eq.name).to.not.equal("Desconocido");
+              expect(eq.quantity).to.be.a("number");
+              expect(eq.quantity).to.be.greaterThan(0);
+            });
+          }
+        });
+      }
+    });
+  });
+  
+  test("Justifications are within character limit", function() {
+    const diet = res.getBody().content[0];
+    
+    // Check mealStructure justifications
+    if (diet.mealStructure && diet.mealStructure.justifications) {
+      Object.values(diet.mealStructure.justifications).forEach(just => {
+        if (typeof just === 'string') {
+          expect(just.length).to.be.lessThanOrEqual(240);
+        }
+      });
+    }
+    
+    // Check meal justifications
+    diet.menus.forEach(menu => {
+      if (menu.meals) {
+        menu.meals.forEach(meal => {
+          if (meal.justification) {
+            expect(meal.justification.length).to.be.lessThanOrEqual(240);
+          }
+        });
+      }
+    });
+  });
+}
+
+docs {
+  # Generate Automatic Diet (GET - Nuevo Flujo)
+  
+  Genera automáticamente una dieta de 7 días **sin necesidad de especificar fórmulas ni parámetros energéticos**.
+  
+  ## Ventajas del nuevo flujo GET
+  
+  - ✅ No requiere body
+  - ✅ Selección automática de fórmulas según perfil del paciente
+  - ✅ CAF/ETA/AF derivados desde el último formulario clínico
+  - ✅ Equivalencias con nombre legible: `{ name: "Proteína - Magra", quantity: 2 }`
+  
+  ## Heurística de Selección
+  
+  El sistema selecciona automáticamente las fórmulas más adecuadas:
+  
+  - **Siempre**: Harris-Benedict + Mifflin-St Jeor
+  - **Si hay % grasa corporal**: Cunningham, Catch-McArdle
+  - **Si hay masa magra (FFM)**: Catch-McArdle Specific
+  - **Si IMC extremo o condiciones clínicas**: IOM, AGA, FAO, Health Canada
+  - **Fallback general**: Owen General/Specific
+  
+  ## Parámetros Energéticos
+  
+  - **CAF** (Factor de Actividad): 1.25-1.9 según nivel de actividad física
+  - **ETA** (Termogénesis): 10% por defecto
+  - **AF** (Ajuste Fijo): 0 por defecto
+  
+  ## Respuesta
+  
+  La respuesta incluye:
+  - Plan de 7 días (keys 0-6)
+  - Justificaciones ≤ 240 caracteres
+  - Tiempos de comida derivados del contexto del paciente
+  - **Equivalencias con nombre**: `{ name: "Grupo - Subgrupo", quantity: N }`
+  
+  ## Comparación con POST (legacy)
+  
+  | Aspecto | GET (Nuevo) | POST (Legacy) |
+  |---------|-------------|---------------|
+  | Body | ❌ No requiere | ✅ Requiere formulas, CAF, ETA, AF |
+  | Selección de fórmulas | ✅ Automática | ❌ Manual |
+  | Formato equivalences | `name` (legible) | `id` (UUID) |
+  | Uso | Recomendado | Mantener compatibilidad |
+}
