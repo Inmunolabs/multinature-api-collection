@@ -1,0 +1,15 @@
+meta {
+  name: IntegrationsGoogleOAuth
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{integrationsHost}}/integrations/connect-calendar
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
