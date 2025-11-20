@@ -1,0 +1,173 @@
+meta {
+  name: DietRecommendFormulasPOST
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{dietsHost}}/diets/recommend-formulas
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "answers": [
+      {
+        "conceptId": "uuid-peso-actual",
+        "value": "75.5",
+        "question": "¿Cuál es su peso actual?",
+        "unit": "kg"
+      },
+      {
+        "conceptId": "uuid-estatura",
+        "value": "170",
+        "question": "¿Cuál es su estatura?",
+        "unit": "cm"
+      },
+      {
+        "conceptId": "uuid-edad",
+        "value": "30",
+        "question": "¿Cuál es su edad?",
+        "unit": "años"
+      },
+      {
+        "conceptId": "uuid-sexo",
+        "value": "Masculino",
+        "question": "¿Cuál es su sexo?"
+      },
+      {
+        "conceptId": "uuid-objetivo-nutricional",
+        "value": "Pérdida de peso",
+        "question": "¿Cuál es su objetivo nutricional?"
+      }
+    ]
+  }
+}
+
+tests {
+  test("Status code is 200", function() {
+    expect(res.getStatus()).to.equal(200);
+  });
+  
+  test("Response has data object", function() {
+    expect(res.getBody()).to.have.property("data");
+  });
+  
+  test("Response has formulas array", function() {
+    expect(res.getBody().data).to.have.property("formulas");
+    expect(res.getBody().data.formulas).to.be.an("array");
+    expect(res.getBody().data.formulas.length).to.be.greaterThan(0);
+  });
+  
+  test("Formulas are valid identifiers", function() {
+    const formulas = res.getBody().data.formulas;
+    const validFormulas = [
+      "harrisBenedict",
+      "IOM",
+      "mifflinStJeor",
+      "AGA",
+      "FAO",
+      "healthCanada",
+      "cunningham",
+      "cunninghamAdjusted",
+      "catchMcArdle",
+      "catchMcArdleSpecific",
+      "owenGeneral",
+      "owenSpecific"
+    ];
+    
+    formulas.forEach(formula => {
+      expect(validFormulas).to.include(formula);
+    });
+  });
+  
+  test("Response has success message", function() {
+    expect(res.getBody()).to.have.property("message");
+    expect(res.getBody().message).to.be.a("string");
+  });
+  
+  test("Response includes awsRequestId", function() {
+    expect(res.getBody()).to.have.property("awsRequestId");
+  });
+}
+
+docs {
+  # Recommend Formulas (POST)
+  
+  Este endpoint recibe las respuestas del formulario base de nutrición (templateId = `1b0ea18d-bd63-42d2-995f-bff9f8094e50`) y devuelve únicamente una **lista de fórmulas recomendadas** para el cálculo de GEB/GET, basadas en el contexto clínico del paciente.
+  
+  **Importante:** Este endpoint **NO genera dieta**. Solo interpreta el formulario y recomienda fórmulas apropiadas según el contexto clínico del paciente.
+  
+  ## Body del Request
+  
+  El body debe contener un arreglo `answers` con las respuestas del formulario. Cada respuesta debe incluir:
+  
+  - `conceptId` (UUID, requerido): ID del concepto/pregunta respondida
+  - `value` (string/number, requerido): Valor de la respuesta
+  - `question` (string, opcional): Texto de la pregunta
+  - `conceptName` (string, opcional): Nombre del concepto
+  - `unit` (string, opcional): Unidad de medida
+  - `observation` (string, opcional): Observaciones adicionales
+  
+  ## Validación
+  
+  El endpoint valida dinámicamente que **todas las preguntas obligatorias** (`isMandatory = 1`) del template estén presentes en el body. Si falta alguna pregunta obligatoria, retornará un error 400 con la lista de `conceptId` faltantes.
+  
+  ## Respuesta Exitosa (200 OK)
+  
+  ```json
+  {
+    "awsRequestId": "456e7890-e89b-12d3-a456-426614174000",
+    "message": "Fórmulas recomendadas exitosamente",
+    "data": {
+      "formulas": [
+        "harrisBenedict",
+        "mifflinStJeor",
+        "IOM",
+        "FAO"
+      ]
+    }
+  }
+  ```
+  
+  ## Fórmulas Disponibles
+  
+  El sistema puede recomendar las siguientes fórmulas según el contexto clínico:
+  
+  - `harrisBenedict` - Harris Benedict
+  - `IOM` - Institute of Medicine
+  - `mifflinStJeor` - Mifflin-St Jeor
+  - `AGA` - American Gastroenterological Association
+  - `FAO` - FAO/OMS/UNU
+  - `healthCanada` - Health Canada
+  - `cunningham` - Cunningham
+  - `cunninghamAdjusted` - Cunningham Ajustado
+  - `catchMcArdle` - Catch-McArdle Equation
+  - `catchMcArdleSpecific` - Catch-McArdle Equation Specific
+  - `owenGeneral` - Owen General
+  - `owenSpecific` - Owen Specific
+  
+  ## Lógica de Recomendación
+  
+  El endpoint utiliza la lógica de `formulaPicker` que selecciona fórmulas basándose en:
+  
+  1. **Fórmulas estándar** - Siempre incluye Harris-Benedict y Mifflin-St Jeor
+  2. **Composición corporal** - Si hay datos de grasa corporal o masa magra, recomienda Cunningham, Catch-McArdle
+  3. **IMC extremo o condiciones clínicas** - Si IMC < 18.5 o ≥ 30, recomienda IOM, AGA, FAO, Health Canada
+  4. **Datos básicos** - Si no hay datos de composición corporal, incluye Owen General/Specific según género
+  
+  ## Códigos de Estado
+  
+  | Código | Significado | Descripción |
+  |--------|-------------|-------------|
+  | 200 | OK | Fórmulas recomendadas exitosamente |
+  | 400 | Bad Request | Body inválido o faltan preguntas obligatorias |
+  | 401 | Unauthorized | Token faltante o inválido |
+  | 500 | Internal Server Error | Error del servidor |
+}
+
