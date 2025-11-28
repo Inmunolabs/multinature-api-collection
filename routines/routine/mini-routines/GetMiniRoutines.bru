@@ -1,17 +1,17 @@
 meta {
-  name: RoutineListByUserId
+  name: GetMiniRoutines
   type: http
   seq: 1
 }
 
 get {
-  url: {{routinesHost}}/routines/user/:id
+  url: {{dietsHost}}/routines/workout-day/:id
   body: none
   auth: bearer
 }
 
 params:path {
-  id: f0d8e32b-e4bb-4e08-ae48-6c9b96a3a98f
+  id: a9eee30b-de9c-4eeb-9ce9-27bfbcc4a531
 }
 
 auth:bearer {

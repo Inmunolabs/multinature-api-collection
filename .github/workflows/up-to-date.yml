@@ -1,0 +1,38 @@
+name: Validate PR Sync with Develop
+
+on:
+  pull_request:
+    branches: [develop]
+
+jobs:
+  ensure_up_to_date:
+    name: Check if PR is up to date with develop
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout PR branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+          ref: ${{ github.event.pull_request.head.sha }}
+
+      - name: 🔄 Fetch latest develop from upstream
+        run: |
+          git remote add base-origin "https://github.com/${{ github.repository }}.git"
+          git fetch base-origin ${{ github.base_ref }}
+
+      - name: 🧪 Verify PR contains latest develop commits
+        run: |
+          if ! git merge-base --is-ancestor "base-origin/${{ github.base_ref }}" HEAD; then
+            echo "❌ Este PR está desactualizado con respecto a '${{ github.base_ref }}'."
+            echo "🔁 Realiza un rebase o merge antes de continuar."
+            echo ""
+            echo "::group::Detalles"
+            echo "Base branch (develop): $(git rev-parse --short base-origin/${{ github.base_ref }})"
+            echo "PR HEAD:               $(git rev-parse --short HEAD)"
+            echo "Merge-base:            $(git merge-base --short HEAD base-origin/${{ github.base_ref }})"
+            echo "::endgroup::"
+            exit 1
+          fi
+          echo "✅ PR actualizado con respecto a '${{ github.base_ref }}'."
