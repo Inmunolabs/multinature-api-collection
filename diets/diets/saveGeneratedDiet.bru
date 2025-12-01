@@ -1,0 +1,107 @@
+meta {
+  name: saveGeneratedDiet
+  type: http
+  seq: 26
+}
+
+post {
+  url: {{dietsHost}}/diets/save-agent-diet
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "specialistId": "eb003fcf-fcf1-4da0-b003-35afd7198844",
+    "userId": "eb003fcf-fcf1-4da0-b003-35afd7198844",
+    "diet": {
+      "notes": "Dieta personalizada para paciente",
+      "caloriesPerDay": 2500,
+      "carbohydratesCalories": 1000,
+      "lipidsCalories": 500,
+      "proteinsCalories": 1000,
+      "lipidsGrams": 40,
+      "proteinsGrams": 90,
+      "carbohydratesGrams": 90
+    },
+    "equivalences": [
+      { "id": "db489a4f-640e-11f0-8618-1290daed9e2f", "quantity": 6 },
+      { "id": "db48b6cf-640e-11f0-8618-1290daed9e2f", "quantity": 5 },
+      { "id": "db48d736-640e-11f0-8618-1290daed9e2f", "quantity": 5 },
+      { "id": "db48db93-640e-11f0-8618-1290daed9e2f", "quantity": 2 },
+      { "id": "db480987-640e-11f0-8618-1290daed9e2f", "quantity": 25 },
+      { "id": "db48d84d-640e-11f0-8618-1290daed9e2f", "quantity": 3.5 },
+      { "id": "db48da09-640e-11f0-8618-1290daed9e2f", "quantity": 4 },
+      { "id": "db48dac7-640e-11f0-8618-1290daed9e2f", "quantity": 2 }
+    ],
+    "menus": {
+      "name": "Menu comidas moderadas",
+      "notes": "Agregar 2 vasos de agua por comida",
+      "meals": [
+        {
+          "mealType": "desayuno",
+          "mealTime": "08:00:00",
+          "equivalencesPerGroup": [
+            { "id": "db487ac0-640e-11f0-8618-1290daed9e2f", "quantity": 3 },
+            { "id": "db48d84d-640e-11f0-8618-1290daed9e2f", "quantity": 3 }
+          ],
+          "dishes": [
+            {
+              "dishId": 0,
+              "foodId": "3c42e17d-e249-495c-adfd-6a45a71d0d8a",
+              "quantity": 2.5
+            },
+            {
+              "dishId": 1,
+              "ingredientId": "0080fb52-6740-11f0-8618-1290daed9e2f",
+              "quantity": 2.5
+            }
+          ]
+        },
+        {
+          "mealType": "comida",
+          "mealTime": "14:00:00",
+          "equivalencesPerGroup": [
+            { "id": "db487ac0-640e-11f0-8618-1290daed9e2f", "quantity": 3 },
+            { "id": "db48d84d-640e-11f0-8618-1290daed9e2f", "quantity": 3 }
+          ],
+          "dishes": [
+            {
+              "dishId": 0,
+              "foodId": "3c42e17d-e249-495c-adfd-6a45a71d0d8a",
+              "quantity": 2.5
+            },
+            {
+              "dishId": 1,
+              "ingredientId": "0080fb52-6740-11f0-8618-1290daed9e2f",
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "mealType": "cena",
+          "mealTime": "20:00:00",
+          "equivalencesPerGroup": [
+            { "id": "db487ac0-640e-11f0-8618-1290daed9e2f", "quantity": 2 }
+          ],
+          "dishes": [
+            {
+              "dishId": 0,
+              "ingredientId": "0080fb52-6740-11f0-8618-1290daed9e2f",
+              "quantity": 1
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
