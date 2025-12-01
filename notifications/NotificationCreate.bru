@@ -1,0 +1,29 @@
+meta {
+  name: NotificationCreate
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{notificationsHost}}/notifications/?email=sabyreveles@gmail.com
+  body: json
+  auth: bearer
+}
+
+params:query {
+  email: sabyreveles@gmail.com
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "type": "email",
+    "subject": "Ejemplo",
+    "title": "Notificación",
+    "notificationDetails": "Ejemplo",
+    "footer": "Gracias por su atención"
+  }
+}
