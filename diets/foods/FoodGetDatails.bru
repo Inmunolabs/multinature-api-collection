@@ -1,0 +1,24 @@
+meta {
+  name: FoodGetDatails
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{dietsHost}}/diets/food/:id
+  body: none
+  auth: bearer
+}
+
+params:path {
+  id: 02952dd3-4769-4e3e-8fc9-2c299e71cc08
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

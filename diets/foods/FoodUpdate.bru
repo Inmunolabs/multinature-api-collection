@@ -1,0 +1,40 @@
+meta {
+  name: FoodUpdate
+  type: http
+  seq: 1
+}
+
+patch {
+  url: {{dietsHost}}/menus/food/:id
+  body: json
+  auth: inherit
+}
+
+params:path {
+  id: 02952dd3-4769-4e3e-8fc9-2c299e71cc08
+}
+
+body:json {
+  {
+    "name": "Huevo revuelto a la update",
+    "ingredients": [
+      {
+        "id": "1ff2766e-665c-11f0-8618-1290daed9e2f",
+        "quantity": 0.4
+      },
+      {
+        "id": "2321ad0b-6661-11f0-8618-1290daed9e2f",
+        "quantity": 0.7
+      },
+      {
+        "id": "ce3184e6-6740-11f0-8618-1290daed9e2f",
+        "quantity": 3
+      }
+    ]
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
