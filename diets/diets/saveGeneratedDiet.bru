@@ -38,67 +38,130 @@ body:json {
       { "id": "db48da09-640e-11f0-8618-1290daed9e2f", "quantity": 4 },
       { "id": "db48dac7-640e-11f0-8618-1290daed9e2f", "quantity": 2 }
     ],
-    "menus": {
-      "name": "Menu comidas moderadas",
-      "notes": "Agregar 2 vasos de agua por comida",
-      "assignedDays": [0,1,2,3,4,5,6],
-      "meals": [
-        {
-          "mealType": "desayuno",
-          "mealTime": "08:00:00",
-          "equivalencesPerGroup": [
-            { "id": "db487ac0-640e-11f0-8618-1290daed9e2f", "quantity": 3 },
-            { "id": "db48d84d-640e-11f0-8618-1290daed9e2f", "quantity": 3 }
-          ],
-          "dishes": [
-            {
-              "dishId": 0,
-              "foodId": "3c42e17d-e249-495c-adfd-6a45a71d0d8a",
-              "quantity": 2.5
-            },
-            {
-              "dishId": 1,
-              "ingredientId": "0080fb52-6740-11f0-8618-1290daed9e2f",
-              "quantity": 2.5
-            }
-          ]
-        }, 
-        {
-          "mealType": "comida",
-          "mealTime": "14:00:00",
-          "equivalencesPerGroup": [
-            { "id": "db487ac0-640e-11f0-8618-1290daed9e2f", "quantity": 3 },
-            { "id": "db48d84d-640e-11f0-8618-1290daed9e2f", "quantity": 3 }
-          ],
-          "dishes": [
-            {
-              "dishId": 0,
-              "foodId": "3c42e17d-e249-495c-adfd-6a45a71d0d8a",
-              "quantity": 2.5
-            },
-            {
-              "dishId": 1,
-              "ingredientId": "0080fb52-6740-11f0-8618-1290daed9e2f",
-              "quantity": 1
-            }
-          ]
-        },
-        {
-          "mealType": "cena",
-          "mealTime": "20:00:00",
-          "equivalencesPerGroup": [
-            { "id": "db487ac0-640e-11f0-8618-1290daed9e2f", "quantity": 2 }
-          ],
-          "dishes": [
-            {
-              "dishId": 0,
-              "ingredientId": "0080fb52-6740-11f0-8618-1290daed9e2f",
-              "quantity": 1
-            }
-          ]
-        }
-      ]
-    }
+    "menus": [
+      {
+        "name": "Menu comidas moderadas",
+        "notes": "Agregar 2 vasos de agua por comida",
+        "assignedDays": [0],
+        "meals": [
+          {
+            "mealType": "desayuno",
+            "mealTime": "08:00:00",
+            "equivalencesPerGroup": [
+              { "id": "db487ac0-640e-11f0-8618-1290daed9e2f", "quantity": 3 },
+              { "id": "db48d84d-640e-11f0-8618-1290daed9e2f", "quantity": 3 }
+            ],
+            "dishes": [
+              {
+                "dishId": 0,
+                "foodId": "3c42e17d-e249-495c-adfd-6a45a71d0d8a",
+                "quantity": 2.5
+              },
+              {
+                "dishId": 1,
+                "ingredientId": "0080fb52-6740-11f0-8618-1290daed9e2f",
+                "quantity": 2.5
+              }
+            ]
+          }, 
+          {
+            "mealType": "comida",
+            "mealTime": "14:00:00",
+            "equivalencesPerGroup": [
+              { "id": "db487ac0-640e-11f0-8618-1290daed9e2f", "quantity": 3 },
+              { "id": "db48d84d-640e-11f0-8618-1290daed9e2f", "quantity": 3 }
+            ],
+            "dishes": [
+              {
+                "dishId": 0,
+                "foodId": "3c42e17d-e249-495c-adfd-6a45a71d0d8a",
+                "quantity": 2.5
+              },
+              {
+                "dishId": 1,
+                "ingredientId": "0080fb52-6740-11f0-8618-1290daed9e2f",
+                "quantity": 1
+              }
+            ]
+          },
+          {
+            "mealType": "cena",
+            "mealTime": "20:00:00",
+            "equivalencesPerGroup": [
+              { "id": "db487ac0-640e-11f0-8618-1290daed9e2f", "quantity": 2 }
+            ],
+            "dishes": [
+              {
+                "dishId": 0,
+                "ingredientId": "0080fb52-6740-11f0-8618-1290daed9e2f",
+                "quantity": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Menu comidas moderadas",
+        "notes": "Agregar 2 vasos de agua por comida",
+        "assignedDays": [1],
+        "meals": [
+          {
+            "mealType": "desayuno",
+            "mealTime": "08:00:00",
+            "equivalencesPerGroup": [
+              { "id": "db487ac0-640e-11f0-8618-1290daed9e2f", "quantity": 3 },
+              { "id": "db48d84d-640e-11f0-8618-1290daed9e2f", "quantity": 3 }
+            ],
+            "dishes": [
+              {
+                "dishId": 0,
+                "foodId": "3c42e17d-e249-495c-adfd-6a45a71d0d8a",
+                "quantity": 2.5
+              },
+              {
+                "dishId": 1,
+                "ingredientId": "0080fb52-6740-11f0-8618-1290daed9e2f",
+                "quantity": 2.5
+              }
+            ]
+          }, 
+          {
+            "mealType": "comida",
+            "mealTime": "14:00:00",
+            "equivalencesPerGroup": [
+              { "id": "db487ac0-640e-11f0-8618-1290daed9e2f", "quantity": 3 },
+              { "id": "db48d84d-640e-11f0-8618-1290daed9e2f", "quantity": 3 }
+            ],
+            "dishes": [
+              {
+                "dishId": 0,
+                "foodId": "3c42e17d-e249-495c-adfd-6a45a71d0d8a",
+                "quantity": 2.5
+              },
+              {
+                "dishId": 1,
+                "ingredientId": "0080fb52-6740-11f0-8618-1290daed9e2f",
+                "quantity": 1
+              }
+            ]
+          },
+          {
+            "mealType": "cena",
+            "mealTime": "20:00:00",
+            "equivalencesPerGroup": [
+              { "id": "db487ac0-640e-11f0-8618-1290daed9e2f", "quantity": 2 }
+            ],
+            "dishes": [
+              {
+                "dishId": 0,
+                "ingredientId": "0080fb52-6740-11f0-8618-1290daed9e2f",
+                "quantity": 1
+              }
+            ]
+          }
+        ]
+      }
+    ]
   }
 }
 
