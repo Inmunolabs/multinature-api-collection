@@ -1,19 +1,15 @@
 meta {
-  name: listEquivalencesGroups
+  name: DietListFoods
   type: http
   seq: 1
 }
 
 get {
-  url: {{dietsHost}}/diets/equivalences/group
+  url: {{dietsHost}}/diets/foods
   body: none
   auth: bearer
 }
 
 auth:bearer {
   token: {{token}}
-}
-
-settings {
-  encodeUrl: true
 }

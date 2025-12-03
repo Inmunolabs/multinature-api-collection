@@ -1,0 +1,22 @@
+meta {
+  name: ExerciseGifMigration
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{routinesHost}}/exercises/migrate-gifs?limit=500&offset=0&force=false
+  body: none
+  auth: bearer
+}
+
+params:query {
+  limit: 500
+  offset: 0
+  force: false
+  ~dryRun: true
+}
+
+auth:bearer {
+  token: {{token}}
+}

@@ -1,0 +1,61 @@
+meta {
+  name: RoutineUpsertWorkout
+  type: http
+  seq: 1
+}
+
+put {
+  url: {{routinesHost}}/routines/workout-day
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "notes": "Rutina global para estimular el crecimiento muscular",
+        "isGlobal": 1,
+        "exercises": [
+            {
+                "notes": "",
+                "details": [],
+                "exercise": {
+                    "name": "advanced dumbbell stiff leg deadlift",
+                    "gifUrl": "https://static.exercisedb.dev/media/2Ty4idJ.gif",
+                    "bodyParts": [
+                        "upper_legs"
+                    ],
+                    "equipments": [
+                        "dumbbell"
+                    ],
+                    "instructions": [
+                        "Step:1 Stand with your feet shoulder-width apart, holding a dumbbell in each hand with an overhand grip.",
+                        "Step:2 Keeping your back straight and your core engaged, hinge at the hips and lower the dumbbells towards the ground, allowing a slight bend in your knees. Focus on advanced movement.",
+                        "Step:3 Lower the dumbbells until you feel a stretch in your hamstrings, then squeeze your glutes and push through your heels to return to the starting position.",
+                        "Step:4 Repeat for the desired number of repetitions."
+                    ],
+                    "targetMuscles": [
+                        "glutes"
+                    ],
+                    "secondaryMuscles": [
+                        "hamstrings",
+                        "lower_back"
+                    ]
+                },
+                "muscleId": "glutes",
+                "exerciseId": "b9d4aa5d-6c96-4db7-957d-ad56f04e9a47",
+                "orderInDay": 1,
+                "workoutExerciseId": "194c8c9f-7148-46d3-9a16-613486f898a4",
+                "restAfterExerciseSeconds": 60
+            }
+        ],
+        "routineId": null,
+        "assignedDays": [],
+        "specialistId": "04e5e292-061c-40ab-9962-f92bdbc74a57",
+        "workoutDayId": "cd1471fb-ecc2-4387-ad99-a90feba2350e",
+        "workoutDayName": "Gluteos"
+  }
+}

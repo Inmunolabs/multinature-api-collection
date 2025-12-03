@@ -1,0 +1,26 @@
+meta {
+  name: FindIngredient
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{dietsHost}}/diets/ingredients?limit=20&page=1&search=Jugo
+  body: none
+  auth: bearer
+}
+
+params:query {
+  limit: 20
+  page: 1
+  search: Jugo
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
