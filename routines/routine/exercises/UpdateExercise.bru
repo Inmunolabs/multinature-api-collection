@@ -1,0 +1,27 @@
+meta {
+  name: UpdateExercise
+  type: http
+  seq: 1
+}
+
+patch {
+  url: {{routinesHost}}/exercises/:id
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "name": "",
+    "gifUrl":"",
+    "instructions":"",
+    "targetMuscles":"",
+    "secundaryMuscles":"",
+    "bodyParts":"",
+    "equipments": ""
+  }
+}

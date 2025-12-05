@@ -1,0 +1,15 @@
+meta {
+  name: CurrentDietGet
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{dietsHost}}/diets/get-current-diet/:id
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
