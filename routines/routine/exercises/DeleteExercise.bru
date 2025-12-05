@@ -1,0 +1,15 @@
+meta {
+  name: DeleteExercise
+  type: http
+  seq: 1
+}
+
+delete {
+  url: {{routinesHost}}/exercises/:id
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
