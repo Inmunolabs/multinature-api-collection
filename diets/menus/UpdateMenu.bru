@@ -10,21 +10,19 @@ put {
   auth: bearer
 }
 
-headers {
-  : 
-}
-
 auth:bearer {
   token: {{token}}
 }
 
 body:json {
   {
-      "menuId": "a3964bc2-7ede-49a4-849f-b5304107e746",
+      "menuId": "881d8175-eda4-40ed-ac13-629b028ea13e",  
+      "specialistId": "04e5e292-061c-40ab-9962-f92bdbc74a57",
       "name": "Menu comidas moderadas",
       "notes": "Agregar 2 vasos de agua por comida",
-      "meals": [ 
-         {
+      "isGlobal": true,
+      "meals": [
+      {
         "mealType": "desayuno",
         "mealTime": "08:00:00",       
         "equivalencesPerGroup": [
@@ -69,8 +67,4 @@ body:json {
       }
     ]
   }
-}
-
-settings {
-  encodeUrl: true
 }
