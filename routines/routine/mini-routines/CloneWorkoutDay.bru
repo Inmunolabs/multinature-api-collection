@@ -1,11 +1,11 @@
 meta {
-  name: RoutineUpsertWorkout
+  name: CloneWorkoutDay
   type: http
   seq: 1
 }
 
-put {
-  url: {{routinesHost}}/routines/workout-day
+post {
+  url: {{routinesHost}}/routines/workout-day/clone
   body: json
   auth: bearer
 }
@@ -16,9 +16,11 @@ auth:bearer {
 
 body:json {
   {
-    "notes": "Rutina global para estimular el crecimiento muscular",
-        "isGlobal": 1,
-        "exercises": [
+    "workoutDayId": "",
+		 "routineId": "", 
+		 "name": "", 
+		 "notes": "", 
+			"exercises": [
             {
                 "notes": "",
                 "details": [],
@@ -52,9 +54,5 @@ body:json {
                 "restAfterExerciseSeconds": 60
             }
         ],
-        "routineId": null,
-        "specialistId": "04e5e292-061c-40ab-9962-f92bdbc74a57",
-        "workoutDayId": "cd1471fb-ecc2-4387-ad99-a90feba2350e",
-        "workoutDayName": "Gluteos"
   }
 }

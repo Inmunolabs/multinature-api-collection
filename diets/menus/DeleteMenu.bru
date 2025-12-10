@@ -1,0 +1,19 @@
+meta {
+  name: DeleteMenu
+  type: http
+  seq: 1
+}
+
+delete {
+  url: {{dietsHost}}/menus/:id
+  body: none
+  auth: bearer
+}
+
+params:path {
+  id: a1718621-cc84-466e-bd45-d929eaf072d5
+}
+
+auth:bearer {
+  token: {{token}}
+}

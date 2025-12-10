@@ -1,11 +1,11 @@
 meta {
-  name: UpdateMenu
+  name: CloneMenus
   type: http
   seq: 1
 }
 
-put {
-  url: {{dietsHost}}/menus/
+post {
+  url: {{dietsHost}}/menus/clone
   body: json
   auth: bearer
 }
@@ -16,36 +16,33 @@ auth:bearer {
 
 body:json {
   {
-      "menuId": "881d8175-eda4-40ed-ac13-629b028ea13e",  
-      "specialistId": "04e5e292-061c-40ab-9962-f92bdbc74a57",
-      "name": "Menu comidas moderadas",
-      "notes": "Agregar 2 vasos de agua por comida",
-      "isGlobal": true,
-      "meals": [
+    "menuId": "1aaab160-cbb9-4686-9118-e3edbe9698a2",
+    "dietId": "uuid-de-la-dieta-destino",
+    "name": "Menu comidas moderadas",
+    "notes": "Agregar 2 vasos de agua por comida",
+    "meals": [
       {
         "mealType": "desayuno",
-        "mealTime": "08:00:00",       
+        "mealTime": "08:00:00",
         "equivalencesPerGroup": [
           { "id": "db487ac0-640e-11f0-8618-1290daed9e2f", "quantity": 3 },
           { "id": "db48d84d-640e-11f0-8618-1290daed9e2f", "quantity": 3 }
         ],
         "dishes": [
           {
-            "dishId": 0,   
+            "dishId": 0,
             "foodId": "3c42e17d-e249-495c-adfd-6a45a71d0d8a",
             "quantity": 2.5
-            // "overrides": []
           },
           {
             "dishId": 1,
             "ingredientId": "0080fb52-6740-11f0-8618-1290daed9e2f",
             "quantity": 2.5
-            // "overrides": []
           }
         ]
-      }, 
+      },
       {
-        "mealType":"comida",
+        "mealType": "comida",
         "mealTime": "14:00:00",
         "equivalencesPerGroup": [
           { "id": "db487ac0-640e-11f0-8618-1290daed9e2f", "quantity": 3 },
@@ -53,10 +50,9 @@ body:json {
         ],
         "dishes": [
           {
-            "dishId": 0,     
+            "dishId": 0,
             "foodId": "3c42e17d-e249-495c-adfd-6a45a71d0d8a",
             "quantity": 2.5
-            //"overrides": []
           },
           {
             "dishId": 1,

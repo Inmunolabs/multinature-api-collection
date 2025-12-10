@@ -1,0 +1,14 @@
+meta {
+  name: ListGlobalMenus
+  type: http
+  seq: 1
+}
+
+get{
+  url: {{dietsHost}}/menus/global
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
