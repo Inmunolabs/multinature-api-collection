@@ -5,9 +5,13 @@ meta {
 }
 
 get {
-  url: {{userFilesHost}}/user-files/certificates/{{userId}}
+  url: {{userFilesHost}}/user-files/certificates/{{userId}}?specialtyId=9ce67305-eafc-11ef-bd0a-1290daed9e2f
   body: none
   auth: bearer
+}
+
+params:query {
+  specialtyId: 9ce67305-eafc-11ef-bd0a-1290daed9e2f
 }
 
 auth:bearer {
