@@ -1,0 +1,19 @@
+meta {
+  name: DeleteFood
+  type: http
+  seq: 1
+}
+
+delete {
+  url: {{dietsHost}}/foods/:id
+  body: none
+  auth: bearer
+}
+
+params:path {
+  id: 7b0efba8-0f95-454d-aac5-0b09ad537f66
+}
+
+auth:bearer {
+  token: {{token}}
+}
