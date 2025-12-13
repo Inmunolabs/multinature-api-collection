@@ -1,0 +1,16 @@
+meta {
+  name: UsersDeactivateAccount
+  type: http
+  seq: 1
+}
+
+delete {
+  url: {{userHost}}/users/account
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
