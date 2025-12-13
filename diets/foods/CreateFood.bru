@@ -1,17 +1,13 @@
 meta {
-  name: FoodUpdate
+  name: CreateOwnFood
   type: http
   seq: 1
 }
 
-patch {
-  url: {{dietsHost}}/menus/food/:id
+post {
+  url: {{dietsHost}}/foods/
   body: json
   auth: bearer
-}
-
-params:path {
-  id: 02952dd3-4769-4e3e-8fc9-2c299e71cc08
 }
 
 auth:bearer {
@@ -20,7 +16,14 @@ auth:bearer {
 
 body:json {
   {
-    "name": "Huevo revuelto a la update",
+    "name": "Belico",
+    "isGlobal": false,
+    "imageKey":"",
+    "imageUrl":"",
+    "caloriesTotal":200,
+    "proteinsTotal":20,
+    "carbohydratesTotal":80,
+    "lipidsTotal": 10,
     "ingredients": [
       {
         "id": "1ff2766e-665c-11f0-8618-1290daed9e2f",
@@ -34,11 +37,7 @@ body:json {
         "id": "ce3184e6-6740-11f0-8618-1290daed9e2f",
         "quantity": 3
       }
-    ]
+    ],
+    "recipe": "Prueba de creacion de platillo desde cero"
   }
-}
-
-settings {
-  encodeUrl: true
-  timeout: 0
 }
