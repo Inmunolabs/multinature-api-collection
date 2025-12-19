@@ -1,0 +1,141 @@
+meta {
+  name: Backfill Food Tags
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{dietsHost}}/foods/backfill-tags
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "batchSize": 500,
+    "startAfterId": null,
+    "dryRun": true
+  }
+}
+
+docs {
+  # Backfill de Tags en Foods
+  
+  ## Descripción
+  Endpoint para hacer backfill de tags en foods con cursor/paginación.
+  Procesa un batch de foods activos (is_active=1), genera tags para cada food y opcionalmente actualiza la BD.
+  
+  ## Parámetros del Body
+  
+  - `batchSize` (number, opcional, default: 500): Tamaño del batch a procesar (1-10000)
+  - `startAfterId` (string|null, opcional, default: null): ID del último food procesado para reanudar desde ahí. Si es null, empieza desde el inicio.
+  - `dryRun` (boolean, opcional, default: true): Si es true, NO escribe a BD, solo regresa sample + nextCursor. Si es false, actualiza foods.tags_json y foods.tags_version=1.
+  
+  ## Respuesta Exitosa (200)
+  
+  ```json
+  {
+    "folio": "aws-request-id",
+    "message": "Backfill de tags completado (dry run)",
+    "content": {
+      "processed": 500,
+      "updated": 500,
+      "dryRun": true,
+      "nextCursor": "uuid-del-ultimo-food-procesado",
+      "warnings": [],
+      "sample": [
+        {
+          "id": "food-uuid-1",
+          "tags_json": "[\"type:official\",\"scope:global\",\"src:human\",\"eqgrp:cereales\",\"eqsub:cereales_cocidos\",\"ing:arroz_blanco\"]",
+          "tags_count": 6
+        },
+        {
+          "id": "food-uuid-2",
+          "tags_json": "[\"type:custom\",\"scope:private\",\"src:human\",\"eqgrp:verduras\",\"ing:tomate\",\"ing:cebolla\"]",
+          "tags_count": 6
+        }
+      ]
+    }
+  }
+  ```
+  
+  ## Campos de la Respuesta
+  
+  - `processed` (int): Número de foods procesados en este batch
+  - `updated` (int): Número de foods actualizados (en dryRun=true, igual a processed)
+  - `dryRun` (bool): Indica si fue un dry run
+  - `nextCursor` (string|null): ID del último food procesado. Usar este valor como `startAfterId` en la siguiente llamada para continuar. Si es null, no hay más foods para procesar.
+  - `warnings` (array): Array de strings con advertencias (ej: foods que no generaron tags)
+  - `sample` (array): Muestra de hasta 10 foods procesados con sus tags generados
+  
+  ## Ejemplo de Uso
+  
+  ### Primera llamada (dry run)
+  ```json
+  {
+    "batchSize": 500,
+    "startAfterId": null,
+    "dryRun": true
+  }
+  ```
+  
+  ### Segunda llamada (continuar desde cursor)
+  ```json
+  {
+    "batchSize": 500,
+    "startAfterId": "uuid-del-ultimo-food-procesado",
+    "dryRun": true
+  }
+  ```
+  
+  ### Ejecución real (actualizar BD)
+  ```json
+  {
+    "batchSize": 500,
+    "startAfterId": null,
+    "dryRun": false
+  }
+  ```
+  
+  ## Reglas de Tags
+  
+  Los tags generados siguen estas reglas:
+  - Formato: `prefix:value` (ej: `type:official`, `scope:global`)
+  - Prefijos permitidos: type, scope, src, eqgrp, eqsub, ing, alg, prot, diet
+  - Máximo 20 tags por food
+  - Orden estable: meta primero (type, scope, src), luego eqgrp/eqsub, luego ing
+  - Tags deduplicados y normalizados (slugs sin acentos, lowercase, max 48 chars)
+  
+  ## Meta Tags (obligatorios)
+  - `type:<food_type>`: official, custom, cloned
+  - `scope:global` si is_global=1, `scope:private` si no
+  - `src:ai` si ai_generated=1, `src:human` si no
+  
+  ## Grupos de Equivalencias
+  - Hasta 6 grupos (máximo 12 tags entre eqgrp/eqsub)
+  - `eqgrp:<slug(name)>`: Grupo de equivalencia
+  - `eqsub:<slug(subgroup)>`: Subgrupo (si existe)
+  
+  ## Ingredientes Clave
+  - Top 3 ingredientes rankeados por net_g DESC (o kcal DESC si net_g es null)
+  - `ing:<slug(ingredient_name)>`
+  
+  ## Errores
+  
+  ### 400 Bad Request
+  - `batchSize` fuera de rango (1-10000)
+  - `startAfterId` no es null ni string válido
+  - `dryRun` no es boolean
+  
+  ### 500 Internal Server Error
+  - Error en la base de datos
+  - Error procesando foods
+}
