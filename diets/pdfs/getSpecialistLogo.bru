@@ -1,0 +1,24 @@
+meta {
+  name: getSpecialistLogo
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{dietsHost}}/diets/specialists/:specialistId/logo
+  body: multipartForm
+  auth: bearer
+}
+
+params:path {
+  specialistId: 04e5e292-061c-40ab-9962-f92bdbc74a57
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

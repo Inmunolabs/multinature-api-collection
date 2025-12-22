@@ -1,0 +1,30 @@
+meta {
+  name: uploadSpecialistLogo
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{dietsHost}}/diets/specialists/:specialistId/logo
+  body: json
+  auth: bearer
+}
+
+params:path {
+  specialistId: 04e5e292-061c-40ab-9962-f92bdbc74a57
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "imageBase64": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA..."
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

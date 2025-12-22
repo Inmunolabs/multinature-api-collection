@@ -1,0 +1,34 @@
+meta {
+  name: generateDietRag
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:3001/diets-ai/generate-diet
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "userprompt": "Quiero un plan para bajar 4 kg de grasas y subir 2 kg de musculo.",
+    "age": 28,
+    "gender": "Mujer",
+    "weight": 75,
+    "height": 170,
+    "activityLevel": "Muy Activo",
+    "objective": "Ganancia muscular",
+    "restrictions": [],
+    "preferences": []
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

@@ -1,11 +1,11 @@
 meta {
-  name: SpecialistListPatients
+  name: deleteSpecialistLogo
   type: http
   seq: 1
 }
 
-get {
-  url: {{userHost}}/specialists/:specialistId/patients
+delete {
+  url: {{dietsHost}}/diets/specialists/:specialistId/logo
   body: none
   auth: bearer
 }
@@ -14,11 +14,11 @@ params:path {
   specialistId: 04e5e292-061c-40ab-9962-f92bdbc74a57
 }
 
-headers {
-  Accept-Language: sp
-  ~Accept-Language: en
-}
-
 auth:bearer {
   token: {{token}}
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
 }
